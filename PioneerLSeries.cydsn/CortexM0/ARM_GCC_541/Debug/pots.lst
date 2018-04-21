@@ -1,0 +1,728 @@
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"pots.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.readPot,"ax",%progbits
+  20              		.align	2
+  21              		.global	readPot
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	readPot, %function
+  25              	readPot:
+  26              	.LFB34:
+  27              		.file 1 "pots.c"
+   1:pots.c        **** /* ========================================
+   2:pots.c        ****  * pots.c
+   3:pots.c        ****  * Dylan Tomberlin
+   4:pots.c        ****  * Husky Robotics Team, 2017-2018
+   5:pots.c        ****  * This file contains functions pertaining to the potentiometers
+   6:pots.c        ****  * ========================================
+   7:pots.c        **** */
+   8:pots.c        **** #include "top.h"
+   9:pots.c        **** 
+  10:pots.c        **** #define VOLT_OVER_POT 5  //Total voltage applied over potentiometer poles
+  11:pots.c        **** #define POT_OFFSET 0     //Tuning factor
+  12:pots.c        **** #define NORMALIZE  32768 //=2^15, Normalize the raw input data to a scale of 0 to 1
+  13:pots.c        **** 
+  14:pots.c        **** //void readPot(motor *currMotorPtr){
+  15:pots.c        **** //    int raw = ADC_GetResult16(currMotorPtr->motorID);
+  16:pots.c        **** //    currMotorPtr->posRaw = raw;
+  17:pots.c        **** //    //currMotorPtr->currPos = ((float) (raw - POT_OFFSET)) / NORMALIZE;
+  18:pots.c        **** //}
+  19:pots.c        **** 
+  20:pots.c        **** void readPot(void *currDataPtr){
+  28              		.loc 1 20 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 70B5     		push	{r4, r5, r6, lr}
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 4, -16
+  36              		.cfi_offset 5, -12
+  37              		.cfi_offset 6, -8
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 2
+
+
+  38              		.cfi_offset 14, -4
+  39 0002 0500     		movs	r5, r0
+  40              	.LVL1:
+  21:pots.c        ****     //Cast generic Data struct pointer to potData struct pointer
+  22:pots.c        ****     potData *potDataPtr = (potData*) currDataPtr;
+  23:pots.c        ****     
+  24:pots.c        ****     int i = 0;
+  25:pots.c        ****     for(i = 0; i < NUM_MOTORS; i++)
+  41              		.loc 1 25 0
+  42 0004 0024     		movs	r4, #0
+  43 0006 05E0     		b	.L2
+  44              	.LVL2:
+  45              	.L3:
+  26:pots.c        ****     {
+  27:pots.c        ****         potDataPtr->potRaw[i] = ADC_GetResult16(i);   
+  46              		.loc 1 27 0 discriminator 3
+  47 0008 2000     		movs	r0, r4
+  48 000a FFF7FEFF 		bl	ADC_GetResult16
+  49              	.LVL3:
+  50 000e 6300     		lsls	r3, r4, #1
+  51 0010 5853     		strh	r0, [r3, r5]
+  25:pots.c        ****     {
+  52              		.loc 1 25 0 discriminator 3
+  53 0012 0134     		adds	r4, r4, #1
+  54              	.LVL4:
+  55              	.L2:
+  25:pots.c        ****     {
+  56              		.loc 1 25 0 is_stmt 0 discriminator 1
+  57 0014 022C     		cmp	r4, #2
+  58 0016 F7DD     		ble	.L3
+  28:pots.c        ****     }
+  29:pots.c        **** }...
+  59              		.loc 1 29 0 is_stmt 1
+  60              		@ sp needed
+  61              	.LVL5:
+  62              	.LVL6:
+  63 0018 70BD     		pop	{r4, r5, r6, pc}
+  64              		.cfi_endproc
+  65              	.LFE34:
+  66              		.size	readPot, .-readPot
+  67 001a C046     		.text
+  68              	.Letext0:
+  69              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+  70              		.file 3 "structs.h"
+  71              		.file 4 "Generated_Source\\PSoC4/ADC.h"
+  72              		.section	.debug_info,"",%progbits
+  73              	.Ldebug_info0:
+  74 0000 2B010000 		.4byte	0x12b
+  75 0004 0400     		.2byte	0x4
+  76 0006 00000000 		.4byte	.Ldebug_abbrev0
+  77 000a 04       		.byte	0x4
+  78 000b 01       		.uleb128 0x1
+  79 000c 2C010000 		.4byte	.LASF17
+  80 0010 0C       		.byte	0xc
+  81 0011 6D000000 		.4byte	.LASF18
+  82 0015 94000000 		.4byte	.LASF19
+  83 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 3
+
+
+  84 001d 00000000 		.4byte	0
+  85 0021 00000000 		.4byte	.Ldebug_line0
+  86 0025 02       		.uleb128 0x2
+  87 0026 01       		.byte	0x1
+  88 0027 06       		.byte	0x6
+  89 0028 CD010000 		.4byte	.LASF0
+  90 002c 02       		.uleb128 0x2
+  91 002d 01       		.byte	0x1
+  92 002e 08       		.byte	0x8
+  93 002f 5F000000 		.4byte	.LASF1
+  94 0033 02       		.uleb128 0x2
+  95 0034 02       		.byte	0x2
+  96 0035 05       		.byte	0x5
+  97 0036 EE010000 		.4byte	.LASF2
+  98 003a 02       		.uleb128 0x2
+  99 003b 02       		.byte	0x2
+ 100 003c 07       		.byte	0x7
+ 101 003d BA010000 		.4byte	.LASF3
+ 102 0041 02       		.uleb128 0x2
+ 103 0042 04       		.byte	0x4
+ 104 0043 05       		.byte	0x5
+ 105 0044 8B000000 		.4byte	.LASF4
+ 106 0048 02       		.uleb128 0x2
+ 107 0049 04       		.byte	0x4
+ 108 004a 07       		.byte	0x7
+ 109 004b 1B000000 		.4byte	.LASF5
+ 110 004f 02       		.uleb128 0x2
+ 111 0050 08       		.byte	0x8
+ 112 0051 05       		.byte	0x5
+ 113 0052 00000000 		.4byte	.LASF6
+ 114 0056 02       		.uleb128 0x2
+ 115 0057 08       		.byte	0x8
+ 116 0058 07       		.byte	0x7
+ 117 0059 2D000000 		.4byte	.LASF7
+ 118 005d 03       		.uleb128 0x3
+ 119 005e 04       		.byte	0x4
+ 120 005f 05       		.byte	0x5
+ 121 0060 696E7400 		.ascii	"int\000"
+ 122 0064 02       		.uleb128 0x2
+ 123 0065 04       		.byte	0x4
+ 124 0066 07       		.byte	0x7
+ 125 0067 0E000000 		.4byte	.LASF8
+ 126 006b 04       		.uleb128 0x4
+ 127 006c E8010000 		.4byte	.LASF14
+ 128 0070 02       		.byte	0x2
+ 129 0071 D601     		.2byte	0x1d6
+ 130 0073 33000000 		.4byte	0x33
+ 131 0077 02       		.uleb128 0x2
+ 132 0078 04       		.byte	0x4
+ 133 0079 04       		.byte	0x4
+ 134 007a 44000000 		.4byte	.LASF9
+ 135 007e 02       		.uleb128 0x2
+ 136 007f 08       		.byte	0x8
+ 137 0080 04       		.byte	0x4
+ 138 0081 11010000 		.4byte	.LASF10
+ 139 0085 02       		.uleb128 0x2
+ 140 0086 01       		.byte	0x1
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 4
+
+
+ 141 0087 08       		.byte	0x8
+ 142 0088 5A000000 		.4byte	.LASF11
+ 143 008c 02       		.uleb128 0x2
+ 144 008d 08       		.byte	0x8
+ 145 008e 04       		.byte	0x4
+ 146 008f 18010000 		.4byte	.LASF12
+ 147 0093 02       		.uleb128 0x2
+ 148 0094 04       		.byte	0x4
+ 149 0095 07       		.byte	0x7
+ 150 0096 F8010000 		.4byte	.LASF13
+ 151 009a 05       		.uleb128 0x5
+ 152 009b 04       		.byte	0x4
+ 153 009c 06       		.uleb128 0x6
+ 154 009d 06       		.byte	0x6
+ 155 009e 03       		.byte	0x3
+ 156 009f 0C       		.byte	0xc
+ 157 00a0 B1000000 		.4byte	0xb1
+ 158 00a4 07       		.uleb128 0x7
+ 159 00a5 E1010000 		.4byte	.LASF20
+ 160 00a9 03       		.byte	0x3
+ 161 00aa 0E       		.byte	0xe
+ 162 00ab B1000000 		.4byte	0xb1
+ 163 00af 00       		.byte	0
+ 164 00b0 00       		.byte	0
+ 165 00b1 08       		.uleb128 0x8
+ 166 00b2 6B000000 		.4byte	0x6b
+ 167 00b6 C1000000 		.4byte	0xc1
+ 168 00ba 09       		.uleb128 0x9
+ 169 00bb 93000000 		.4byte	0x93
+ 170 00bf 02       		.byte	0x2
+ 171 00c0 00       		.byte	0
+ 172 00c1 0A       		.uleb128 0xa
+ 173 00c2 D9010000 		.4byte	.LASF15
+ 174 00c6 03       		.byte	0x3
+ 175 00c7 0F       		.byte	0xf
+ 176 00c8 9C000000 		.4byte	0x9c
+ 177 00cc 0B       		.uleb128 0xb
+ 178 00cd 24010000 		.4byte	.LASF21
+ 179 00d1 01       		.byte	0x1
+ 180 00d2 14       		.byte	0x14
+ 181 00d3 00000000 		.4byte	.LFB34
+ 182 00d7 1A000000 		.4byte	.LFE34-.LFB34
+ 183 00db 01       		.uleb128 0x1
+ 184 00dc 9C       		.byte	0x9c
+ 185 00dd 1D010000 		.4byte	0x11d
+ 186 00e1 0C       		.uleb128 0xc
+ 187 00e2 7F000000 		.4byte	.LASF22
+ 188 00e6 01       		.byte	0x1
+ 189 00e7 14       		.byte	0x14
+ 190 00e8 9A000000 		.4byte	0x9a
+ 191 00ec 00000000 		.4byte	.LLST0
+ 192 00f0 0D       		.uleb128 0xd
+ 193 00f1 74000000 		.4byte	.LASF16
+ 194 00f5 01       		.byte	0x1
+ 195 00f6 16       		.byte	0x16
+ 196 00f7 1D010000 		.4byte	0x11d
+ 197 00fb 2C000000 		.4byte	.LLST1
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 5
+
+
+ 198 00ff 0E       		.uleb128 0xe
+ 199 0100 6900     		.ascii	"i\000"
+ 200 0102 01       		.byte	0x1
+ 201 0103 18       		.byte	0x18
+ 202 0104 5D000000 		.4byte	0x5d
+ 203 0108 58000000 		.4byte	.LLST2
+ 204 010c 0F       		.uleb128 0xf
+ 205 010d 0E000000 		.4byte	.LVL3
+ 206 0111 23010000 		.4byte	0x123
+ 207 0115 10       		.uleb128 0x10
+ 208 0116 01       		.uleb128 0x1
+ 209 0117 50       		.byte	0x50
+ 210 0118 02       		.uleb128 0x2
+ 211 0119 74       		.byte	0x74
+ 212 011a 00       		.sleb128 0
+ 213 011b 00       		.byte	0
+ 214 011c 00       		.byte	0
+ 215 011d 11       		.uleb128 0x11
+ 216 011e 04       		.byte	0x4
+ 217 011f C1000000 		.4byte	0xc1
+ 218 0123 12       		.uleb128 0x12
+ 219 0124 4A000000 		.4byte	.LASF23
+ 220 0128 4A000000 		.4byte	.LASF23
+ 221 012c 04       		.byte	0x4
+ 222 012d A0       		.byte	0xa0
+ 223 012e 00       		.byte	0
+ 224              		.section	.debug_abbrev,"",%progbits
+ 225              	.Ldebug_abbrev0:
+ 226 0000 01       		.uleb128 0x1
+ 227 0001 11       		.uleb128 0x11
+ 228 0002 01       		.byte	0x1
+ 229 0003 25       		.uleb128 0x25
+ 230 0004 0E       		.uleb128 0xe
+ 231 0005 13       		.uleb128 0x13
+ 232 0006 0B       		.uleb128 0xb
+ 233 0007 03       		.uleb128 0x3
+ 234 0008 0E       		.uleb128 0xe
+ 235 0009 1B       		.uleb128 0x1b
+ 236 000a 0E       		.uleb128 0xe
+ 237 000b 55       		.uleb128 0x55
+ 238 000c 17       		.uleb128 0x17
+ 239 000d 11       		.uleb128 0x11
+ 240 000e 01       		.uleb128 0x1
+ 241 000f 10       		.uleb128 0x10
+ 242 0010 17       		.uleb128 0x17
+ 243 0011 00       		.byte	0
+ 244 0012 00       		.byte	0
+ 245 0013 02       		.uleb128 0x2
+ 246 0014 24       		.uleb128 0x24
+ 247 0015 00       		.byte	0
+ 248 0016 0B       		.uleb128 0xb
+ 249 0017 0B       		.uleb128 0xb
+ 250 0018 3E       		.uleb128 0x3e
+ 251 0019 0B       		.uleb128 0xb
+ 252 001a 03       		.uleb128 0x3
+ 253 001b 0E       		.uleb128 0xe
+ 254 001c 00       		.byte	0
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 6
+
+
+ 255 001d 00       		.byte	0
+ 256 001e 03       		.uleb128 0x3
+ 257 001f 24       		.uleb128 0x24
+ 258 0020 00       		.byte	0
+ 259 0021 0B       		.uleb128 0xb
+ 260 0022 0B       		.uleb128 0xb
+ 261 0023 3E       		.uleb128 0x3e
+ 262 0024 0B       		.uleb128 0xb
+ 263 0025 03       		.uleb128 0x3
+ 264 0026 08       		.uleb128 0x8
+ 265 0027 00       		.byte	0
+ 266 0028 00       		.byte	0
+ 267 0029 04       		.uleb128 0x4
+ 268 002a 16       		.uleb128 0x16
+ 269 002b 00       		.byte	0
+ 270 002c 03       		.uleb128 0x3
+ 271 002d 0E       		.uleb128 0xe
+ 272 002e 3A       		.uleb128 0x3a
+ 273 002f 0B       		.uleb128 0xb
+ 274 0030 3B       		.uleb128 0x3b
+ 275 0031 05       		.uleb128 0x5
+ 276 0032 49       		.uleb128 0x49
+ 277 0033 13       		.uleb128 0x13
+ 278 0034 00       		.byte	0
+ 279 0035 00       		.byte	0
+ 280 0036 05       		.uleb128 0x5
+ 281 0037 0F       		.uleb128 0xf
+ 282 0038 00       		.byte	0
+ 283 0039 0B       		.uleb128 0xb
+ 284 003a 0B       		.uleb128 0xb
+ 285 003b 00       		.byte	0
+ 286 003c 00       		.byte	0
+ 287 003d 06       		.uleb128 0x6
+ 288 003e 13       		.uleb128 0x13
+ 289 003f 01       		.byte	0x1
+ 290 0040 0B       		.uleb128 0xb
+ 291 0041 0B       		.uleb128 0xb
+ 292 0042 3A       		.uleb128 0x3a
+ 293 0043 0B       		.uleb128 0xb
+ 294 0044 3B       		.uleb128 0x3b
+ 295 0045 0B       		.uleb128 0xb
+ 296 0046 01       		.uleb128 0x1
+ 297 0047 13       		.uleb128 0x13
+ 298 0048 00       		.byte	0
+ 299 0049 00       		.byte	0
+ 300 004a 07       		.uleb128 0x7
+ 301 004b 0D       		.uleb128 0xd
+ 302 004c 00       		.byte	0
+ 303 004d 03       		.uleb128 0x3
+ 304 004e 0E       		.uleb128 0xe
+ 305 004f 3A       		.uleb128 0x3a
+ 306 0050 0B       		.uleb128 0xb
+ 307 0051 3B       		.uleb128 0x3b
+ 308 0052 0B       		.uleb128 0xb
+ 309 0053 49       		.uleb128 0x49
+ 310 0054 13       		.uleb128 0x13
+ 311 0055 38       		.uleb128 0x38
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 7
+
+
+ 312 0056 0B       		.uleb128 0xb
+ 313 0057 00       		.byte	0
+ 314 0058 00       		.byte	0
+ 315 0059 08       		.uleb128 0x8
+ 316 005a 01       		.uleb128 0x1
+ 317 005b 01       		.byte	0x1
+ 318 005c 49       		.uleb128 0x49
+ 319 005d 13       		.uleb128 0x13
+ 320 005e 01       		.uleb128 0x1
+ 321 005f 13       		.uleb128 0x13
+ 322 0060 00       		.byte	0
+ 323 0061 00       		.byte	0
+ 324 0062 09       		.uleb128 0x9
+ 325 0063 21       		.uleb128 0x21
+ 326 0064 00       		.byte	0
+ 327 0065 49       		.uleb128 0x49
+ 328 0066 13       		.uleb128 0x13
+ 329 0067 2F       		.uleb128 0x2f
+ 330 0068 0B       		.uleb128 0xb
+ 331 0069 00       		.byte	0
+ 332 006a 00       		.byte	0
+ 333 006b 0A       		.uleb128 0xa
+ 334 006c 16       		.uleb128 0x16
+ 335 006d 00       		.byte	0
+ 336 006e 03       		.uleb128 0x3
+ 337 006f 0E       		.uleb128 0xe
+ 338 0070 3A       		.uleb128 0x3a
+ 339 0071 0B       		.uleb128 0xb
+ 340 0072 3B       		.uleb128 0x3b
+ 341 0073 0B       		.uleb128 0xb
+ 342 0074 49       		.uleb128 0x49
+ 343 0075 13       		.uleb128 0x13
+ 344 0076 00       		.byte	0
+ 345 0077 00       		.byte	0
+ 346 0078 0B       		.uleb128 0xb
+ 347 0079 2E       		.uleb128 0x2e
+ 348 007a 01       		.byte	0x1
+ 349 007b 3F       		.uleb128 0x3f
+ 350 007c 19       		.uleb128 0x19
+ 351 007d 03       		.uleb128 0x3
+ 352 007e 0E       		.uleb128 0xe
+ 353 007f 3A       		.uleb128 0x3a
+ 354 0080 0B       		.uleb128 0xb
+ 355 0081 3B       		.uleb128 0x3b
+ 356 0082 0B       		.uleb128 0xb
+ 357 0083 27       		.uleb128 0x27
+ 358 0084 19       		.uleb128 0x19
+ 359 0085 11       		.uleb128 0x11
+ 360 0086 01       		.uleb128 0x1
+ 361 0087 12       		.uleb128 0x12
+ 362 0088 06       		.uleb128 0x6
+ 363 0089 40       		.uleb128 0x40
+ 364 008a 18       		.uleb128 0x18
+ 365 008b 9742     		.uleb128 0x2117
+ 366 008d 19       		.uleb128 0x19
+ 367 008e 01       		.uleb128 0x1
+ 368 008f 13       		.uleb128 0x13
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 8
+
+
+ 369 0090 00       		.byte	0
+ 370 0091 00       		.byte	0
+ 371 0092 0C       		.uleb128 0xc
+ 372 0093 05       		.uleb128 0x5
+ 373 0094 00       		.byte	0
+ 374 0095 03       		.uleb128 0x3
+ 375 0096 0E       		.uleb128 0xe
+ 376 0097 3A       		.uleb128 0x3a
+ 377 0098 0B       		.uleb128 0xb
+ 378 0099 3B       		.uleb128 0x3b
+ 379 009a 0B       		.uleb128 0xb
+ 380 009b 49       		.uleb128 0x49
+ 381 009c 13       		.uleb128 0x13
+ 382 009d 02       		.uleb128 0x2
+ 383 009e 17       		.uleb128 0x17
+ 384 009f 00       		.byte	0
+ 385 00a0 00       		.byte	0
+ 386 00a1 0D       		.uleb128 0xd
+ 387 00a2 34       		.uleb128 0x34
+ 388 00a3 00       		.byte	0
+ 389 00a4 03       		.uleb128 0x3
+ 390 00a5 0E       		.uleb128 0xe
+ 391 00a6 3A       		.uleb128 0x3a
+ 392 00a7 0B       		.uleb128 0xb
+ 393 00a8 3B       		.uleb128 0x3b
+ 394 00a9 0B       		.uleb128 0xb
+ 395 00aa 49       		.uleb128 0x49
+ 396 00ab 13       		.uleb128 0x13
+ 397 00ac 02       		.uleb128 0x2
+ 398 00ad 17       		.uleb128 0x17
+ 399 00ae 00       		.byte	0
+ 400 00af 00       		.byte	0
+ 401 00b0 0E       		.uleb128 0xe
+ 402 00b1 34       		.uleb128 0x34
+ 403 00b2 00       		.byte	0
+ 404 00b3 03       		.uleb128 0x3
+ 405 00b4 08       		.uleb128 0x8
+ 406 00b5 3A       		.uleb128 0x3a
+ 407 00b6 0B       		.uleb128 0xb
+ 408 00b7 3B       		.uleb128 0x3b
+ 409 00b8 0B       		.uleb128 0xb
+ 410 00b9 49       		.uleb128 0x49
+ 411 00ba 13       		.uleb128 0x13
+ 412 00bb 02       		.uleb128 0x2
+ 413 00bc 17       		.uleb128 0x17
+ 414 00bd 00       		.byte	0
+ 415 00be 00       		.byte	0
+ 416 00bf 0F       		.uleb128 0xf
+ 417 00c0 898201   		.uleb128 0x4109
+ 418 00c3 01       		.byte	0x1
+ 419 00c4 11       		.uleb128 0x11
+ 420 00c5 01       		.uleb128 0x1
+ 421 00c6 31       		.uleb128 0x31
+ 422 00c7 13       		.uleb128 0x13
+ 423 00c8 00       		.byte	0
+ 424 00c9 00       		.byte	0
+ 425 00ca 10       		.uleb128 0x10
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 9
+
+
+ 426 00cb 8A8201   		.uleb128 0x410a
+ 427 00ce 00       		.byte	0
+ 428 00cf 02       		.uleb128 0x2
+ 429 00d0 18       		.uleb128 0x18
+ 430 00d1 9142     		.uleb128 0x2111
+ 431 00d3 18       		.uleb128 0x18
+ 432 00d4 00       		.byte	0
+ 433 00d5 00       		.byte	0
+ 434 00d6 11       		.uleb128 0x11
+ 435 00d7 0F       		.uleb128 0xf
+ 436 00d8 00       		.byte	0
+ 437 00d9 0B       		.uleb128 0xb
+ 438 00da 0B       		.uleb128 0xb
+ 439 00db 49       		.uleb128 0x49
+ 440 00dc 13       		.uleb128 0x13
+ 441 00dd 00       		.byte	0
+ 442 00de 00       		.byte	0
+ 443 00df 12       		.uleb128 0x12
+ 444 00e0 2E       		.uleb128 0x2e
+ 445 00e1 00       		.byte	0
+ 446 00e2 3F       		.uleb128 0x3f
+ 447 00e3 19       		.uleb128 0x19
+ 448 00e4 3C       		.uleb128 0x3c
+ 449 00e5 19       		.uleb128 0x19
+ 450 00e6 6E       		.uleb128 0x6e
+ 451 00e7 0E       		.uleb128 0xe
+ 452 00e8 03       		.uleb128 0x3
+ 453 00e9 0E       		.uleb128 0xe
+ 454 00ea 3A       		.uleb128 0x3a
+ 455 00eb 0B       		.uleb128 0xb
+ 456 00ec 3B       		.uleb128 0x3b
+ 457 00ed 0B       		.uleb128 0xb
+ 458 00ee 00       		.byte	0
+ 459 00ef 00       		.byte	0
+ 460 00f0 00       		.byte	0
+ 461              		.section	.debug_loc,"",%progbits
+ 462              	.Ldebug_loc0:
+ 463              	.LLST0:
+ 464 0000 00000000 		.4byte	.LVL0
+ 465 0004 08000000 		.4byte	.LVL2
+ 466 0008 0100     		.2byte	0x1
+ 467 000a 50       		.byte	0x50
+ 468 000b 08000000 		.4byte	.LVL2
+ 469 000f 18000000 		.4byte	.LVL6
+ 470 0013 0100     		.2byte	0x1
+ 471 0015 55       		.byte	0x55
+ 472 0016 18000000 		.4byte	.LVL6
+ 473 001a 1A000000 		.4byte	.LFE34
+ 474 001e 0400     		.2byte	0x4
+ 475 0020 F3       		.byte	0xf3
+ 476 0021 01       		.uleb128 0x1
+ 477 0022 50       		.byte	0x50
+ 478 0023 9F       		.byte	0x9f
+ 479 0024 00000000 		.4byte	0
+ 480 0028 00000000 		.4byte	0
+ 481              	.LLST1:
+ 482 002c 04000000 		.4byte	.LVL1
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 10
+
+
+ 483 0030 08000000 		.4byte	.LVL2
+ 484 0034 0100     		.2byte	0x1
+ 485 0036 50       		.byte	0x50
+ 486 0037 08000000 		.4byte	.LVL2
+ 487 003b 18000000 		.4byte	.LVL6
+ 488 003f 0100     		.2byte	0x1
+ 489 0041 55       		.byte	0x55
+ 490 0042 18000000 		.4byte	.LVL6
+ 491 0046 1A000000 		.4byte	.LFE34
+ 492 004a 0400     		.2byte	0x4
+ 493 004c F3       		.byte	0xf3
+ 494 004d 01       		.uleb128 0x1
+ 495 004e 50       		.byte	0x50
+ 496 004f 9F       		.byte	0x9f
+ 497 0050 00000000 		.4byte	0
+ 498 0054 00000000 		.4byte	0
+ 499              	.LLST2:
+ 500 0058 04000000 		.4byte	.LVL1
+ 501 005c 08000000 		.4byte	.LVL2
+ 502 0060 0200     		.2byte	0x2
+ 503 0062 30       		.byte	0x30
+ 504 0063 9F       		.byte	0x9f
+ 505 0064 08000000 		.4byte	.LVL2
+ 506 0068 18000000 		.4byte	.LVL5
+ 507 006c 0100     		.2byte	0x1
+ 508 006e 54       		.byte	0x54
+ 509 006f 00000000 		.4byte	0
+ 510 0073 00000000 		.4byte	0
+ 511              		.section	.debug_aranges,"",%progbits
+ 512 0000 1C000000 		.4byte	0x1c
+ 513 0004 0200     		.2byte	0x2
+ 514 0006 00000000 		.4byte	.Ldebug_info0
+ 515 000a 04       		.byte	0x4
+ 516 000b 00       		.byte	0
+ 517 000c 0000     		.2byte	0
+ 518 000e 0000     		.2byte	0
+ 519 0010 00000000 		.4byte	.LFB34
+ 520 0014 1A000000 		.4byte	.LFE34-.LFB34
+ 521 0018 00000000 		.4byte	0
+ 522 001c 00000000 		.4byte	0
+ 523              		.section	.debug_ranges,"",%progbits
+ 524              	.Ldebug_ranges0:
+ 525 0000 00000000 		.4byte	.LFB34
+ 526 0004 1A000000 		.4byte	.LFE34
+ 527 0008 00000000 		.4byte	0
+ 528 000c 00000000 		.4byte	0
+ 529              		.section	.debug_line,"",%progbits
+ 530              	.Ldebug_line0:
+ 531 0000 7F000000 		.section	.debug_str,"MS",%progbits,1
+ 531      02005700 
+ 531      00000201 
+ 531      FB0E0D00 
+ 531      01010101 
+ 532              	.LASF6:
+ 533 0000 6C6F6E67 		.ascii	"long long int\000"
+ 533      206C6F6E 
+ 533      6720696E 
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 11
+
+
+ 533      7400
+ 534              	.LASF8:
+ 535 000e 756E7369 		.ascii	"unsigned int\000"
+ 535      676E6564 
+ 535      20696E74 
+ 535      00
+ 536              	.LASF5:
+ 537 001b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 537      20756E73 
+ 537      69676E65 
+ 537      6420696E 
+ 537      7400
+ 538              	.LASF7:
+ 539 002d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 539      206C6F6E 
+ 539      6720756E 
+ 539      7369676E 
+ 539      65642069 
+ 540              	.LASF9:
+ 541 0044 666C6F61 		.ascii	"float\000"
+ 541      7400
+ 542              	.LASF23:
+ 543 004a 4144435F 		.ascii	"ADC_GetResult16\000"
+ 543      47657452 
+ 543      6573756C 
+ 543      74313600 
+ 544              	.LASF11:
+ 545 005a 63686172 		.ascii	"char\000"
+ 545      00
+ 546              	.LASF1:
+ 547 005f 756E7369 		.ascii	"unsigned char\000"
+ 547      676E6564 
+ 547      20636861 
+ 547      7200
+ 548              	.LASF18:
+ 549 006d 706F7473 		.ascii	"pots.c\000"
+ 549      2E6300
+ 550              	.LASF16:
+ 551 0074 706F7444 		.ascii	"potDataPtr\000"
+ 551      61746150 
+ 551      747200
+ 552              	.LASF22:
+ 553 007f 63757272 		.ascii	"currDataPtr\000"
+ 553      44617461 
+ 553      50747200 
+ 554              	.LASF4:
+ 555 008b 6C6F6E67 		.ascii	"long int\000"
+ 555      20696E74 
+ 555      00
+ 556              	.LASF19:
+ 557 0094 473A5C4D 		.ascii	"G:\\My Drive\\Husky Robotics\\Electronics\\Arm_Elec"
+ 557      79204472 
+ 557      6976655C 
+ 557      4875736B 
+ 557      7920526F 
+ 558 00c3 74726F6E 		.ascii	"tronics\\PSoC Workspaces\\MotorBoard2017-18_PSoC Wo"
+ 558      6963735C 
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 12
+
+
+ 558      50536F43 
+ 558      20576F72 
+ 558      6B737061 
+ 559 00f4 726B7370 		.ascii	"rkspace\\PioneerLSeries.cydsn\000"
+ 559      6163655C 
+ 559      50696F6E 
+ 559      6565724C 
+ 559      53657269 
+ 560              	.LASF10:
+ 561 0111 646F7562 		.ascii	"double\000"
+ 561      6C6500
+ 562              	.LASF12:
+ 563 0118 6C6F6E67 		.ascii	"long double\000"
+ 563      20646F75 
+ 563      626C6500 
+ 564              	.LASF21:
+ 565 0124 72656164 		.ascii	"readPot\000"
+ 565      506F7400 
+ 566              	.LASF17:
+ 567 012c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 567      43313120 
+ 567      352E342E 
+ 567      31203230 
+ 567      31363036 
+ 568 015f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 568      20726576 
+ 568      6973696F 
+ 568      6E203233 
+ 568      37373135 
+ 569 0192 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 569      66756E63 
+ 569      74696F6E 
+ 569      2D736563 
+ 569      74696F6E 
+ 570              	.LASF3:
+ 571 01ba 73686F72 		.ascii	"short unsigned int\000"
+ 571      7420756E 
+ 571      7369676E 
+ 571      65642069 
+ 571      6E7400
+ 572              	.LASF0:
+ 573 01cd 7369676E 		.ascii	"signed char\000"
+ 573      65642063 
+ 573      68617200 
+ 574              	.LASF15:
+ 575 01d9 706F7444 		.ascii	"potData\000"
+ 575      61746100 
+ 576              	.LASF20:
+ 577 01e1 706F7452 		.ascii	"potRaw\000"
+ 577      617700
+ 578              	.LASF14:
+ 579 01e8 696E7431 		.ascii	"int16\000"
+ 579      3600
+ 580              	.LASF2:
+ 581 01ee 73686F72 		.ascii	"short int\000"
+ 581      7420696E 
+ 581      7400
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHNHLVi.s 			page 13
+
+
+ 582              	.LASF13:
+ 583 01f8 73697A65 		.ascii	"sizetype\000"
+ 583      74797065 
+ 583      00
+ 584              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

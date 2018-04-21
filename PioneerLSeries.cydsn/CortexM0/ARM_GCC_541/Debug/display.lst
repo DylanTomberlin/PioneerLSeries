@@ -1,0 +1,714 @@
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"display.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.display,"ax",%progbits
+  20              		.align	2
+  21              		.global	display
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	display, %function
+  25              	display:
+  26              	.LFB34:
+  27              		.file 1 "display.c"
+   1:display.c     **** /* ========================================
+   2:display.c     ****  * display.c
+   3:display.c     ****  * Dylan Tomberlin
+   4:display.c     ****  * Husky Robotics Team 2017-2018
+   5:display.c     ****  * This file contains functions related to displaying to a character LCD for the purposes of debugg
+   6:display.c     ****  * Part of the Arm Motor Board project
+   7:display.c     ****  * ========================================
+   8:display.c     **** */
+   9:display.c     **** #include "top.h"
+  10:display.c     **** 
+  11:display.c     **** 
+  12:display.c     **** void display(void *dataPointer)
+  13:display.c     **** {
+  28              		.loc 1 13 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37 0002 0400     		movs	r4, r0
+  38              	.LVL1:
+  14:display.c     ****     displayData *displayDataPtr = (displayData*) dataPointer; //cast from generic data struct point
+  15:display.c     ****     LCD_Position(0, 0);
+  39              		.loc 1 15 0
+  40 0004 0021     		movs	r1, #0
+  41 0006 0020     		movs	r0, #0
+  42              	.LVL2:
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 2
+
+
+  43 0008 FFF7FEFF 		bl	LCD_Position
+  44              	.LVL3:
+  16:display.c     ****     LCD_PrintDecUint16(*(displayDataPtr->potRawPtr));
+  45              		.loc 1 16 0
+  46 000c 2068     		ldr	r0, [r4]
+  47 000e 0004     		lsls	r0, r0, #16
+  48 0010 000C     		lsrs	r0, r0, #16
+  49 0012 FFF7FEFF 		bl	LCD_PrintU32Number
+  50              	.LVL4:
+  17:display.c     **** }
+  51              		.loc 1 17 0
+  52              		@ sp needed
+  53              	.LVL5:
+  54 0016 10BD     		pop	{r4, pc}
+  55              		.cfi_endproc
+  56              	.LFE34:
+  57              		.size	display, .-display
+  58              		.text
+  59              	.Letext0:
+  60              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+  61              		.file 3 "structs.h"
+  62              		.file 4 "Generated_Source\\PSoC4/LCD.h"
+  63              		.section	.debug_info,"",%progbits
+  64              	.Ldebug_info0:
+  65 0000 4C010000 		.4byte	0x14c
+  66 0004 0400     		.2byte	0x4
+  67 0006 00000000 		.4byte	.Ldebug_abbrev0
+  68 000a 04       		.byte	0x4
+  69 000b 01       		.uleb128 0x1
+  70 000c 19010000 		.4byte	.LASF19
+  71 0010 0C       		.byte	0xc
+  72 0011 2A000000 		.4byte	.LASF20
+  73 0015 46000000 		.4byte	.LASF21
+  74 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  75 001d 00000000 		.4byte	0
+  76 0021 00000000 		.4byte	.Ldebug_line0
+  77 0025 02       		.uleb128 0x2
+  78 0026 01       		.byte	0x1
+  79 0027 06       		.byte	0x6
+  80 0028 BA010000 		.4byte	.LASF0
+  81 002c 02       		.uleb128 0x2
+  82 002d 01       		.byte	0x1
+  83 002e 08       		.byte	0x8
+  84 002f D5000000 		.4byte	.LASF1
+  85 0033 02       		.uleb128 0x2
+  86 0034 02       		.byte	0x2
+  87 0035 05       		.byte	0x5
+  88 0036 F5010000 		.4byte	.LASF2
+  89 003a 02       		.uleb128 0x2
+  90 003b 02       		.byte	0x2
+  91 003c 07       		.byte	0x7
+  92 003d A7010000 		.4byte	.LASF3
+  93 0041 02       		.uleb128 0x2
+  94 0042 04       		.byte	0x4
+  95 0043 05       		.byte	0x5
+  96 0044 FC000000 		.4byte	.LASF4
+  97 0048 02       		.uleb128 0x2
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 3
+
+
+  98 0049 04       		.byte	0x4
+  99 004a 07       		.byte	0x7
+ 100 004b 34000000 		.4byte	.LASF5
+ 101 004f 02       		.uleb128 0x2
+ 102 0050 08       		.byte	0x8
+ 103 0051 05       		.byte	0x5
+ 104 0052 00000000 		.4byte	.LASF6
+ 105 0056 02       		.uleb128 0x2
+ 106 0057 08       		.byte	0x8
+ 107 0058 07       		.byte	0x7
+ 108 0059 B8000000 		.4byte	.LASF7
+ 109 005d 03       		.uleb128 0x3
+ 110 005e 04       		.byte	0x4
+ 111 005f 05       		.byte	0x5
+ 112 0060 696E7400 		.ascii	"int\000"
+ 113 0064 02       		.uleb128 0x2
+ 114 0065 04       		.byte	0x4
+ 115 0066 07       		.byte	0x7
+ 116 0067 1D000000 		.4byte	.LASF8
+ 117 006b 04       		.uleb128 0x4
+ 118 006c FF010000 		.4byte	.LASF9
+ 119 0070 02       		.byte	0x2
+ 120 0071 D301     		.2byte	0x1d3
+ 121 0073 3A000000 		.4byte	0x3a
+ 122 0077 04       		.uleb128 0x4
+ 123 0078 EF010000 		.4byte	.LASF10
+ 124 007c 02       		.byte	0x2
+ 125 007d D601     		.2byte	0x1d6
+ 126 007f 33000000 		.4byte	0x33
+ 127 0083 02       		.uleb128 0x2
+ 128 0084 04       		.byte	0x4
+ 129 0085 04       		.byte	0x4
+ 130 0086 CF000000 		.4byte	.LASF11
+ 131 008a 02       		.uleb128 0x2
+ 132 008b 08       		.byte	0x8
+ 133 008c 04       		.byte	0x4
+ 134 008d 05010000 		.4byte	.LASF12
+ 135 0091 02       		.uleb128 0x2
+ 136 0092 01       		.byte	0x1
+ 137 0093 08       		.byte	0x8
+ 138 0094 E3000000 		.4byte	.LASF13
+ 139 0098 02       		.uleb128 0x2
+ 140 0099 08       		.byte	0x8
+ 141 009a 04       		.byte	0x4
+ 142 009b E3010000 		.4byte	.LASF14
+ 143 009f 02       		.uleb128 0x2
+ 144 00a0 04       		.byte	0x4
+ 145 00a1 07       		.byte	0x7
+ 146 00a2 06020000 		.4byte	.LASF15
+ 147 00a6 05       		.uleb128 0x5
+ 148 00a7 04       		.byte	0x4
+ 149 00a8 06       		.uleb128 0x6
+ 150 00a9 0C       		.byte	0xc
+ 151 00aa 03       		.byte	0x3
+ 152 00ab 14       		.byte	0x14
+ 153 00ac BD000000 		.4byte	0xbd
+ 154 00b0 07       		.uleb128 0x7
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 4
+
+
+ 155 00b1 D9010000 		.4byte	.LASF22
+ 156 00b5 03       		.byte	0x3
+ 157 00b6 16       		.byte	0x16
+ 158 00b7 BD000000 		.4byte	0xbd
+ 159 00bb 00       		.byte	0
+ 160 00bc 00       		.byte	0
+ 161 00bd 08       		.uleb128 0x8
+ 162 00be CD000000 		.4byte	0xcd
+ 163 00c2 CD000000 		.4byte	0xcd
+ 164 00c6 09       		.uleb128 0x9
+ 165 00c7 9F000000 		.4byte	0x9f
+ 166 00cb 02       		.byte	0x2
+ 167 00cc 00       		.byte	0
+ 168 00cd 0A       		.uleb128 0xa
+ 169 00ce 04       		.byte	0x4
+ 170 00cf 77000000 		.4byte	0x77
+ 171 00d3 0B       		.uleb128 0xb
+ 172 00d4 0F020000 		.4byte	.LASF16
+ 173 00d8 03       		.byte	0x3
+ 174 00d9 17       		.byte	0x17
+ 175 00da A8000000 		.4byte	0xa8
+ 176 00de 0C       		.uleb128 0xc
+ 177 00df E8000000 		.4byte	.LASF23
+ 178 00e3 01       		.byte	0x1
+ 179 00e4 0C       		.byte	0xc
+ 180 00e5 00000000 		.4byte	.LFB34
+ 181 00e9 18000000 		.4byte	.LFE34-.LFB34
+ 182 00ed 01       		.uleb128 0x1
+ 183 00ee 9C       		.byte	0x9c
+ 184 00ef 33010000 		.4byte	0x133
+ 185 00f3 0D       		.uleb128 0xd
+ 186 00f4 F0000000 		.4byte	.LASF24
+ 187 00f8 01       		.byte	0x1
+ 188 00f9 0C       		.byte	0xc
+ 189 00fa A6000000 		.4byte	0xa6
+ 190 00fe 00000000 		.4byte	.LLST0
+ 191 0102 0E       		.uleb128 0xe
+ 192 0103 0E000000 		.4byte	.LASF25
+ 193 0107 01       		.byte	0x1
+ 194 0108 0E       		.byte	0xe
+ 195 0109 33010000 		.4byte	0x133
+ 196 010d 2C000000 		.4byte	.LLST1
+ 197 0111 0F       		.uleb128 0xf
+ 198 0112 0C000000 		.4byte	.LVL3
+ 199 0116 39010000 		.4byte	0x139
+ 200 011a 29010000 		.4byte	0x129
+ 201 011e 10       		.uleb128 0x10
+ 202 011f 01       		.uleb128 0x1
+ 203 0120 50       		.byte	0x50
+ 204 0121 01       		.uleb128 0x1
+ 205 0122 30       		.byte	0x30
+ 206 0123 10       		.uleb128 0x10
+ 207 0124 01       		.uleb128 0x1
+ 208 0125 51       		.byte	0x51
+ 209 0126 01       		.uleb128 0x1
+ 210 0127 30       		.byte	0x30
+ 211 0128 00       		.byte	0
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 5
+
+
+ 212 0129 11       		.uleb128 0x11
+ 213 012a 16000000 		.4byte	.LVL4
+ 214 012e 44010000 		.4byte	0x144
+ 215 0132 00       		.byte	0
+ 216 0133 0A       		.uleb128 0xa
+ 217 0134 04       		.byte	0x4
+ 218 0135 D3000000 		.4byte	0xd3
+ 219 0139 12       		.uleb128 0x12
+ 220 013a 0C010000 		.4byte	.LASF17
+ 221 013e 0C010000 		.4byte	.LASF17
+ 222 0142 04       		.byte	0x4
+ 223 0143 3D       		.byte	0x3d
+ 224 0144 12       		.uleb128 0x12
+ 225 0145 C6010000 		.4byte	.LASF18
+ 226 0149 C6010000 		.4byte	.LASF18
+ 227 014d 04       		.byte	0x4
+ 228 014e 61       		.byte	0x61
+ 229 014f 00       		.byte	0
+ 230              		.section	.debug_abbrev,"",%progbits
+ 231              	.Ldebug_abbrev0:
+ 232 0000 01       		.uleb128 0x1
+ 233 0001 11       		.uleb128 0x11
+ 234 0002 01       		.byte	0x1
+ 235 0003 25       		.uleb128 0x25
+ 236 0004 0E       		.uleb128 0xe
+ 237 0005 13       		.uleb128 0x13
+ 238 0006 0B       		.uleb128 0xb
+ 239 0007 03       		.uleb128 0x3
+ 240 0008 0E       		.uleb128 0xe
+ 241 0009 1B       		.uleb128 0x1b
+ 242 000a 0E       		.uleb128 0xe
+ 243 000b 55       		.uleb128 0x55
+ 244 000c 17       		.uleb128 0x17
+ 245 000d 11       		.uleb128 0x11
+ 246 000e 01       		.uleb128 0x1
+ 247 000f 10       		.uleb128 0x10
+ 248 0010 17       		.uleb128 0x17
+ 249 0011 00       		.byte	0
+ 250 0012 00       		.byte	0
+ 251 0013 02       		.uleb128 0x2
+ 252 0014 24       		.uleb128 0x24
+ 253 0015 00       		.byte	0
+ 254 0016 0B       		.uleb128 0xb
+ 255 0017 0B       		.uleb128 0xb
+ 256 0018 3E       		.uleb128 0x3e
+ 257 0019 0B       		.uleb128 0xb
+ 258 001a 03       		.uleb128 0x3
+ 259 001b 0E       		.uleb128 0xe
+ 260 001c 00       		.byte	0
+ 261 001d 00       		.byte	0
+ 262 001e 03       		.uleb128 0x3
+ 263 001f 24       		.uleb128 0x24
+ 264 0020 00       		.byte	0
+ 265 0021 0B       		.uleb128 0xb
+ 266 0022 0B       		.uleb128 0xb
+ 267 0023 3E       		.uleb128 0x3e
+ 268 0024 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 6
+
+
+ 269 0025 03       		.uleb128 0x3
+ 270 0026 08       		.uleb128 0x8
+ 271 0027 00       		.byte	0
+ 272 0028 00       		.byte	0
+ 273 0029 04       		.uleb128 0x4
+ 274 002a 16       		.uleb128 0x16
+ 275 002b 00       		.byte	0
+ 276 002c 03       		.uleb128 0x3
+ 277 002d 0E       		.uleb128 0xe
+ 278 002e 3A       		.uleb128 0x3a
+ 279 002f 0B       		.uleb128 0xb
+ 280 0030 3B       		.uleb128 0x3b
+ 281 0031 05       		.uleb128 0x5
+ 282 0032 49       		.uleb128 0x49
+ 283 0033 13       		.uleb128 0x13
+ 284 0034 00       		.byte	0
+ 285 0035 00       		.byte	0
+ 286 0036 05       		.uleb128 0x5
+ 287 0037 0F       		.uleb128 0xf
+ 288 0038 00       		.byte	0
+ 289 0039 0B       		.uleb128 0xb
+ 290 003a 0B       		.uleb128 0xb
+ 291 003b 00       		.byte	0
+ 292 003c 00       		.byte	0
+ 293 003d 06       		.uleb128 0x6
+ 294 003e 13       		.uleb128 0x13
+ 295 003f 01       		.byte	0x1
+ 296 0040 0B       		.uleb128 0xb
+ 297 0041 0B       		.uleb128 0xb
+ 298 0042 3A       		.uleb128 0x3a
+ 299 0043 0B       		.uleb128 0xb
+ 300 0044 3B       		.uleb128 0x3b
+ 301 0045 0B       		.uleb128 0xb
+ 302 0046 01       		.uleb128 0x1
+ 303 0047 13       		.uleb128 0x13
+ 304 0048 00       		.byte	0
+ 305 0049 00       		.byte	0
+ 306 004a 07       		.uleb128 0x7
+ 307 004b 0D       		.uleb128 0xd
+ 308 004c 00       		.byte	0
+ 309 004d 03       		.uleb128 0x3
+ 310 004e 0E       		.uleb128 0xe
+ 311 004f 3A       		.uleb128 0x3a
+ 312 0050 0B       		.uleb128 0xb
+ 313 0051 3B       		.uleb128 0x3b
+ 314 0052 0B       		.uleb128 0xb
+ 315 0053 49       		.uleb128 0x49
+ 316 0054 13       		.uleb128 0x13
+ 317 0055 38       		.uleb128 0x38
+ 318 0056 0B       		.uleb128 0xb
+ 319 0057 00       		.byte	0
+ 320 0058 00       		.byte	0
+ 321 0059 08       		.uleb128 0x8
+ 322 005a 01       		.uleb128 0x1
+ 323 005b 01       		.byte	0x1
+ 324 005c 49       		.uleb128 0x49
+ 325 005d 13       		.uleb128 0x13
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 7
+
+
+ 326 005e 01       		.uleb128 0x1
+ 327 005f 13       		.uleb128 0x13
+ 328 0060 00       		.byte	0
+ 329 0061 00       		.byte	0
+ 330 0062 09       		.uleb128 0x9
+ 331 0063 21       		.uleb128 0x21
+ 332 0064 00       		.byte	0
+ 333 0065 49       		.uleb128 0x49
+ 334 0066 13       		.uleb128 0x13
+ 335 0067 2F       		.uleb128 0x2f
+ 336 0068 0B       		.uleb128 0xb
+ 337 0069 00       		.byte	0
+ 338 006a 00       		.byte	0
+ 339 006b 0A       		.uleb128 0xa
+ 340 006c 0F       		.uleb128 0xf
+ 341 006d 00       		.byte	0
+ 342 006e 0B       		.uleb128 0xb
+ 343 006f 0B       		.uleb128 0xb
+ 344 0070 49       		.uleb128 0x49
+ 345 0071 13       		.uleb128 0x13
+ 346 0072 00       		.byte	0
+ 347 0073 00       		.byte	0
+ 348 0074 0B       		.uleb128 0xb
+ 349 0075 16       		.uleb128 0x16
+ 350 0076 00       		.byte	0
+ 351 0077 03       		.uleb128 0x3
+ 352 0078 0E       		.uleb128 0xe
+ 353 0079 3A       		.uleb128 0x3a
+ 354 007a 0B       		.uleb128 0xb
+ 355 007b 3B       		.uleb128 0x3b
+ 356 007c 0B       		.uleb128 0xb
+ 357 007d 49       		.uleb128 0x49
+ 358 007e 13       		.uleb128 0x13
+ 359 007f 00       		.byte	0
+ 360 0080 00       		.byte	0
+ 361 0081 0C       		.uleb128 0xc
+ 362 0082 2E       		.uleb128 0x2e
+ 363 0083 01       		.byte	0x1
+ 364 0084 3F       		.uleb128 0x3f
+ 365 0085 19       		.uleb128 0x19
+ 366 0086 03       		.uleb128 0x3
+ 367 0087 0E       		.uleb128 0xe
+ 368 0088 3A       		.uleb128 0x3a
+ 369 0089 0B       		.uleb128 0xb
+ 370 008a 3B       		.uleb128 0x3b
+ 371 008b 0B       		.uleb128 0xb
+ 372 008c 27       		.uleb128 0x27
+ 373 008d 19       		.uleb128 0x19
+ 374 008e 11       		.uleb128 0x11
+ 375 008f 01       		.uleb128 0x1
+ 376 0090 12       		.uleb128 0x12
+ 377 0091 06       		.uleb128 0x6
+ 378 0092 40       		.uleb128 0x40
+ 379 0093 18       		.uleb128 0x18
+ 380 0094 9742     		.uleb128 0x2117
+ 381 0096 19       		.uleb128 0x19
+ 382 0097 01       		.uleb128 0x1
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 8
+
+
+ 383 0098 13       		.uleb128 0x13
+ 384 0099 00       		.byte	0
+ 385 009a 00       		.byte	0
+ 386 009b 0D       		.uleb128 0xd
+ 387 009c 05       		.uleb128 0x5
+ 388 009d 00       		.byte	0
+ 389 009e 03       		.uleb128 0x3
+ 390 009f 0E       		.uleb128 0xe
+ 391 00a0 3A       		.uleb128 0x3a
+ 392 00a1 0B       		.uleb128 0xb
+ 393 00a2 3B       		.uleb128 0x3b
+ 394 00a3 0B       		.uleb128 0xb
+ 395 00a4 49       		.uleb128 0x49
+ 396 00a5 13       		.uleb128 0x13
+ 397 00a6 02       		.uleb128 0x2
+ 398 00a7 17       		.uleb128 0x17
+ 399 00a8 00       		.byte	0
+ 400 00a9 00       		.byte	0
+ 401 00aa 0E       		.uleb128 0xe
+ 402 00ab 34       		.uleb128 0x34
+ 403 00ac 00       		.byte	0
+ 404 00ad 03       		.uleb128 0x3
+ 405 00ae 0E       		.uleb128 0xe
+ 406 00af 3A       		.uleb128 0x3a
+ 407 00b0 0B       		.uleb128 0xb
+ 408 00b1 3B       		.uleb128 0x3b
+ 409 00b2 0B       		.uleb128 0xb
+ 410 00b3 49       		.uleb128 0x49
+ 411 00b4 13       		.uleb128 0x13
+ 412 00b5 02       		.uleb128 0x2
+ 413 00b6 17       		.uleb128 0x17
+ 414 00b7 00       		.byte	0
+ 415 00b8 00       		.byte	0
+ 416 00b9 0F       		.uleb128 0xf
+ 417 00ba 898201   		.uleb128 0x4109
+ 418 00bd 01       		.byte	0x1
+ 419 00be 11       		.uleb128 0x11
+ 420 00bf 01       		.uleb128 0x1
+ 421 00c0 31       		.uleb128 0x31
+ 422 00c1 13       		.uleb128 0x13
+ 423 00c2 01       		.uleb128 0x1
+ 424 00c3 13       		.uleb128 0x13
+ 425 00c4 00       		.byte	0
+ 426 00c5 00       		.byte	0
+ 427 00c6 10       		.uleb128 0x10
+ 428 00c7 8A8201   		.uleb128 0x410a
+ 429 00ca 00       		.byte	0
+ 430 00cb 02       		.uleb128 0x2
+ 431 00cc 18       		.uleb128 0x18
+ 432 00cd 9142     		.uleb128 0x2111
+ 433 00cf 18       		.uleb128 0x18
+ 434 00d0 00       		.byte	0
+ 435 00d1 00       		.byte	0
+ 436 00d2 11       		.uleb128 0x11
+ 437 00d3 898201   		.uleb128 0x4109
+ 438 00d6 00       		.byte	0
+ 439 00d7 11       		.uleb128 0x11
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 9
+
+
+ 440 00d8 01       		.uleb128 0x1
+ 441 00d9 31       		.uleb128 0x31
+ 442 00da 13       		.uleb128 0x13
+ 443 00db 00       		.byte	0
+ 444 00dc 00       		.byte	0
+ 445 00dd 12       		.uleb128 0x12
+ 446 00de 2E       		.uleb128 0x2e
+ 447 00df 00       		.byte	0
+ 448 00e0 3F       		.uleb128 0x3f
+ 449 00e1 19       		.uleb128 0x19
+ 450 00e2 3C       		.uleb128 0x3c
+ 451 00e3 19       		.uleb128 0x19
+ 452 00e4 6E       		.uleb128 0x6e
+ 453 00e5 0E       		.uleb128 0xe
+ 454 00e6 03       		.uleb128 0x3
+ 455 00e7 0E       		.uleb128 0xe
+ 456 00e8 3A       		.uleb128 0x3a
+ 457 00e9 0B       		.uleb128 0xb
+ 458 00ea 3B       		.uleb128 0x3b
+ 459 00eb 0B       		.uleb128 0xb
+ 460 00ec 00       		.byte	0
+ 461 00ed 00       		.byte	0
+ 462 00ee 00       		.byte	0
+ 463              		.section	.debug_loc,"",%progbits
+ 464              	.Ldebug_loc0:
+ 465              	.LLST0:
+ 466 0000 00000000 		.4byte	.LVL0
+ 467 0004 08000000 		.4byte	.LVL2
+ 468 0008 0100     		.2byte	0x1
+ 469 000a 50       		.byte	0x50
+ 470 000b 08000000 		.4byte	.LVL2
+ 471 000f 16000000 		.4byte	.LVL5
+ 472 0013 0100     		.2byte	0x1
+ 473 0015 54       		.byte	0x54
+ 474 0016 16000000 		.4byte	.LVL5
+ 475 001a 18000000 		.4byte	.LFE34
+ 476 001e 0400     		.2byte	0x4
+ 477 0020 F3       		.byte	0xf3
+ 478 0021 01       		.uleb128 0x1
+ 479 0022 50       		.byte	0x50
+ 480 0023 9F       		.byte	0x9f
+ 481 0024 00000000 		.4byte	0
+ 482 0028 00000000 		.4byte	0
+ 483              	.LLST1:
+ 484 002c 04000000 		.4byte	.LVL1
+ 485 0030 08000000 		.4byte	.LVL2
+ 486 0034 0100     		.2byte	0x1
+ 487 0036 50       		.byte	0x50
+ 488 0037 08000000 		.4byte	.LVL2
+ 489 003b 16000000 		.4byte	.LVL5
+ 490 003f 0100     		.2byte	0x1
+ 491 0041 54       		.byte	0x54
+ 492 0042 16000000 		.4byte	.LVL5
+ 493 0046 18000000 		.4byte	.LFE34
+ 494 004a 0400     		.2byte	0x4
+ 495 004c F3       		.byte	0xf3
+ 496 004d 01       		.uleb128 0x1
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 10
+
+
+ 497 004e 50       		.byte	0x50
+ 498 004f 9F       		.byte	0x9f
+ 499 0050 00000000 		.4byte	0
+ 500 0054 00000000 		.4byte	0
+ 501              		.section	.debug_aranges,"",%progbits
+ 502 0000 1C000000 		.4byte	0x1c
+ 503 0004 0200     		.2byte	0x2
+ 504 0006 00000000 		.4byte	.Ldebug_info0
+ 505 000a 04       		.byte	0x4
+ 506 000b 00       		.byte	0
+ 507 000c 0000     		.2byte	0
+ 508 000e 0000     		.2byte	0
+ 509 0010 00000000 		.4byte	.LFB34
+ 510 0014 18000000 		.4byte	.LFE34-.LFB34
+ 511 0018 00000000 		.4byte	0
+ 512 001c 00000000 		.4byte	0
+ 513              		.section	.debug_ranges,"",%progbits
+ 514              	.Ldebug_ranges0:
+ 515 0000 00000000 		.4byte	.LFB34
+ 516 0004 18000000 		.4byte	.LFE34
+ 517 0008 00000000 		.4byte	0
+ 518 000c 00000000 		.4byte	0
+ 519              		.section	.debug_line,"",%progbits
+ 520              	.Ldebug_line0:
+ 521 0000 72000000 		.section	.debug_str,"MS",%progbits,1
+ 521      02005A00 
+ 521      00000201 
+ 521      FB0E0D00 
+ 521      01010101 
+ 522              	.LASF6:
+ 523 0000 6C6F6E67 		.ascii	"long long int\000"
+ 523      206C6F6E 
+ 523      6720696E 
+ 523      7400
+ 524              	.LASF25:
+ 525 000e 64697370 		.ascii	"displayDataPtr\000"
+ 525      6C617944 
+ 525      61746150 
+ 525      747200
+ 526              	.LASF8:
+ 527 001d 756E7369 		.ascii	"unsigned int\000"
+ 527      676E6564 
+ 527      20696E74 
+ 527      00
+ 528              	.LASF20:
+ 529 002a 64697370 		.ascii	"display.c\000"
+ 529      6C61792E 
+ 529      6300
+ 530              	.LASF5:
+ 531 0034 6C6F6E67 		.ascii	"long unsigned int\000"
+ 531      20756E73 
+ 531      69676E65 
+ 531      6420696E 
+ 531      7400
+ 532              	.LASF21:
+ 533 0046 453A5C55 		.ascii	"E:\\Users\\Dylan\\Documents\\Husky Robotics\\PSoCWo"
+ 533      73657273 
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 11
+
+
+ 533      5C44796C 
+ 533      616E5C44 
+ 533      6F63756D 
+ 534 0074 726B7370 		.ascii	"rkspaces\\HuskyRobotics2017-2018\\PioneerLSeries\\P"
+ 534      61636573 
+ 534      5C487573 
+ 534      6B79526F 
+ 534      626F7469 
+ 535 00a4 696F6E65 		.ascii	"ioneerLSeries.cydsn\000"
+ 535      65724C53 
+ 535      65726965 
+ 535      732E6379 
+ 535      64736E00 
+ 536              	.LASF7:
+ 537 00b8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 537      206C6F6E 
+ 537      6720756E 
+ 537      7369676E 
+ 537      65642069 
+ 538              	.LASF11:
+ 539 00cf 666C6F61 		.ascii	"float\000"
+ 539      7400
+ 540              	.LASF1:
+ 541 00d5 756E7369 		.ascii	"unsigned char\000"
+ 541      676E6564 
+ 541      20636861 
+ 541      7200
+ 542              	.LASF13:
+ 543 00e3 63686172 		.ascii	"char\000"
+ 543      00
+ 544              	.LASF23:
+ 545 00e8 64697370 		.ascii	"display\000"
+ 545      6C617900 
+ 546              	.LASF24:
+ 547 00f0 64617461 		.ascii	"dataPointer\000"
+ 547      506F696E 
+ 547      74657200 
+ 548              	.LASF4:
+ 549 00fc 6C6F6E67 		.ascii	"long int\000"
+ 549      20696E74 
+ 549      00
+ 550              	.LASF12:
+ 551 0105 646F7562 		.ascii	"double\000"
+ 551      6C6500
+ 552              	.LASF17:
+ 553 010c 4C43445F 		.ascii	"LCD_Position\000"
+ 553      506F7369 
+ 553      74696F6E 
+ 553      00
+ 554              	.LASF19:
+ 555 0119 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 555      43313120 
+ 555      352E342E 
+ 555      31203230 
+ 555      31363036 
+ 556 014c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 556      20726576 
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccTWsimk.s 			page 12
+
+
+ 556      6973696F 
+ 556      6E203233 
+ 556      37373135 
+ 557 017f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 557      66756E63 
+ 557      74696F6E 
+ 557      2D736563 
+ 557      74696F6E 
+ 558              	.LASF3:
+ 559 01a7 73686F72 		.ascii	"short unsigned int\000"
+ 559      7420756E 
+ 559      7369676E 
+ 559      65642069 
+ 559      6E7400
+ 560              	.LASF0:
+ 561 01ba 7369676E 		.ascii	"signed char\000"
+ 561      65642063 
+ 561      68617200 
+ 562              	.LASF18:
+ 563 01c6 4C43445F 		.ascii	"LCD_PrintU32Number\000"
+ 563      5072696E 
+ 563      74553332 
+ 563      4E756D62 
+ 563      657200
+ 564              	.LASF22:
+ 565 01d9 706F7452 		.ascii	"potRawPtr\000"
+ 565      61775074 
+ 565      7200
+ 566              	.LASF14:
+ 567 01e3 6C6F6E67 		.ascii	"long double\000"
+ 567      20646F75 
+ 567      626C6500 
+ 568              	.LASF10:
+ 569 01ef 696E7431 		.ascii	"int16\000"
+ 569      3600
+ 570              	.LASF2:
+ 571 01f5 73686F72 		.ascii	"short int\000"
+ 571      7420696E 
+ 571      7400
+ 572              	.LASF9:
+ 573 01ff 75696E74 		.ascii	"uint16\000"
+ 573      313600
+ 574              	.LASF15:
+ 575 0206 73697A65 		.ascii	"sizetype\000"
+ 575      74797065 
+ 575      00
+ 576              	.LASF16:
+ 577 020f 64697370 		.ascii	"displayData\000"
+ 577      6C617944 
+ 577      61746100 
+ 578              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

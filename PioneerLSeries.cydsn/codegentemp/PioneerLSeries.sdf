@@ -1,0 +1,28 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2018-04-21T21:21:42Z")
+ (DESIGN "PioneerLSeries")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.2")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "PioneerLSeries")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.hfclk \\ADC\:IRQ\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.ff_div_10 \\ADC\:cy_psoc4_sar\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT \\ADC\:cy_psoc4_sar\\.irq \\ADC\:IRQ\\.interrupt (1.000:1.000:1.000))
+    (INTERCONNECT \\LCD\:LCDPort\(0\)_PAD\\ \\LCD\:LCDPort\(0\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\LCD\:LCDPort\(1\)_PAD\\ \\LCD\:LCDPort\(1\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\LCD\:LCDPort\(2\)_PAD\\ \\LCD\:LCDPort\(2\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\LCD\:LCDPort\(3\)_PAD\\ \\LCD\:LCDPort\(3\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\LCD\:LCDPort\(4\)_PAD\\ \\LCD\:LCDPort\(4\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\LCD\:LCDPort\(5\)_PAD\\ \\LCD\:LCDPort\(5\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\LCD\:LCDPort\(6\)_PAD\\ \\LCD\:LCDPort\(6\)\\.pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

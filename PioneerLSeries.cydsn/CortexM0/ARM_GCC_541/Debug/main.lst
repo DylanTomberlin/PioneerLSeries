@@ -1,0 +1,1517 @@
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.initMotor,"ax",%progbits
+  20              		.align	2
+  21              		.global	initMotor
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	initMotor, %function
+  25              	initMotor:
+  26              	.LFB36:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "top.h"
+  13:main.c        **** 
+  14:main.c        **** 
+  15:main.c        **** //local function prototypes
+  16:main.c        **** void initialize(void);
+  17:main.c        **** void initDataStructs(void);
+  18:main.c        **** void initTCBs(void);
+  19:main.c        **** void initMotor(motor *currMotorPtr, int motorID);
+  20:main.c        **** 
+  21:main.c        **** //external function prototypes
+  22:main.c        **** void addTask(tcb *newTask);
+  23:main.c        **** void executeTask(tcb *tcbPtr);
+  24:main.c        **** void readPot(void* currDataPtr);
+  25:main.c        **** void display(void *dataPointer);
+  26:main.c        **** 
+  27:main.c        **** //void initMotor(motor *currMotorPtr, int motorID);
+  28:main.c        **** //void readPot();
+  29:main.c        **** 
+  30:main.c        **** //declare motor variables from motor.h
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 2
+
+
+  31:main.c        **** motor motor0;
+  32:main.c        **** 
+  33:main.c        **** //declare global variables
+  34:main.c        **** tcb *firstTCBPtr = 0;
+  35:main.c        **** tcb *lastTCBPtr = 0;
+  36:main.c        **** 
+  37:main.c        **** //data structs
+  38:main.c        **** potData myPotData;
+  39:main.c        **** displayData myDisplayData;
+  40:main.c        **** 
+  41:main.c        **** //tcb structs
+  42:main.c        **** tcb potTCB;
+  43:main.c        **** tcb displayTCB;
+  44:main.c        **** 
+  45:main.c        **** int main(void)
+  46:main.c        **** {
+  47:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  48:main.c        ****     
+  49:main.c        ****     initialize();
+  50:main.c        ****     
+  51:main.c        ****     int count = 0; //For testing/ call simulation purposes.
+  52:main.c        ****     
+  53:main.c        ****     for(;;)
+  54:main.c        ****     {
+  55:main.c        ****         if(0 == count % 6)
+  56:main.c        ****             addTask((void*) &potTCB);
+  57:main.c        ****         if(0 == count % 17)
+  58:main.c        ****             addTask((void*) &displayTCB);
+  59:main.c        ****         //readPot(&motor0);
+  60:main.c        ****         //CyDelay(500);
+  61:main.c        ****         //LCD_Position(1, 0);
+  62:main.c        ****         //LCD_PrintString("Reading: ");
+  63:main.c        ****         //readPot(&motor0);
+  64:main.c        ****         //LCD_PrintDecUint16(motor0.posRaw);
+  65:main.c        ****         //CyDelay(500);
+  66:main.c        ****         if(0 != firstTCBPtr)
+  67:main.c        ****             executeTask(firstTCBPtr);
+  68:main.c        ****     }
+  69:main.c        **** }
+  70:main.c        **** 
+  71:main.c        **** 
+  72:main.c        **** 
+  73:main.c        **** void initialize()
+  74:main.c        **** {
+  75:main.c        ****     LCD_Start();
+  76:main.c        ****     ADC_Start();
+  77:main.c        ****     initMotor(&motor0, 0);
+  78:main.c        ****     //LCD_PrintString("Hello World");
+  79:main.c        ****     initDataStructs();
+  80:main.c        ****     initTCBs();
+  81:main.c        **** }
+  82:main.c        **** 
+  83:main.c        **** void initMotor(motor *currMotorPtr, int motorID)
+  84:main.c        **** {
+  28              		.loc 1 84 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 3
+
+
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  85:main.c        ****     currMotorPtr->motorID = motorID;
+  34              		.loc 1 85 0
+  35 0000 0160     		str	r1, [r0]
+  86:main.c        ****     //readPot(currMotorPtr);
+  87:main.c        **** }
+  36              		.loc 1 87 0
+  37              		@ sp needed
+  38 0002 7047     		bx	lr
+  39              		.cfi_endproc
+  40              	.LFE36:
+  41              		.size	initMotor, .-initMotor
+  42              		.section	.text.initDataStructs,"ax",%progbits
+  43              		.align	2
+  44              		.global	initDataStructs
+  45              		.code	16
+  46              		.thumb_func
+  47              		.type	initDataStructs, %function
+  48              	initDataStructs:
+  49              	.LFB37:
+  88:main.c        **** 
+  89:main.c        **** void initDataStructs(void)
+  90:main.c        **** {
+  50              		.loc 1 90 0
+  51              		.cfi_startproc
+  52              		@ args = 0, pretend = 0, frame = 0
+  53              		@ frame_needed = 0, uses_anonymous_args = 0
+  54              		@ link register save eliminated.
+  55              	.LVL1:
+  91:main.c        ****     int i = 0;
+  92:main.c        ****     for(i = 0; i < NUM_MOTORS; i++)
+  56              		.loc 1 92 0
+  57 0000 0023     		movs	r3, #0
+  58 0002 06E0     		b	.L3
+  59              	.LVL2:
+  60              	.L4:
+  93:main.c        ****     {
+  94:main.c        ****         myDisplayData.potRawPtr[i] = &(myPotData.potRaw[i]);
+  61              		.loc 1 94 0 discriminator 3
+  62 0004 5900     		lsls	r1, r3, #1
+  63 0006 044A     		ldr	r2, .L5
+  64 0008 8A18     		adds	r2, r1, r2
+  65 000a 9800     		lsls	r0, r3, #2
+  66 000c 0349     		ldr	r1, .L5+4
+  67 000e 4250     		str	r2, [r0, r1]
+  92:main.c        ****     {
+  68              		.loc 1 92 0 discriminator 3
+  69 0010 0133     		adds	r3, r3, #1
+  70              	.LVL3:
+  71              	.L3:
+  92:main.c        ****     {
+  72              		.loc 1 92 0 is_stmt 0 discriminator 1
+  73 0012 022B     		cmp	r3, #2
+  74 0014 F6DD     		ble	.L4
+  95:main.c        ****     }
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 4
+
+
+  96:main.c        **** }
+  75              		.loc 1 96 0 is_stmt 1
+  76              		@ sp needed
+  77 0016 7047     		bx	lr
+  78              	.L6:
+  79              		.align	2
+  80              	.L5:
+  81 0018 00000000 		.word	myPotData
+  82 001c 00000000 		.word	myDisplayData
+  83              		.cfi_endproc
+  84              	.LFE37:
+  85              		.size	initDataStructs, .-initDataStructs
+  86              		.section	.text.initTCBs,"ax",%progbits
+  87              		.align	2
+  88              		.global	initTCBs
+  89              		.code	16
+  90              		.thumb_func
+  91              		.type	initTCBs, %function
+  92              	initTCBs:
+  93              	.LFB38:
+  97:main.c        **** 
+  98:main.c        **** void initTCBs(void)
+  99:main.c        **** {
+  94              		.loc 1 99 0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              		@ link register save eliminated.
+ 100:main.c        ****     potTCB.currTask = readPot;
+  99              		.loc 1 100 0
+ 100 0000 034A     		ldr	r2, .L8
+ 101 0002 044B     		ldr	r3, .L8+4
+ 102 0004 1A60     		str	r2, [r3]
+ 101:main.c        ****     displayTCB.currTask = &display;
+ 103              		.loc 1 101 0
+ 104 0006 044A     		ldr	r2, .L8+8
+ 105 0008 044B     		ldr	r3, .L8+12
+ 106 000a 1A60     		str	r2, [r3]
+ 102:main.c        **** }...
+ 107              		.loc 1 102 0
+ 108              		@ sp needed
+ 109 000c 7047     		bx	lr
+ 110              	.L9:
+ 111 000e C046     		.align	2
+ 112              	.L8:
+ 113 0010 00000000 		.word	readPot
+ 114 0014 00000000 		.word	potTCB
+ 115 0018 00000000 		.word	display
+ 116 001c 00000000 		.word	displayTCB
+ 117              		.cfi_endproc
+ 118              	.LFE38:
+ 119              		.size	initTCBs, .-initTCBs
+ 120              		.section	.text.initialize,"ax",%progbits
+ 121              		.align	2
+ 122              		.global	initialize
+ 123              		.code	16
+ 124              		.thumb_func
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 5
+
+
+ 125              		.type	initialize, %function
+ 126              	initialize:
+ 127              	.LFB35:
+  74:main.c        **** {
+ 128              		.loc 1 74 0
+ 129              		.cfi_startproc
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132 0000 10B5     		push	{r4, lr}
+ 133              		.cfi_def_cfa_offset 8
+ 134              		.cfi_offset 4, -8
+ 135              		.cfi_offset 14, -4
+  75:main.c        ****     LCD_Start();
+ 136              		.loc 1 75 0
+ 137 0002 FFF7FEFF 		bl	LCD_Start
+ 138              	.LVL4:
+  76:main.c        ****     ADC_Start();
+ 139              		.loc 1 76 0
+ 140 0006 FFF7FEFF 		bl	ADC_Start
+ 141              	.LVL5:
+  77:main.c        ****     initMotor(&motor0, 0);
+ 142              		.loc 1 77 0
+ 143 000a 0021     		movs	r1, #0
+ 144 000c 0348     		ldr	r0, .L11
+ 145 000e FFF7FEFF 		bl	initMotor
+ 146              	.LVL6:
+  79:main.c        ****     initDataStructs();
+ 147              		.loc 1 79 0
+ 148 0012 FFF7FEFF 		bl	initDataStructs
+ 149              	.LVL7:
+  80:main.c        ****     initTCBs();
+ 150              		.loc 1 80 0
+ 151 0016 FFF7FEFF 		bl	initTCBs
+ 152              	.LVL8:
+  81:main.c        **** }
+ 153              		.loc 1 81 0
+ 154              		@ sp needed
+ 155 001a 10BD     		pop	{r4, pc}
+ 156              	.L12:
+ 157              		.align	2
+ 158              	.L11:
+ 159 001c 00000000 		.word	motor0
+ 160              		.cfi_endproc
+ 161              	.LFE35:
+ 162              		.size	initialize, .-initialize
+ 163              		.section	.text.main,"ax",%progbits
+ 164              		.align	2
+ 165              		.global	main
+ 166              		.code	16
+ 167              		.thumb_func
+ 168              		.type	main, %function
+ 169              	main:
+ 170              	.LFB34:
+  46:main.c        **** {
+ 171              		.loc 1 46 0
+ 172              		.cfi_startproc
+ 173              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 6
+
+
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175 0000 10B5     		push	{r4, lr}
+ 176              		.cfi_def_cfa_offset 8
+ 177              		.cfi_offset 4, -8
+ 178              		.cfi_offset 14, -4
+  47:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 179              		.loc 1 47 0
+ 180              		.syntax divided
+ 181              	@ 47 "main.c" 1
+ 182 0002 62B6     		CPSIE   i
+ 183              	@ 0 "" 2
+  49:main.c        ****     initialize();
+ 184              		.loc 1 49 0
+ 185              		.thumb
+ 186              		.syntax unified
+ 187 0004 FFF7FEFF 		bl	initialize
+ 188              	.LVL9:
+ 189              	.L14:
+  56:main.c        ****             addTask((void*) &potTCB);
+ 190              		.loc 1 56 0
+ 191 0008 0648     		ldr	r0, .L16
+ 192 000a FFF7FEFF 		bl	addTask
+ 193              	.LVL10:
+  58:main.c        ****             addTask((void*) &displayTCB);
+ 194              		.loc 1 58 0
+ 195 000e 0648     		ldr	r0, .L16+4
+ 196 0010 FFF7FEFF 		bl	addTask
+ 197              	.LVL11:
+  66:main.c        ****         if(0 != firstTCBPtr)
+ 198              		.loc 1 66 0
+ 199 0014 054B     		ldr	r3, .L16+8
+ 200 0016 1868     		ldr	r0, [r3]
+ 201 0018 0028     		cmp	r0, #0
+ 202 001a F5D0     		beq	.L14
+  67:main.c        ****             executeTask(firstTCBPtr);
+ 203              		.loc 1 67 0
+ 204 001c FFF7FEFF 		bl	executeTask
+ 205              	.LVL12:
+ 206 0020 F2E7     		b	.L14
+ 207              	.L17:
+ 208 0022 C046     		.align	2
+ 209              	.L16:
+ 210 0024 00000000 		.word	potTCB
+ 211 0028 00000000 		.word	displayTCB
+ 212 002c 00000000 		.word	.LANCHOR0
+ 213              		.cfi_endproc
+ 214              	.LFE34:
+ 215              		.size	main, .-main
+ 216              		.comm	displayTCB,12,4
+ 217              		.comm	potTCB,12,4
+ 218              		.comm	myDisplayData,12,4
+ 219              		.comm	myPotData,6,4
+ 220              		.global	lastTCBPtr
+ 221              		.global	firstTCBPtr
+ 222              		.comm	motor0,24,4
+ 223              		.bss
+ 224              		.align	2
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 7
+
+
+ 225              		.set	.LANCHOR0,. + 0
+ 226              		.type	firstTCBPtr, %object
+ 227              		.size	firstTCBPtr, 4
+ 228              	firstTCBPtr:
+ 229 0000 00000000 		.space	4
+ 230              		.type	lastTCBPtr, %object
+ 231              		.size	lastTCBPtr, 4
+ 232              	lastTCBPtr:
+ 233 0004 00000000 		.space	4
+ 234              		.text
+ 235              	.Letext0:
+ 236              		.file 2 "motor.h"
+ 237              		.file 3 "Generated_Source\\PSoC4/cytypes.h"
+ 238              		.file 4 "tcb.h"
+ 239              		.file 5 "structs.h"
+ 240              		.file 6 "Generated_Source\\PSoC4/LCD.h"
+ 241              		.file 7 "Generated_Source\\PSoC4/ADC.h"
+ 242              		.section	.debug_info,"",%progbits
+ 243              	.Ldebug_info0:
+ 244 0000 85030000 		.4byte	0x385
+ 245 0004 0400     		.2byte	0x4
+ 246 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 247 000a 04       		.byte	0x4
+ 248 000b 01       		.uleb128 0x1
+ 249 000c 7A010000 		.4byte	.LASF45
+ 250 0010 0C       		.byte	0xc
+ 251 0011 2F020000 		.4byte	.LASF46
+ 252 0015 4A020000 		.4byte	.LASF47
+ 253 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 254 001d 00000000 		.4byte	0
+ 255 0021 00000000 		.4byte	.Ldebug_line0
+ 256 0025 02       		.uleb128 0x2
+ 257 0026 01       		.byte	0x1
+ 258 0027 06       		.byte	0x6
+ 259 0028 F2020000 		.4byte	.LASF0
+ 260 002c 02       		.uleb128 0x2
+ 261 002d 01       		.byte	0x1
+ 262 002e 08       		.byte	0x8
+ 263 002f 6C000000 		.4byte	.LASF1
+ 264 0033 02       		.uleb128 0x2
+ 265 0034 02       		.byte	0x2
+ 266 0035 05       		.byte	0x5
+ 267 0036 C7020000 		.4byte	.LASF2
+ 268 003a 02       		.uleb128 0x2
+ 269 003b 02       		.byte	0x2
+ 270 003c 07       		.byte	0x7
+ 271 003d AC000000 		.4byte	.LASF3
+ 272 0041 02       		.uleb128 0x2
+ 273 0042 04       		.byte	0x4
+ 274 0043 05       		.byte	0x5
+ 275 0044 D1020000 		.4byte	.LASF4
+ 276 0048 02       		.uleb128 0x2
+ 277 0049 04       		.byte	0x4
+ 278 004a 07       		.byte	0x7
+ 279 004b 9A000000 		.4byte	.LASF5
+ 280 004f 02       		.uleb128 0x2
+ 281 0050 08       		.byte	0x8
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 8
+
+
+ 282 0051 05       		.byte	0x5
+ 283 0052 21020000 		.4byte	.LASF6
+ 284 0056 02       		.uleb128 0x2
+ 285 0057 08       		.byte	0x8
+ 286 0058 07       		.byte	0x7
+ 287 0059 30010000 		.4byte	.LASF7
+ 288 005d 03       		.uleb128 0x3
+ 289 005e 04       		.byte	0x4
+ 290 005f 05       		.byte	0x5
+ 291 0060 696E7400 		.ascii	"int\000"
+ 292 0064 02       		.uleb128 0x2
+ 293 0065 04       		.byte	0x4
+ 294 0066 07       		.byte	0x7
+ 295 0067 19010000 		.4byte	.LASF8
+ 296 006b 04       		.uleb128 0x4
+ 297 006c 40000000 		.4byte	.LASF20
+ 298 0070 03       		.byte	0x3
+ 299 0071 D601     		.2byte	0x1d6
+ 300 0073 33000000 		.4byte	0x33
+ 301 0077 02       		.uleb128 0x2
+ 302 0078 04       		.byte	0x4
+ 303 0079 04       		.byte	0x4
+ 304 007a 5C000000 		.4byte	.LASF9
+ 305 007e 02       		.uleb128 0x2
+ 306 007f 08       		.byte	0x8
+ 307 0080 04       		.byte	0x4
+ 308 0081 DC000000 		.4byte	.LASF10
+ 309 0085 02       		.uleb128 0x2
+ 310 0086 01       		.byte	0x1
+ 311 0087 08       		.byte	0x8
+ 312 0088 36020000 		.4byte	.LASF11
+ 313 008c 05       		.uleb128 0x5
+ 314 008d 04       		.byte	0x4
+ 315 008e 92000000 		.4byte	0x92
+ 316 0092 06       		.uleb128 0x6
+ 317 0093 02       		.uleb128 0x2
+ 318 0094 08       		.byte	0x8
+ 319 0095 04       		.byte	0x4
+ 320 0096 E6020000 		.4byte	.LASF12
+ 321 009a 02       		.uleb128 0x2
+ 322 009b 04       		.byte	0x4
+ 323 009c 07       		.byte	0x7
+ 324 009d 18020000 		.4byte	.LASF13
+ 325 00a1 07       		.uleb128 0x7
+ 326 00a2 04       		.byte	0x4
+ 327 00a3 08       		.uleb128 0x8
+ 328 00a4 18       		.byte	0x18
+ 329 00a5 02       		.byte	0x2
+ 330 00a6 0D       		.byte	0xd
+ 331 00a7 F4000000 		.4byte	0xf4
+ 332 00ab 09       		.uleb128 0x9
+ 333 00ac 4D000000 		.4byte	.LASF14
+ 334 00b0 02       		.byte	0x2
+ 335 00b1 0E       		.byte	0xe
+ 336 00b2 5D000000 		.4byte	0x5d
+ 337 00b6 00       		.byte	0
+ 338 00b7 09       		.uleb128 0x9
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 9
+
+
+ 339 00b8 04010000 		.4byte	.LASF15
+ 340 00bc 02       		.byte	0x2
+ 341 00bd 0F       		.byte	0xf
+ 342 00be 5D000000 		.4byte	0x5d
+ 343 00c2 04       		.byte	0x4
+ 344 00c3 09       		.uleb128 0x9
+ 345 00c4 27000000 		.4byte	.LASF16
+ 346 00c8 02       		.byte	0x2
+ 347 00c9 10       		.byte	0x10
+ 348 00ca 77000000 		.4byte	0x77
+ 349 00ce 08       		.byte	0x8
+ 350 00cf 09       		.uleb128 0x9
+ 351 00d0 EF000000 		.4byte	.LASF17
+ 352 00d4 02       		.byte	0x2
+ 353 00d5 11       		.byte	0x11
+ 354 00d6 8C000000 		.4byte	0x8c
+ 355 00da 0C       		.byte	0xc
+ 356 00db 09       		.uleb128 0x9
+ 357 00dc 00000000 		.4byte	.LASF18
+ 358 00e0 02       		.byte	0x2
+ 359 00e1 12       		.byte	0x12
+ 360 00e2 8C000000 		.4byte	0x8c
+ 361 00e6 10       		.byte	0x10
+ 362 00e7 09       		.uleb128 0x9
+ 363 00e8 47010000 		.4byte	.LASF19
+ 364 00ec 02       		.byte	0x2
+ 365 00ed 13       		.byte	0x13
+ 366 00ee 8C000000 		.4byte	0x8c
+ 367 00f2 14       		.byte	0x14
+ 368 00f3 00       		.byte	0
+ 369 00f4 0A       		.uleb128 0xa
+ 370 00f5 58010000 		.4byte	.LASF21
+ 371 00f9 02       		.byte	0x2
+ 372 00fa 16       		.byte	0x16
+ 373 00fb A3000000 		.4byte	0xa3
+ 374 00ff 08       		.uleb128 0x8
+ 375 0100 0C       		.byte	0xc
+ 376 0101 04       		.byte	0x4
+ 377 0102 0B       		.byte	0xb
+ 378 0103 2C010000 		.4byte	0x12c
+ 379 0107 09       		.uleb128 0x9
+ 380 0108 FE020000 		.4byte	.LASF22
+ 381 010c 04       		.byte	0x4
+ 382 010d 0D       		.byte	0xd
+ 383 010e 37010000 		.4byte	0x137
+ 384 0112 00       		.byte	0
+ 385 0113 09       		.uleb128 0x9
+ 386 0114 92000000 		.4byte	.LASF23
+ 387 0118 04       		.byte	0x4
+ 388 0119 0E       		.byte	0xe
+ 389 011a A1000000 		.4byte	0xa1
+ 390 011e 04       		.byte	0x4
+ 391 011f 09       		.uleb128 0x9
+ 392 0120 5E010000 		.4byte	.LASF24
+ 393 0124 04       		.byte	0x4
+ 394 0125 0F       		.byte	0xf
+ 395 0126 42010000 		.4byte	0x142
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 10
+
+
+ 396 012a 08       		.byte	0x8
+ 397 012b 00       		.byte	0
+ 398 012c 0B       		.uleb128 0xb
+ 399 012d 37010000 		.4byte	0x137
+ 400 0131 0C       		.uleb128 0xc
+ 401 0132 A1000000 		.4byte	0xa1
+ 402 0136 00       		.byte	0
+ 403 0137 05       		.uleb128 0x5
+ 404 0138 04       		.byte	0x4
+ 405 0139 2C010000 		.4byte	0x12c
+ 406 013d 0D       		.uleb128 0xd
+ 407 013e 74636200 		.ascii	"tcb\000"
+ 408 0142 05       		.uleb128 0x5
+ 409 0143 04       		.byte	0x4
+ 410 0144 3D010000 		.4byte	0x13d
+ 411 0148 0E       		.uleb128 0xe
+ 412 0149 74636200 		.ascii	"tcb\000"
+ 413 014d 04       		.byte	0x4
+ 414 014e 10       		.byte	0x10
+ 415 014f FF000000 		.4byte	0xff
+ 416 0153 08       		.uleb128 0x8
+ 417 0154 06       		.byte	0x6
+ 418 0155 05       		.byte	0x5
+ 419 0156 0C       		.byte	0xc
+ 420 0157 68010000 		.4byte	0x168
+ 421 015b 09       		.uleb128 0x9
+ 422 015c 43020000 		.4byte	.LASF25
+ 423 0160 05       		.byte	0x5
+ 424 0161 0E       		.byte	0xe
+ 425 0162 68010000 		.4byte	0x168
+ 426 0166 00       		.byte	0
+ 427 0167 00       		.byte	0
+ 428 0168 0F       		.uleb128 0xf
+ 429 0169 6B000000 		.4byte	0x6b
+ 430 016d 78010000 		.4byte	0x178
+ 431 0171 10       		.uleb128 0x10
+ 432 0172 9A000000 		.4byte	0x9a
+ 433 0176 02       		.byte	0x2
+ 434 0177 00       		.byte	0
+ 435 0178 0A       		.uleb128 0xa
+ 436 0179 BF000000 		.4byte	.LASF26
+ 437 017d 05       		.byte	0x5
+ 438 017e 0F       		.byte	0xf
+ 439 017f 53010000 		.4byte	0x153
+ 440 0183 08       		.uleb128 0x8
+ 441 0184 0C       		.byte	0xc
+ 442 0185 05       		.byte	0x5
+ 443 0186 12       		.byte	0x12
+ 444 0187 98010000 		.4byte	0x198
+ 445 018b 09       		.uleb128 0x9
+ 446 018c 12000000 		.4byte	.LASF27
+ 447 0190 05       		.byte	0x5
+ 448 0191 14       		.byte	0x14
+ 449 0192 98010000 		.4byte	0x198
+ 450 0196 00       		.byte	0
+ 451 0197 00       		.byte	0
+ 452 0198 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 11
+
+
+ 453 0199 A8010000 		.4byte	0x1a8
+ 454 019d A8010000 		.4byte	0x1a8
+ 455 01a1 10       		.uleb128 0x10
+ 456 01a2 9A000000 		.4byte	0x9a
+ 457 01a6 02       		.byte	0x2
+ 458 01a7 00       		.byte	0
+ 459 01a8 05       		.uleb128 0x5
+ 460 01a9 04       		.byte	0x4
+ 461 01aa 6B000000 		.4byte	0x6b
+ 462 01ae 0A       		.uleb128 0xa
+ 463 01af DA020000 		.4byte	.LASF28
+ 464 01b3 05       		.byte	0x5
+ 465 01b4 15       		.byte	0x15
+ 466 01b5 83010000 		.4byte	0x183
+ 467 01b9 11       		.uleb128 0x11
+ 468 01ba 70010000 		.4byte	.LASF30
+ 469 01be 01       		.byte	0x1
+ 470 01bf 53       		.byte	0x53
+ 471 01c0 00000000 		.4byte	.LFB36
+ 472 01c4 04000000 		.4byte	.LFE36-.LFB36
+ 473 01c8 01       		.uleb128 0x1
+ 474 01c9 9C       		.byte	0x9c
+ 475 01ca E9010000 		.4byte	0x1e9
+ 476 01ce 12       		.uleb128 0x12
+ 477 01cf 7A000000 		.4byte	.LASF29
+ 478 01d3 01       		.byte	0x1
+ 479 01d4 53       		.byte	0x53
+ 480 01d5 E9010000 		.4byte	0x1e9
+ 481 01d9 01       		.uleb128 0x1
+ 482 01da 50       		.byte	0x50
+ 483 01db 12       		.uleb128 0x12
+ 484 01dc 4D000000 		.4byte	.LASF14
+ 485 01e0 01       		.byte	0x1
+ 486 01e1 53       		.byte	0x53
+ 487 01e2 5D000000 		.4byte	0x5d
+ 488 01e6 01       		.uleb128 0x1
+ 489 01e7 51       		.byte	0x51
+ 490 01e8 00       		.byte	0
+ 491 01e9 05       		.uleb128 0x5
+ 492 01ea 04       		.byte	0x4
+ 493 01eb F4000000 		.4byte	0xf4
+ 494 01ef 11       		.uleb128 0x11
+ 495 01f0 08020000 		.4byte	.LASF31
+ 496 01f4 01       		.byte	0x1
+ 497 01f5 59       		.byte	0x59
+ 498 01f6 00000000 		.4byte	.LFB37
+ 499 01fa 20000000 		.4byte	.LFE37-.LFB37
+ 500 01fe 01       		.uleb128 0x1
+ 501 01ff 9C       		.byte	0x9c
+ 502 0200 12020000 		.4byte	0x212
+ 503 0204 13       		.uleb128 0x13
+ 504 0205 6900     		.ascii	"i\000"
+ 505 0207 01       		.byte	0x1
+ 506 0208 5B       		.byte	0x5b
+ 507 0209 5D000000 		.4byte	0x5d
+ 508 020d 00000000 		.4byte	.LLST0
+ 509 0211 00       		.byte	0
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 12
+
+
+ 510 0212 14       		.uleb128 0x14
+ 511 0213 D3000000 		.4byte	.LASF48
+ 512 0217 01       		.byte	0x1
+ 513 0218 62       		.byte	0x62
+ 514 0219 00000000 		.4byte	.LFB38
+ 515 021d 20000000 		.4byte	.LFE38-.LFB38
+ 516 0221 01       		.uleb128 0x1
+ 517 0222 9C       		.byte	0x9c
+ 518 0223 11       		.uleb128 0x11
+ 519 0224 35000000 		.4byte	.LASF32
+ 520 0228 01       		.byte	0x1
+ 521 0229 49       		.byte	0x49
+ 522 022a 00000000 		.4byte	.LFB35
+ 523 022e 20000000 		.4byte	.LFE35-.LFB35
+ 524 0232 01       		.uleb128 0x1
+ 525 0233 9C       		.byte	0x9c
+ 526 0234 79020000 		.4byte	0x279
+ 527 0238 15       		.uleb128 0x15
+ 528 0239 06000000 		.4byte	.LVL4
+ 529 023d 5C030000 		.4byte	0x35c
+ 530 0241 15       		.uleb128 0x15
+ 531 0242 0A000000 		.4byte	.LVL5
+ 532 0246 67030000 		.4byte	0x367
+ 533 024a 16       		.uleb128 0x16
+ 534 024b 12000000 		.4byte	.LVL6
+ 535 024f B9010000 		.4byte	0x1b9
+ 536 0253 66020000 		.4byte	0x266
+ 537 0257 17       		.uleb128 0x17
+ 538 0258 01       		.uleb128 0x1
+ 539 0259 50       		.byte	0x50
+ 540 025a 05       		.uleb128 0x5
+ 541 025b 03       		.byte	0x3
+ 542 025c 00000000 		.4byte	motor0
+ 543 0260 17       		.uleb128 0x17
+ 544 0261 01       		.uleb128 0x1
+ 545 0262 51       		.byte	0x51
+ 546 0263 01       		.uleb128 0x1
+ 547 0264 30       		.byte	0x30
+ 548 0265 00       		.byte	0
+ 549 0266 15       		.uleb128 0x15
+ 550 0267 16000000 		.4byte	.LVL7
+ 551 026b EF010000 		.4byte	0x1ef
+ 552 026f 15       		.uleb128 0x15
+ 553 0270 1A000000 		.4byte	.LVL8
+ 554 0274 12020000 		.4byte	0x212
+ 555 0278 00       		.byte	0
+ 556 0279 18       		.uleb128 0x18
+ 557 027a FF000000 		.4byte	.LASF49
+ 558 027e 01       		.byte	0x1
+ 559 027f 2D       		.byte	0x2d
+ 560 0280 5D000000 		.4byte	0x5d
+ 561 0284 00000000 		.4byte	.LFB34
+ 562 0288 30000000 		.4byte	.LFE34-.LFB34
+ 563 028c 01       		.uleb128 0x1
+ 564 028d 9C       		.byte	0x9c
+ 565 028e DF020000 		.4byte	0x2df
+ 566 0292 19       		.uleb128 0x19
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 13
+
+
+ 567 0293 2F000000 		.4byte	.LASF33
+ 568 0297 01       		.byte	0x1
+ 569 0298 33       		.byte	0x33
+ 570 0299 5D000000 		.4byte	0x5d
+ 571 029d 00       		.byte	0
+ 572 029e 15       		.uleb128 0x15
+ 573 029f 08000000 		.4byte	.LVL9
+ 574 02a3 23020000 		.4byte	0x223
+ 575 02a7 16       		.uleb128 0x16
+ 576 02a8 0E000000 		.4byte	.LVL10
+ 577 02ac 72030000 		.4byte	0x372
+ 578 02b0 BE020000 		.4byte	0x2be
+ 579 02b4 17       		.uleb128 0x17
+ 580 02b5 01       		.uleb128 0x1
+ 581 02b6 50       		.byte	0x50
+ 582 02b7 05       		.uleb128 0x5
+ 583 02b8 03       		.byte	0x3
+ 584 02b9 00000000 		.4byte	potTCB
+ 585 02bd 00       		.byte	0
+ 586 02be 16       		.uleb128 0x16
+ 587 02bf 14000000 		.4byte	.LVL11
+ 588 02c3 72030000 		.4byte	0x372
+ 589 02c7 D5020000 		.4byte	0x2d5
+ 590 02cb 17       		.uleb128 0x17
+ 591 02cc 01       		.uleb128 0x1
+ 592 02cd 50       		.byte	0x50
+ 593 02ce 05       		.uleb128 0x5
+ 594 02cf 03       		.byte	0x3
+ 595 02d0 00000000 		.4byte	displayTCB
+ 596 02d4 00       		.byte	0
+ 597 02d5 15       		.uleb128 0x15
+ 598 02d6 20000000 		.4byte	.LVL12
+ 599 02da 7D030000 		.4byte	0x37d
+ 600 02de 00       		.byte	0
+ 601 02df 1A       		.uleb128 0x1a
+ 602 02e0 46000000 		.4byte	.LASF34
+ 603 02e4 01       		.byte	0x1
+ 604 02e5 1F       		.byte	0x1f
+ 605 02e6 F4000000 		.4byte	0xf4
+ 606 02ea 05       		.uleb128 0x5
+ 607 02eb 03       		.byte	0x3
+ 608 02ec 00000000 		.4byte	motor0
+ 609 02f0 1A       		.uleb128 0x1a
+ 610 02f1 C7000000 		.4byte	.LASF35
+ 611 02f5 01       		.byte	0x1
+ 612 02f6 22       		.byte	0x22
+ 613 02f7 01030000 		.4byte	0x301
+ 614 02fb 05       		.uleb128 0x5
+ 615 02fc 03       		.byte	0x3
+ 616 02fd 00000000 		.4byte	firstTCBPtr
+ 617 0301 05       		.uleb128 0x5
+ 618 0302 04       		.byte	0x4
+ 619 0303 48010000 		.4byte	0x148
+ 620 0307 1A       		.uleb128 0x1a
+ 621 0308 1C000000 		.4byte	.LASF36
+ 622 030c 01       		.byte	0x1
+ 623 030d 23       		.byte	0x23
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 14
+
+
+ 624 030e 01030000 		.4byte	0x301
+ 625 0312 05       		.uleb128 0x5
+ 626 0313 03       		.byte	0x3
+ 627 0314 00000000 		.4byte	lastTCBPtr
+ 628 0318 1A       		.uleb128 0x1a
+ 629 0319 26010000 		.4byte	.LASF37
+ 630 031d 01       		.byte	0x1
+ 631 031e 26       		.byte	0x26
+ 632 031f 78010000 		.4byte	0x178
+ 633 0323 05       		.uleb128 0x5
+ 634 0324 03       		.byte	0x3
+ 635 0325 00000000 		.4byte	myPotData
+ 636 0329 1A       		.uleb128 0x1a
+ 637 032a 0B010000 		.4byte	.LASF38
+ 638 032e 01       		.byte	0x1
+ 639 032f 27       		.byte	0x27
+ 640 0330 AE010000 		.4byte	0x1ae
+ 641 0334 05       		.uleb128 0x5
+ 642 0335 03       		.byte	0x3
+ 643 0336 00000000 		.4byte	myDisplayData
+ 644 033a 1A       		.uleb128 0x1a
+ 645 033b 55000000 		.4byte	.LASF39
+ 646 033f 01       		.byte	0x1
+ 647 0340 2A       		.byte	0x2a
+ 648 0341 48010000 		.4byte	0x148
+ 649 0345 05       		.uleb128 0x5
+ 650 0346 03       		.byte	0x3
+ 651 0347 00000000 		.4byte	potTCB
+ 652 034b 1A       		.uleb128 0x1a
+ 653 034c 87000000 		.4byte	.LASF40
+ 654 0350 01       		.byte	0x1
+ 655 0351 2B       		.byte	0x2b
+ 656 0352 48010000 		.4byte	0x148
+ 657 0356 05       		.uleb128 0x5
+ 658 0357 03       		.byte	0x3
+ 659 0358 00000000 		.4byte	displayTCB
+ 660 035c 1B       		.uleb128 0x1b
+ 661 035d 62000000 		.4byte	.LASF41
+ 662 0361 62000000 		.4byte	.LASF41
+ 663 0365 06       		.byte	0x6
+ 664 0366 38       		.byte	0x38
+ 665 0367 1B       		.uleb128 0x1b
+ 666 0368 66010000 		.4byte	.LASF42
+ 667 036c 66010000 		.4byte	.LASF42
+ 668 0370 07       		.byte	0x7
+ 669 0371 99       		.byte	0x99
+ 670 0372 1B       		.uleb128 0x1b
+ 671 0373 3B020000 		.4byte	.LASF43
+ 672 0377 3B020000 		.4byte	.LASF43
+ 673 037b 01       		.byte	0x1
+ 674 037c 16       		.byte	0x16
+ 675 037d 1B       		.uleb128 0x1b
+ 676 037e E3000000 		.4byte	.LASF44
+ 677 0382 E3000000 		.4byte	.LASF44
+ 678 0386 01       		.byte	0x1
+ 679 0387 17       		.byte	0x17
+ 680 0388 00       		.byte	0
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 15
+
+
+ 681              		.section	.debug_abbrev,"",%progbits
+ 682              	.Ldebug_abbrev0:
+ 683 0000 01       		.uleb128 0x1
+ 684 0001 11       		.uleb128 0x11
+ 685 0002 01       		.byte	0x1
+ 686 0003 25       		.uleb128 0x25
+ 687 0004 0E       		.uleb128 0xe
+ 688 0005 13       		.uleb128 0x13
+ 689 0006 0B       		.uleb128 0xb
+ 690 0007 03       		.uleb128 0x3
+ 691 0008 0E       		.uleb128 0xe
+ 692 0009 1B       		.uleb128 0x1b
+ 693 000a 0E       		.uleb128 0xe
+ 694 000b 55       		.uleb128 0x55
+ 695 000c 17       		.uleb128 0x17
+ 696 000d 11       		.uleb128 0x11
+ 697 000e 01       		.uleb128 0x1
+ 698 000f 10       		.uleb128 0x10
+ 699 0010 17       		.uleb128 0x17
+ 700 0011 00       		.byte	0
+ 701 0012 00       		.byte	0
+ 702 0013 02       		.uleb128 0x2
+ 703 0014 24       		.uleb128 0x24
+ 704 0015 00       		.byte	0
+ 705 0016 0B       		.uleb128 0xb
+ 706 0017 0B       		.uleb128 0xb
+ 707 0018 3E       		.uleb128 0x3e
+ 708 0019 0B       		.uleb128 0xb
+ 709 001a 03       		.uleb128 0x3
+ 710 001b 0E       		.uleb128 0xe
+ 711 001c 00       		.byte	0
+ 712 001d 00       		.byte	0
+ 713 001e 03       		.uleb128 0x3
+ 714 001f 24       		.uleb128 0x24
+ 715 0020 00       		.byte	0
+ 716 0021 0B       		.uleb128 0xb
+ 717 0022 0B       		.uleb128 0xb
+ 718 0023 3E       		.uleb128 0x3e
+ 719 0024 0B       		.uleb128 0xb
+ 720 0025 03       		.uleb128 0x3
+ 721 0026 08       		.uleb128 0x8
+ 722 0027 00       		.byte	0
+ 723 0028 00       		.byte	0
+ 724 0029 04       		.uleb128 0x4
+ 725 002a 16       		.uleb128 0x16
+ 726 002b 00       		.byte	0
+ 727 002c 03       		.uleb128 0x3
+ 728 002d 0E       		.uleb128 0xe
+ 729 002e 3A       		.uleb128 0x3a
+ 730 002f 0B       		.uleb128 0xb
+ 731 0030 3B       		.uleb128 0x3b
+ 732 0031 05       		.uleb128 0x5
+ 733 0032 49       		.uleb128 0x49
+ 734 0033 13       		.uleb128 0x13
+ 735 0034 00       		.byte	0
+ 736 0035 00       		.byte	0
+ 737 0036 05       		.uleb128 0x5
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 16
+
+
+ 738 0037 0F       		.uleb128 0xf
+ 739 0038 00       		.byte	0
+ 740 0039 0B       		.uleb128 0xb
+ 741 003a 0B       		.uleb128 0xb
+ 742 003b 49       		.uleb128 0x49
+ 743 003c 13       		.uleb128 0x13
+ 744 003d 00       		.byte	0
+ 745 003e 00       		.byte	0
+ 746 003f 06       		.uleb128 0x6
+ 747 0040 15       		.uleb128 0x15
+ 748 0041 00       		.byte	0
+ 749 0042 27       		.uleb128 0x27
+ 750 0043 19       		.uleb128 0x19
+ 751 0044 00       		.byte	0
+ 752 0045 00       		.byte	0
+ 753 0046 07       		.uleb128 0x7
+ 754 0047 0F       		.uleb128 0xf
+ 755 0048 00       		.byte	0
+ 756 0049 0B       		.uleb128 0xb
+ 757 004a 0B       		.uleb128 0xb
+ 758 004b 00       		.byte	0
+ 759 004c 00       		.byte	0
+ 760 004d 08       		.uleb128 0x8
+ 761 004e 13       		.uleb128 0x13
+ 762 004f 01       		.byte	0x1
+ 763 0050 0B       		.uleb128 0xb
+ 764 0051 0B       		.uleb128 0xb
+ 765 0052 3A       		.uleb128 0x3a
+ 766 0053 0B       		.uleb128 0xb
+ 767 0054 3B       		.uleb128 0x3b
+ 768 0055 0B       		.uleb128 0xb
+ 769 0056 01       		.uleb128 0x1
+ 770 0057 13       		.uleb128 0x13
+ 771 0058 00       		.byte	0
+ 772 0059 00       		.byte	0
+ 773 005a 09       		.uleb128 0x9
+ 774 005b 0D       		.uleb128 0xd
+ 775 005c 00       		.byte	0
+ 776 005d 03       		.uleb128 0x3
+ 777 005e 0E       		.uleb128 0xe
+ 778 005f 3A       		.uleb128 0x3a
+ 779 0060 0B       		.uleb128 0xb
+ 780 0061 3B       		.uleb128 0x3b
+ 781 0062 0B       		.uleb128 0xb
+ 782 0063 49       		.uleb128 0x49
+ 783 0064 13       		.uleb128 0x13
+ 784 0065 38       		.uleb128 0x38
+ 785 0066 0B       		.uleb128 0xb
+ 786 0067 00       		.byte	0
+ 787 0068 00       		.byte	0
+ 788 0069 0A       		.uleb128 0xa
+ 789 006a 16       		.uleb128 0x16
+ 790 006b 00       		.byte	0
+ 791 006c 03       		.uleb128 0x3
+ 792 006d 0E       		.uleb128 0xe
+ 793 006e 3A       		.uleb128 0x3a
+ 794 006f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 17
+
+
+ 795 0070 3B       		.uleb128 0x3b
+ 796 0071 0B       		.uleb128 0xb
+ 797 0072 49       		.uleb128 0x49
+ 798 0073 13       		.uleb128 0x13
+ 799 0074 00       		.byte	0
+ 800 0075 00       		.byte	0
+ 801 0076 0B       		.uleb128 0xb
+ 802 0077 15       		.uleb128 0x15
+ 803 0078 01       		.byte	0x1
+ 804 0079 27       		.uleb128 0x27
+ 805 007a 19       		.uleb128 0x19
+ 806 007b 01       		.uleb128 0x1
+ 807 007c 13       		.uleb128 0x13
+ 808 007d 00       		.byte	0
+ 809 007e 00       		.byte	0
+ 810 007f 0C       		.uleb128 0xc
+ 811 0080 05       		.uleb128 0x5
+ 812 0081 00       		.byte	0
+ 813 0082 49       		.uleb128 0x49
+ 814 0083 13       		.uleb128 0x13
+ 815 0084 00       		.byte	0
+ 816 0085 00       		.byte	0
+ 817 0086 0D       		.uleb128 0xd
+ 818 0087 13       		.uleb128 0x13
+ 819 0088 00       		.byte	0
+ 820 0089 03       		.uleb128 0x3
+ 821 008a 08       		.uleb128 0x8
+ 822 008b 3C       		.uleb128 0x3c
+ 823 008c 19       		.uleb128 0x19
+ 824 008d 00       		.byte	0
+ 825 008e 00       		.byte	0
+ 826 008f 0E       		.uleb128 0xe
+ 827 0090 16       		.uleb128 0x16
+ 828 0091 00       		.byte	0
+ 829 0092 03       		.uleb128 0x3
+ 830 0093 08       		.uleb128 0x8
+ 831 0094 3A       		.uleb128 0x3a
+ 832 0095 0B       		.uleb128 0xb
+ 833 0096 3B       		.uleb128 0x3b
+ 834 0097 0B       		.uleb128 0xb
+ 835 0098 49       		.uleb128 0x49
+ 836 0099 13       		.uleb128 0x13
+ 837 009a 00       		.byte	0
+ 838 009b 00       		.byte	0
+ 839 009c 0F       		.uleb128 0xf
+ 840 009d 01       		.uleb128 0x1
+ 841 009e 01       		.byte	0x1
+ 842 009f 49       		.uleb128 0x49
+ 843 00a0 13       		.uleb128 0x13
+ 844 00a1 01       		.uleb128 0x1
+ 845 00a2 13       		.uleb128 0x13
+ 846 00a3 00       		.byte	0
+ 847 00a4 00       		.byte	0
+ 848 00a5 10       		.uleb128 0x10
+ 849 00a6 21       		.uleb128 0x21
+ 850 00a7 00       		.byte	0
+ 851 00a8 49       		.uleb128 0x49
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 18
+
+
+ 852 00a9 13       		.uleb128 0x13
+ 853 00aa 2F       		.uleb128 0x2f
+ 854 00ab 0B       		.uleb128 0xb
+ 855 00ac 00       		.byte	0
+ 856 00ad 00       		.byte	0
+ 857 00ae 11       		.uleb128 0x11
+ 858 00af 2E       		.uleb128 0x2e
+ 859 00b0 01       		.byte	0x1
+ 860 00b1 3F       		.uleb128 0x3f
+ 861 00b2 19       		.uleb128 0x19
+ 862 00b3 03       		.uleb128 0x3
+ 863 00b4 0E       		.uleb128 0xe
+ 864 00b5 3A       		.uleb128 0x3a
+ 865 00b6 0B       		.uleb128 0xb
+ 866 00b7 3B       		.uleb128 0x3b
+ 867 00b8 0B       		.uleb128 0xb
+ 868 00b9 27       		.uleb128 0x27
+ 869 00ba 19       		.uleb128 0x19
+ 870 00bb 11       		.uleb128 0x11
+ 871 00bc 01       		.uleb128 0x1
+ 872 00bd 12       		.uleb128 0x12
+ 873 00be 06       		.uleb128 0x6
+ 874 00bf 40       		.uleb128 0x40
+ 875 00c0 18       		.uleb128 0x18
+ 876 00c1 9742     		.uleb128 0x2117
+ 877 00c3 19       		.uleb128 0x19
+ 878 00c4 01       		.uleb128 0x1
+ 879 00c5 13       		.uleb128 0x13
+ 880 00c6 00       		.byte	0
+ 881 00c7 00       		.byte	0
+ 882 00c8 12       		.uleb128 0x12
+ 883 00c9 05       		.uleb128 0x5
+ 884 00ca 00       		.byte	0
+ 885 00cb 03       		.uleb128 0x3
+ 886 00cc 0E       		.uleb128 0xe
+ 887 00cd 3A       		.uleb128 0x3a
+ 888 00ce 0B       		.uleb128 0xb
+ 889 00cf 3B       		.uleb128 0x3b
+ 890 00d0 0B       		.uleb128 0xb
+ 891 00d1 49       		.uleb128 0x49
+ 892 00d2 13       		.uleb128 0x13
+ 893 00d3 02       		.uleb128 0x2
+ 894 00d4 18       		.uleb128 0x18
+ 895 00d5 00       		.byte	0
+ 896 00d6 00       		.byte	0
+ 897 00d7 13       		.uleb128 0x13
+ 898 00d8 34       		.uleb128 0x34
+ 899 00d9 00       		.byte	0
+ 900 00da 03       		.uleb128 0x3
+ 901 00db 08       		.uleb128 0x8
+ 902 00dc 3A       		.uleb128 0x3a
+ 903 00dd 0B       		.uleb128 0xb
+ 904 00de 3B       		.uleb128 0x3b
+ 905 00df 0B       		.uleb128 0xb
+ 906 00e0 49       		.uleb128 0x49
+ 907 00e1 13       		.uleb128 0x13
+ 908 00e2 02       		.uleb128 0x2
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 19
+
+
+ 909 00e3 17       		.uleb128 0x17
+ 910 00e4 00       		.byte	0
+ 911 00e5 00       		.byte	0
+ 912 00e6 14       		.uleb128 0x14
+ 913 00e7 2E       		.uleb128 0x2e
+ 914 00e8 00       		.byte	0
+ 915 00e9 3F       		.uleb128 0x3f
+ 916 00ea 19       		.uleb128 0x19
+ 917 00eb 03       		.uleb128 0x3
+ 918 00ec 0E       		.uleb128 0xe
+ 919 00ed 3A       		.uleb128 0x3a
+ 920 00ee 0B       		.uleb128 0xb
+ 921 00ef 3B       		.uleb128 0x3b
+ 922 00f0 0B       		.uleb128 0xb
+ 923 00f1 27       		.uleb128 0x27
+ 924 00f2 19       		.uleb128 0x19
+ 925 00f3 11       		.uleb128 0x11
+ 926 00f4 01       		.uleb128 0x1
+ 927 00f5 12       		.uleb128 0x12
+ 928 00f6 06       		.uleb128 0x6
+ 929 00f7 40       		.uleb128 0x40
+ 930 00f8 18       		.uleb128 0x18
+ 931 00f9 9742     		.uleb128 0x2117
+ 932 00fb 19       		.uleb128 0x19
+ 933 00fc 00       		.byte	0
+ 934 00fd 00       		.byte	0
+ 935 00fe 15       		.uleb128 0x15
+ 936 00ff 898201   		.uleb128 0x4109
+ 937 0102 00       		.byte	0
+ 938 0103 11       		.uleb128 0x11
+ 939 0104 01       		.uleb128 0x1
+ 940 0105 31       		.uleb128 0x31
+ 941 0106 13       		.uleb128 0x13
+ 942 0107 00       		.byte	0
+ 943 0108 00       		.byte	0
+ 944 0109 16       		.uleb128 0x16
+ 945 010a 898201   		.uleb128 0x4109
+ 946 010d 01       		.byte	0x1
+ 947 010e 11       		.uleb128 0x11
+ 948 010f 01       		.uleb128 0x1
+ 949 0110 31       		.uleb128 0x31
+ 950 0111 13       		.uleb128 0x13
+ 951 0112 01       		.uleb128 0x1
+ 952 0113 13       		.uleb128 0x13
+ 953 0114 00       		.byte	0
+ 954 0115 00       		.byte	0
+ 955 0116 17       		.uleb128 0x17
+ 956 0117 8A8201   		.uleb128 0x410a
+ 957 011a 00       		.byte	0
+ 958 011b 02       		.uleb128 0x2
+ 959 011c 18       		.uleb128 0x18
+ 960 011d 9142     		.uleb128 0x2111
+ 961 011f 18       		.uleb128 0x18
+ 962 0120 00       		.byte	0
+ 963 0121 00       		.byte	0
+ 964 0122 18       		.uleb128 0x18
+ 965 0123 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 20
+
+
+ 966 0124 01       		.byte	0x1
+ 967 0125 3F       		.uleb128 0x3f
+ 968 0126 19       		.uleb128 0x19
+ 969 0127 03       		.uleb128 0x3
+ 970 0128 0E       		.uleb128 0xe
+ 971 0129 3A       		.uleb128 0x3a
+ 972 012a 0B       		.uleb128 0xb
+ 973 012b 3B       		.uleb128 0x3b
+ 974 012c 0B       		.uleb128 0xb
+ 975 012d 27       		.uleb128 0x27
+ 976 012e 19       		.uleb128 0x19
+ 977 012f 49       		.uleb128 0x49
+ 978 0130 13       		.uleb128 0x13
+ 979 0131 8701     		.uleb128 0x87
+ 980 0133 19       		.uleb128 0x19
+ 981 0134 11       		.uleb128 0x11
+ 982 0135 01       		.uleb128 0x1
+ 983 0136 12       		.uleb128 0x12
+ 984 0137 06       		.uleb128 0x6
+ 985 0138 40       		.uleb128 0x40
+ 986 0139 18       		.uleb128 0x18
+ 987 013a 9742     		.uleb128 0x2117
+ 988 013c 19       		.uleb128 0x19
+ 989 013d 01       		.uleb128 0x1
+ 990 013e 13       		.uleb128 0x13
+ 991 013f 00       		.byte	0
+ 992 0140 00       		.byte	0
+ 993 0141 19       		.uleb128 0x19
+ 994 0142 34       		.uleb128 0x34
+ 995 0143 00       		.byte	0
+ 996 0144 03       		.uleb128 0x3
+ 997 0145 0E       		.uleb128 0xe
+ 998 0146 3A       		.uleb128 0x3a
+ 999 0147 0B       		.uleb128 0xb
+ 1000 0148 3B       		.uleb128 0x3b
+ 1001 0149 0B       		.uleb128 0xb
+ 1002 014a 49       		.uleb128 0x49
+ 1003 014b 13       		.uleb128 0x13
+ 1004 014c 1C       		.uleb128 0x1c
+ 1005 014d 0B       		.uleb128 0xb
+ 1006 014e 00       		.byte	0
+ 1007 014f 00       		.byte	0
+ 1008 0150 1A       		.uleb128 0x1a
+ 1009 0151 34       		.uleb128 0x34
+ 1010 0152 00       		.byte	0
+ 1011 0153 03       		.uleb128 0x3
+ 1012 0154 0E       		.uleb128 0xe
+ 1013 0155 3A       		.uleb128 0x3a
+ 1014 0156 0B       		.uleb128 0xb
+ 1015 0157 3B       		.uleb128 0x3b
+ 1016 0158 0B       		.uleb128 0xb
+ 1017 0159 49       		.uleb128 0x49
+ 1018 015a 13       		.uleb128 0x13
+ 1019 015b 3F       		.uleb128 0x3f
+ 1020 015c 19       		.uleb128 0x19
+ 1021 015d 02       		.uleb128 0x2
+ 1022 015e 18       		.uleb128 0x18
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 21
+
+
+ 1023 015f 00       		.byte	0
+ 1024 0160 00       		.byte	0
+ 1025 0161 1B       		.uleb128 0x1b
+ 1026 0162 2E       		.uleb128 0x2e
+ 1027 0163 00       		.byte	0
+ 1028 0164 3F       		.uleb128 0x3f
+ 1029 0165 19       		.uleb128 0x19
+ 1030 0166 3C       		.uleb128 0x3c
+ 1031 0167 19       		.uleb128 0x19
+ 1032 0168 6E       		.uleb128 0x6e
+ 1033 0169 0E       		.uleb128 0xe
+ 1034 016a 03       		.uleb128 0x3
+ 1035 016b 0E       		.uleb128 0xe
+ 1036 016c 3A       		.uleb128 0x3a
+ 1037 016d 0B       		.uleb128 0xb
+ 1038 016e 3B       		.uleb128 0x3b
+ 1039 016f 0B       		.uleb128 0xb
+ 1040 0170 00       		.byte	0
+ 1041 0171 00       		.byte	0
+ 1042 0172 00       		.byte	0
+ 1043              		.section	.debug_loc,"",%progbits
+ 1044              	.Ldebug_loc0:
+ 1045              	.LLST0:
+ 1046 0000 00000000 		.4byte	.LVL1
+ 1047 0004 04000000 		.4byte	.LVL2
+ 1048 0008 0200     		.2byte	0x2
+ 1049 000a 30       		.byte	0x30
+ 1050 000b 9F       		.byte	0x9f
+ 1051 000c 04000000 		.4byte	.LVL2
+ 1052 0010 20000000 		.4byte	.LFE37
+ 1053 0014 0100     		.2byte	0x1
+ 1054 0016 53       		.byte	0x53
+ 1055 0017 00000000 		.4byte	0
+ 1056 001b 00000000 		.4byte	0
+ 1057              		.section	.debug_aranges,"",%progbits
+ 1058 0000 3C000000 		.4byte	0x3c
+ 1059 0004 0200     		.2byte	0x2
+ 1060 0006 00000000 		.4byte	.Ldebug_info0
+ 1061 000a 04       		.byte	0x4
+ 1062 000b 00       		.byte	0
+ 1063 000c 0000     		.2byte	0
+ 1064 000e 0000     		.2byte	0
+ 1065 0010 00000000 		.4byte	.LFB36
+ 1066 0014 04000000 		.4byte	.LFE36-.LFB36
+ 1067 0018 00000000 		.4byte	.LFB37
+ 1068 001c 20000000 		.4byte	.LFE37-.LFB37
+ 1069 0020 00000000 		.4byte	.LFB38
+ 1070 0024 20000000 		.4byte	.LFE38-.LFB38
+ 1071 0028 00000000 		.4byte	.LFB35
+ 1072 002c 20000000 		.4byte	.LFE35-.LFB35
+ 1073 0030 00000000 		.4byte	.LFB34
+ 1074 0034 30000000 		.4byte	.LFE34-.LFB34
+ 1075 0038 00000000 		.4byte	0
+ 1076 003c 00000000 		.4byte	0
+ 1077              		.section	.debug_ranges,"",%progbits
+ 1078              	.Ldebug_ranges0:
+ 1079 0000 00000000 		.4byte	.LFB36
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 22
+
+
+ 1080 0004 04000000 		.4byte	.LFE36
+ 1081 0008 00000000 		.4byte	.LFB37
+ 1082 000c 20000000 		.4byte	.LFE37
+ 1083 0010 00000000 		.4byte	.LFB38
+ 1084 0014 20000000 		.4byte	.LFE38
+ 1085 0018 00000000 		.4byte	.LFB35
+ 1086 001c 20000000 		.4byte	.LFE35
+ 1087 0020 00000000 		.4byte	.LFB34
+ 1088 0024 30000000 		.4byte	.LFE34
+ 1089 0028 00000000 		.4byte	0
+ 1090 002c 00000000 		.4byte	0
+ 1091              		.section	.debug_line,"",%progbits
+ 1092              	.Ldebug_line0:
+ 1093 0000 ED000000 		.section	.debug_str,"MS",%progbits,1
+ 1093      02007400 
+ 1093      00000201 
+ 1093      FB0E0D00 
+ 1093      01010101 
+ 1094              	.LASF18:
+ 1095 0000 72656164 		.ascii	"readEncodFunctPtr\000"
+ 1095      456E636F 
+ 1095      6446756E 
+ 1095      63745074 
+ 1095      7200
+ 1096              	.LASF27:
+ 1097 0012 706F7452 		.ascii	"potRawPtr\000"
+ 1097      61775074 
+ 1097      7200
+ 1098              	.LASF36:
+ 1099 001c 6C617374 		.ascii	"lastTCBPtr\000"
+ 1099      54434250 
+ 1099      747200
+ 1100              	.LASF16:
+ 1101 0027 63757272 		.ascii	"currPos\000"
+ 1101      506F7300 
+ 1102              	.LASF33:
+ 1103 002f 636F756E 		.ascii	"count\000"
+ 1103      7400
+ 1104              	.LASF32:
+ 1105 0035 696E6974 		.ascii	"initialize\000"
+ 1105      69616C69 
+ 1105      7A6500
+ 1106              	.LASF20:
+ 1107 0040 696E7431 		.ascii	"int16\000"
+ 1107      3600
+ 1108              	.LASF34:
+ 1109 0046 6D6F746F 		.ascii	"motor0\000"
+ 1109      723000
+ 1110              	.LASF14:
+ 1111 004d 6D6F746F 		.ascii	"motorID\000"
+ 1111      72494400 
+ 1112              	.LASF39:
+ 1113 0055 706F7454 		.ascii	"potTCB\000"
+ 1113      434200
+ 1114              	.LASF9:
+ 1115 005c 666C6F61 		.ascii	"float\000"
+ 1115      7400
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 23
+
+
+ 1116              	.LASF41:
+ 1117 0062 4C43445F 		.ascii	"LCD_Start\000"
+ 1117      53746172 
+ 1117      7400
+ 1118              	.LASF1:
+ 1119 006c 756E7369 		.ascii	"unsigned char\000"
+ 1119      676E6564 
+ 1119      20636861 
+ 1119      7200
+ 1120              	.LASF29:
+ 1121 007a 63757272 		.ascii	"currMotorPtr\000"
+ 1121      4D6F746F 
+ 1121      72507472 
+ 1121      00
+ 1122              	.LASF40:
+ 1123 0087 64697370 		.ascii	"displayTCB\000"
+ 1123      6C617954 
+ 1123      434200
+ 1124              	.LASF23:
+ 1125 0092 64617461 		.ascii	"dataPtr\000"
+ 1125      50747200 
+ 1126              	.LASF5:
+ 1127 009a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1127      20756E73 
+ 1127      69676E65 
+ 1127      6420696E 
+ 1127      7400
+ 1128              	.LASF3:
+ 1129 00ac 73686F72 		.ascii	"short unsigned int\000"
+ 1129      7420756E 
+ 1129      7369676E 
+ 1129      65642069 
+ 1129      6E7400
+ 1130              	.LASF26:
+ 1131 00bf 706F7444 		.ascii	"potData\000"
+ 1131      61746100 
+ 1132              	.LASF35:
+ 1133 00c7 66697273 		.ascii	"firstTCBPtr\000"
+ 1133      74544342 
+ 1133      50747200 
+ 1134              	.LASF48:
+ 1135 00d3 696E6974 		.ascii	"initTCBs\000"
+ 1135      54434273 
+ 1135      00
+ 1136              	.LASF10:
+ 1137 00dc 646F7562 		.ascii	"double\000"
+ 1137      6C6500
+ 1138              	.LASF44:
+ 1139 00e3 65786563 		.ascii	"executeTask\000"
+ 1139      75746554 
+ 1139      61736B00 
+ 1140              	.LASF17:
+ 1141 00ef 72656164 		.ascii	"readPotFunctPtr\000"
+ 1141      506F7446 
+ 1141      756E6374 
+ 1141      50747200 
+ 1142              	.LASF49:
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 24
+
+
+ 1143 00ff 6D61696E 		.ascii	"main\000"
+ 1143      00
+ 1144              	.LASF15:
+ 1145 0104 706F7352 		.ascii	"posRaw\000"
+ 1145      617700
+ 1146              	.LASF38:
+ 1147 010b 6D794469 		.ascii	"myDisplayData\000"
+ 1147      73706C61 
+ 1147      79446174 
+ 1147      6100
+ 1148              	.LASF8:
+ 1149 0119 756E7369 		.ascii	"unsigned int\000"
+ 1149      676E6564 
+ 1149      20696E74 
+ 1149      00
+ 1150              	.LASF37:
+ 1151 0126 6D79506F 		.ascii	"myPotData\000"
+ 1151      74446174 
+ 1151      6100
+ 1152              	.LASF7:
+ 1153 0130 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1153      206C6F6E 
+ 1153      6720756E 
+ 1153      7369676E 
+ 1153      65642069 
+ 1154              	.LASF19:
+ 1155 0147 77726974 		.ascii	"writePWMFunctPtr\000"
+ 1155      6550574D 
+ 1155      46756E63 
+ 1155      74507472 
+ 1155      00
+ 1156              	.LASF21:
+ 1157 0158 6D6F746F 		.ascii	"motor\000"
+ 1157      7200
+ 1158              	.LASF24:
+ 1159 015e 6E657874 		.ascii	"nextTCB\000"
+ 1159      54434200 
+ 1160              	.LASF42:
+ 1161 0166 4144435F 		.ascii	"ADC_Start\000"
+ 1161      53746172 
+ 1161      7400
+ 1162              	.LASF30:
+ 1163 0170 696E6974 		.ascii	"initMotor\000"
+ 1163      4D6F746F 
+ 1163      7200
+ 1164              	.LASF45:
+ 1165 017a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1165      43313120 
+ 1165      352E342E 
+ 1165      31203230 
+ 1165      31363036 
+ 1166 01ad 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1166      20726576 
+ 1166      6973696F 
+ 1166      6E203233 
+ 1166      37373135 
+ 1167 01e0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 25
+
+
+ 1167      66756E63 
+ 1167      74696F6E 
+ 1167      2D736563 
+ 1167      74696F6E 
+ 1168              	.LASF31:
+ 1169 0208 696E6974 		.ascii	"initDataStructs\000"
+ 1169      44617461 
+ 1169      53747275 
+ 1169      63747300 
+ 1170              	.LASF13:
+ 1171 0218 73697A65 		.ascii	"sizetype\000"
+ 1171      74797065 
+ 1171      00
+ 1172              	.LASF6:
+ 1173 0221 6C6F6E67 		.ascii	"long long int\000"
+ 1173      206C6F6E 
+ 1173      6720696E 
+ 1173      7400
+ 1174              	.LASF46:
+ 1175 022f 6D61696E 		.ascii	"main.c\000"
+ 1175      2E6300
+ 1176              	.LASF11:
+ 1177 0236 63686172 		.ascii	"char\000"
+ 1177      00
+ 1178              	.LASF43:
+ 1179 023b 61646454 		.ascii	"addTask\000"
+ 1179      61736B00 
+ 1180              	.LASF25:
+ 1181 0243 706F7452 		.ascii	"potRaw\000"
+ 1181      617700
+ 1182              	.LASF47:
+ 1183 024a 473A5C4D 		.ascii	"G:\\My Drive\\Husky Robotics\\Electronics\\Arm_Elec"
+ 1183      79204472 
+ 1183      6976655C 
+ 1183      4875736B 
+ 1183      7920526F 
+ 1184 0279 74726F6E 		.ascii	"tronics\\PSoC Workspaces\\MotorBoard2017-18_PSoC Wo"
+ 1184      6963735C 
+ 1184      50536F43 
+ 1184      20576F72 
+ 1184      6B737061 
+ 1185 02aa 726B7370 		.ascii	"rkspace\\PioneerLSeries.cydsn\000"
+ 1185      6163655C 
+ 1185      50696F6E 
+ 1185      6565724C 
+ 1185      53657269 
+ 1186              	.LASF2:
+ 1187 02c7 73686F72 		.ascii	"short int\000"
+ 1187      7420696E 
+ 1187      7400
+ 1188              	.LASF4:
+ 1189 02d1 6C6F6E67 		.ascii	"long int\000"
+ 1189      20696E74 
+ 1189      00
+ 1190              	.LASF28:
+ 1191 02da 64697370 		.ascii	"displayData\000"
+ 1191      6C617944 
+ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccl7kbo4.s 			page 26
+
+
+ 1191      61746100 
+ 1192              	.LASF12:
+ 1193 02e6 6C6F6E67 		.ascii	"long double\000"
+ 1193      20646F75 
+ 1193      626C6500 
+ 1194              	.LASF0:
+ 1195 02f2 7369676E 		.ascii	"signed char\000"
+ 1195      65642063 
+ 1195      68617200 
+ 1196              	.LASF22:
+ 1197 02fe 63757272 		.ascii	"currTask\000"
+ 1197      5461736B 
+ 1197      00
+ 1198              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
