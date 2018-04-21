@@ -4,6 +4,8 @@
  * Husky Robotics Team, 2017-2018
  * This file contains the motor struct, which 
  * organizes all information related to a single motor unit
+ *
+ *  THIS FILE IS OBSOLETE!!!
  * ========================================
 */
 

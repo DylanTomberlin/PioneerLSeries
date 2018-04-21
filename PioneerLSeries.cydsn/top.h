@@ -10,7 +10,7 @@
 #ifndef TOP
 #define TOP
     //global constants
-    #define NUM_MOTORS 3
+    #include "constants.h"
     
     //global function prototypes
     

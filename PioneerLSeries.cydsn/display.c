@@ -13,5 +13,8 @@ void display(void *dataPointer)
 {
     displayData *displayDataPtr = (displayData*) dataPointer; //cast from generic data struct pointer to displayData struct pointer
     LCD_Position(0, 0);
-    LCD_PrintDecUint16(*(displayDataPtr->potRawPtr));
+    //LCD_PrintDecUint16(*(displayDataPtr->potRawPtr));
+    LCD_PrintNumber(*(displayDataPtr->potRawPtr));
+    LCD_Position(1, 0);
+    LCD_PrintString("HelloWorld");
 }
