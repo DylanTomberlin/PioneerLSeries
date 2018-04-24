@@ -35,3 +35,20 @@ void addTask(tcb *newTask)
         lastTCBPtr = newTask;           //Check this else statement... Is it possible for lastTCBPtr == 0 but firstTCBPtr != 0??
     }
 }
+
+void groundTask(tcb *taskPtr)
+{
+       
+}
+
+tcb* findPreviousTask(tcb *targetTaskPtr)//not the cleanest code ever, work in progress
+{
+    if(NULL == targetTaskPtr)
+        return NULL;
+    else if(NULL == firstTCBPtr)
+        return NULL;
+    else {
+        tcb *currentTaskPtr = firstTCBPtr;
+        while(currentTaskPtr.nextTask
+    }
+}
