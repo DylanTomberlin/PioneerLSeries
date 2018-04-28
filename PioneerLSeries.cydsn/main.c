@@ -18,8 +18,8 @@ void initTCBs(void);
 void initMotor(motor *currMotorPtr, int motorID);
 
 //external function prototypes
-void addTask(tcb *newTask);
-void executeTask(tcb *tcbPtr);
+//void addTask(tcb *newTask);
+//void executeTask(tcb *tcbPtr);
 void readPot(void* currDataPtr);
 void display(void *dataPointer);
 
@@ -40,6 +40,20 @@ displayData myDisplayData;
 //tcb structs
 tcb potTCB;
 tcb displayTCB;
+
+CY_ISR(isrLim0)
+{
+    LCD_Position(0,0);
+    LCD_PrintString("Pot interrupt");
+    addTask(&potTCB);
+}
+
+CY_ISR(isrLim1)
+{
+    LCD_Position(0, 0);
+    LCD_PrintString("Display interrupt");
+    addTask(&displayTCB);   
+}
 
 int main(void)
 {
@@ -63,9 +77,10 @@ int main(void)
         //LCD_PrintDecUint16(motor0.posRaw);
         //CyDelay(500);
         //addTask(&
-        if(NULL != firstTCBPtr)
-            executeTask(firstTCBPtr);
-            
+        //if(NULL != firstTCBPtr)
+          //  executeTask(firstTCBPtr);
+        //addTask(&displayTCB);    
+        executeTask(firstTCBPtr);
     }
 }
 
@@ -79,6 +94,7 @@ void initialize()
     //LCD_PrintString("Hello World");
     initDataStructs();
     initTCBs();
+    addTask(&potTCB);
 }
 
 void initMotor(motor *currMotorPtr, int motorID)
@@ -98,6 +114,9 @@ void initDataStructs(void)
 
 void initTCBs(void)
 {
+    LCD_PrintString("TCB Init");
     potTCB.currTask = readPot;
-    displayTCB.currTask = &display;
+    potTCB.dataPtr  = &myPotData;
+    displayTCB.currTask = display;
+    displayTCB.dataPtr = &myDisplayData;
 }
