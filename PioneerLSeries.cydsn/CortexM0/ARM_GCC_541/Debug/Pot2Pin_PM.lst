@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
   28:Generated_Source\PSoC4/Pot2Pin_PM.c **** *  deep-sleep/hibernate modes. This function applies only to SIO and USBIO pins.
   29:Generated_Source\PSoC4/Pot2Pin_PM.c **** *  It should not be called for GPIO or GPIO_OVT pins.
   30:Generated_Source\PSoC4/Pot2Pin_PM.c **** *
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 2
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 2
 
 
   31:Generated_Source\PSoC4/Pot2Pin_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
   51              		.global	Pot2Pin_Wakeup
   52              		.code	16
   53              		.thumb_func
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 3
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 3
 
 
   54              		.type	Pot2Pin_Wakeup, %function
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
   72              	.L5:
   73 000c 00000000 		.word	.LANCHOR0
   74 0010 08020440 		.word	1074004488
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 4
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 4
 
 
   75              		.cfi_endproc
@@ -206,15 +206,15 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
   95 000b 01       		.uleb128 0x1
   96 000c 97000000 		.4byte	.LASF20
   97 0010 0C       		.byte	0xc
-  98 0011 F4010000 		.4byte	.LASF21
-  99 0015 50010000 		.4byte	.LASF22
+  98 0011 E6010000 		.4byte	.LASF21
+  99 0015 77010000 		.4byte	.LASF22
  100 0019 00000000 		.4byte	.Ldebug_ranges0+0
  101 001d 00000000 		.4byte	0
  102 0021 00000000 		.4byte	.Ldebug_line0
  103 0025 02       		.uleb128 0x2
  104 0026 01       		.byte	0x1
  105 0027 06       		.byte	0x6
- 106 0028 E8010000 		.4byte	.LASF0
+ 106 0028 6B010000 		.4byte	.LASF0
  107 002c 02       		.uleb128 0x2
  108 002d 01       		.byte	0x1
  109 002e 08       		.byte	0x8
@@ -222,7 +222,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  111 0033 02       		.uleb128 0x2
  112 0034 02       		.byte	0x2
  113 0035 05       		.byte	0x5
- 114 0036 CD010000 		.4byte	.LASF2
+ 114 0036 50010000 		.4byte	.LASF2
  115 003a 02       		.uleb128 0x2
  116 003b 02       		.byte	0x2
  117 003c 07       		.byte	0x7
@@ -230,7 +230,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  119 0041 02       		.uleb128 0x2
  120 0042 04       		.byte	0x4
  121 0043 05       		.byte	0x5
- 122 0044 DF010000 		.4byte	.LASF4
+ 122 0044 62010000 		.4byte	.LASF4
  123 0048 02       		.uleb128 0x2
  124 0049 04       		.byte	0x4
  125 004a 07       		.byte	0x7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  127 004f 02       		.uleb128 0x2
  128 0050 08       		.byte	0x8
  129 0051 05       		.byte	0x5
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 5
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 5
 
 
  130 0052 2E010000 		.4byte	.LASF6
@@ -284,7 +284,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  170 00a0 21       		.byte	0x21
  171 00a1 CA000000 		.4byte	0xca
  172 00a5 07       		.uleb128 0x7
- 173 00a6 D7010000 		.4byte	.LASF14
+ 173 00a6 5A010000 		.4byte	.LASF14
  174 00aa 03       		.byte	0x3
  175 00ab 23       		.byte	0x23
  176 00ac 6B000000 		.4byte	0x6b
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  184 00bd 07       		.uleb128 0x7
  185 00be 06000000 		.4byte	.LASF16
  186 00c2 03       		.byte	0x3
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 6
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 6
 
 
  187 00c3 25       		.byte	0x25
@@ -306,7 +306,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  189 00c8 08       		.byte	0x8
  190 00c9 00       		.byte	0
  191 00ca 08       		.uleb128 0x8
- 192 00cb 18020000 		.4byte	.LASF17
+ 192 00cb 0A020000 		.4byte	.LASF17
  193 00cf 03       		.byte	0x3
  194 00d0 26       		.byte	0x26
  195 00d1 9D000000 		.4byte	0x9d
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  241 0012 00       		.byte	0
  242 0013 02       		.uleb128 0x2
  243 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 7
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 7
 
 
  244 0015 00       		.byte	0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  298 004b 0D       		.uleb128 0xd
  299 004c 00       		.byte	0
  300 004d 03       		.uleb128 0x3
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 8
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 8
 
 
  301 004e 0E       		.uleb128 0xe
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  355 0085 3B       		.uleb128 0x3b
  356 0086 0B       		.uleb128 0xb
  357 0087 49       		.uleb128 0x49
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 9
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 9
 
 
  358 0088 13       		.uleb128 0x13
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  398      6420696E 
  398      7400
  399              	.LASF3:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 10
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 10
 
 
  400 0035 73686F72 		.ascii	"short unsigned int\000"
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  420      206C6F6E 
  420      6720696E 
  420      7400
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 11
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccvAMbOO.s 			page 11
 
 
  421              	.LASF11:
@@ -609,45 +609,44 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccddNQym.s 			page 1
  424      50696E5F 
  424      57616B65 
  424      757000
- 425              	.LASF22:
- 426 0150 473A5C4D 		.ascii	"G:\\My Drive\\Husky Robotics\\Electronics\\Arm_Elec"
- 426      79204472 
- 426      6976655C 
- 426      4875736B 
- 426      7920526F 
- 427 017f 74726F6E 		.ascii	"tronics\\PSoC Workspaces\\MotorBoard2017-18_PSoC Wo"
- 427      6963735C 
- 427      50536F43 
- 427      20576F72 
- 427      6B737061 
- 428 01b0 726B7370 		.ascii	"rkspace\\PioneerLSeries.cydsn\000"
- 428      6163655C 
- 428      50696F6E 
- 428      6565724C 
- 428      53657269 
- 429              	.LASF2:
- 430 01cd 73686F72 		.ascii	"short int\000"
- 430      7420696E 
- 430      7400
- 431              	.LASF14:
- 432 01d7 70635374 		.ascii	"pcState\000"
- 432      61746500 
- 433              	.LASF4:
- 434 01df 6C6F6E67 		.ascii	"long int\000"
- 434      20696E74 
- 434      00
- 435              	.LASF0:
- 436 01e8 7369676E 		.ascii	"signed char\000"
- 436      65642063 
- 436      68617200 
+ 425              	.LASF2:
+ 426 0150 73686F72 		.ascii	"short int\000"
+ 426      7420696E 
+ 426      7400
+ 427              	.LASF14:
+ 428 015a 70635374 		.ascii	"pcState\000"
+ 428      61746500 
+ 429              	.LASF4:
+ 430 0162 6C6F6E67 		.ascii	"long int\000"
+ 430      20696E74 
+ 430      00
+ 431              	.LASF0:
+ 432 016b 7369676E 		.ascii	"signed char\000"
+ 432      65642063 
+ 432      68617200 
+ 433              	.LASF22:
+ 434 0177 433A5C55 		.ascii	"C:\\Users\\Default User.DESKTOP-J8EE37M\\Documents\\"
+ 434      73657273 
+ 434      5C446566 
+ 434      61756C74 
+ 434      20557365 
+ 435 01a7 50536F43 		.ascii	"PSoC Creator\\HuskyRobotics\\PioneerLSeries\\Pionee"
+ 435      20437265 
+ 435      61746F72 
+ 435      5C487573 
+ 435      6B79526F 
+ 436 01d7 724C5365 		.ascii	"rLSeries.cydsn\000"
+ 436      72696573 
+ 436      2E637964 
+ 436      736E00
  437              	.LASF21:
- 438 01f4 47656E65 		.ascii	"Generated_Source\\PSoC4\\Pot2Pin_PM.c\000"
+ 438 01e6 47656E65 		.ascii	"Generated_Source\\PSoC4\\Pot2Pin_PM.c\000"
  438      72617465 
  438      645F536F 
  438      75726365 
  438      5C50536F 
  439              	.LASF17:
- 440 0218 506F7432 		.ascii	"Pot2Pin_BACKUP_STRUCT\000"
+ 440 020a 506F7432 		.ascii	"Pot2Pin_BACKUP_STRUCT\000"
  440      50696E5F 
  440      4241434B 
  440      55505F53 

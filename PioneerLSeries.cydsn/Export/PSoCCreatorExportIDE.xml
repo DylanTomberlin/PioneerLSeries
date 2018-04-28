@@ -25,7 +25,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="PioneerLSeries" Path="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" Version="5.60" Type="Normal">
+  <Project Name="PioneerLSeries" Path="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" Version="5.60" Type="Normal">
     <CMSIS_SVD_File>PioneerLSeries.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -34,8 +34,8 @@
       <LinkerFile Toolchain="ARM IAR Generic">.\Generated_Source\PSoC4\Cm0Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="STRICT" Path="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn">
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
           <File BuildType="BUILD" Toolchain="">pots.c</File>
           <File BuildType="BUILD" Toolchain="">scheduler.c</File>
@@ -47,8 +47,8 @@
           <File BuildType="BUILD" Toolchain="">top.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn\Generated_Source\PSoC4">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\Generated_Source\PSoC4">
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cymetadata.c</File>
@@ -124,34 +124,34 @@
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0p">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM4">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM7">
-        <Files Root="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn" />
+        <Files Root="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn" />
       </Folder>
     </Folders>
   </Project>

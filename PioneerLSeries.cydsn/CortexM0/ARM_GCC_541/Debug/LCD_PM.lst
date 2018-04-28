@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
   28:Generated_Source\PSoC4/LCD_PM.c **** *  Does nothing, provided for consistency.
   29:Generated_Source\PSoC4/LCD_PM.c **** *
   30:Generated_Source\PSoC4/LCD_PM.c **** * Parameters:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 2
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 2
 
 
   31:Generated_Source\PSoC4/LCD_PM.c **** *  None.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
   54 0000 7047     		bx	lr
   55              		.cfi_endproc
   56              	.LFE1:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 3
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 3
 
 
   57              		.size	LCD_RestoreConfig, .-LCD_RestoreConfig
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
   86              		.align	2
   87              	.L4:
   88 0010 00000000 		.word	LCD_enableState
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 4
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 4
 
 
   89 0014 00000000 		.word	.LANCHOR0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  113:Generated_Source\PSoC4/LCD_PM.c ****         LCD_Enable();
  114              		.loc 1 113 0
  115 000a FFF7FEFF 		bl	LCD_Enable
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 5
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 5
 
 
  116              	.LVL1:
@@ -276,14 +276,14 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  146 000c D3000000 		.4byte	.LASF20
  147 0010 0C       		.byte	0xc
  148 0011 46000000 		.4byte	.LASF21
- 149 0015 86010000 		.4byte	.LASF22
+ 149 0015 C2010000 		.4byte	.LASF22
  150 0019 00000000 		.4byte	.Ldebug_ranges0+0
  151 001d 00000000 		.4byte	0
  152 0021 00000000 		.4byte	.Ldebug_line0
  153 0025 02       		.uleb128 0x2
  154 0026 01       		.byte	0x1
  155 0027 06       		.byte	0x6
- 156 0028 33020000 		.4byte	.LASF0
+ 156 0028 B6010000 		.4byte	.LASF0
  157 002c 02       		.uleb128 0x2
  158 002d 01       		.byte	0x1
  159 002e 08       		.byte	0x8
@@ -291,18 +291,18 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  161 0033 02       		.uleb128 0x2
  162 0034 02       		.byte	0x2
  163 0035 05       		.byte	0x5
- 164 0036 03020000 		.4byte	.LASF2
+ 164 0036 86010000 		.4byte	.LASF2
  165 003a 02       		.uleb128 0x2
  166 003b 02       		.byte	0x2
  167 003c 07       		.byte	0x7
  168 003d 78000000 		.4byte	.LASF3
  169 0041 02       		.uleb128 0x2
  170 0042 04       		.byte	0x4
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 6
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 6
 
 
  171 0043 05       		.byte	0x5
- 172 0044 1E020000 		.4byte	.LASF4
+ 172 0044 A1010000 		.4byte	.LASF4
  173 0048 02       		.uleb128 0x2
  174 0049 04       		.byte	0x4
  175 004a 07       		.byte	0x7
@@ -324,7 +324,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  191 0066 07       		.byte	0x7
  192 0067 AF000000 		.4byte	.LASF8
  193 006b 04       		.uleb128 0x4
- 194 006c 0D020000 		.4byte	.LASF12
+ 194 006c 90010000 		.4byte	.LASF12
  195 0070 02       		.byte	0x2
  196 0071 D201     		.2byte	0x1d2
  197 0073 2C000000 		.4byte	0x2c
@@ -346,7 +346,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  213 008f 2C       		.byte	0x2c
  214 0090 A1000000 		.4byte	0xa1
  215 0094 06       		.uleb128 0x6
- 216 0095 27020000 		.4byte	.LASF23
+ 216 0095 AA010000 		.4byte	.LASF23
  217 0099 03       		.byte	0x3
  218 009a 2E       		.byte	0x2e
  219 009b 6B000000 		.4byte	0x6b
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  225 00a7 2F       		.byte	0x2f
  226 00a8 8C000000 		.4byte	0x8c
  227 00ac 08       		.uleb128 0x8
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 7
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 7
 
 
  228 00ad 37000000 		.4byte	.LASF14
@@ -390,7 +390,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  254 00e8 28010000 		.4byte	0x128
  255 00ec 00       		.byte	0
  256 00ed 09       		.uleb128 0x9
- 257 00ee 3F020000 		.4byte	.LASF17
+ 257 00ee 31020000 		.4byte	.LASF17
  258 00f2 01       		.byte	0x1
  259 00f3 6B       		.byte	0x6b
  260 00f4 00000000 		.4byte	.LFB3
@@ -403,7 +403,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  267 0107 33010000 		.4byte	0x133
  268 010b 00       		.byte	0
  269 010c 0B       		.uleb128 0xb
- 270 010d 13020000 		.4byte	.LASF24
+ 270 010d 96010000 		.4byte	.LASF24
  271 0111 01       		.byte	0x1
  272 0112 14       		.byte	0x14
  273 0113 A1000000 		.4byte	0xa1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  282 0128 0D       		.uleb128 0xd
  283 0129 1A000000 		.4byte	.LASF18
  284 012d 1A000000 		.4byte	.LASF18
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 8
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 8
 
 
  285 0131 03       		.byte	0x3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  339 002c 03       		.uleb128 0x3
  340 002d 0E       		.uleb128 0xe
  341 002e 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 9
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 9
 
 
  342 002f 0B       		.uleb128 0xb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  396 0065 0E       		.uleb128 0xe
  397 0066 3A       		.uleb128 0x3a
  398 0067 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 10
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 10
 
 
  399 0068 3B       		.uleb128 0x3b
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  453 00a2 0B       		.uleb128 0xb
  454 00a3 3B       		.uleb128 0x3b
  455 00a4 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 11
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 11
 
 
  456 00a5 49       		.uleb128 0x49
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  510 0024 18000000 		.4byte	.LFE2-.LFB2
  511 0028 00000000 		.4byte	.LFB3
  512 002c 14000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 12
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 12
 
 
  513 0030 00000000 		.4byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  545 0066 6C6F6E67 		.ascii	"long unsigned int\000"
  545      20756E73 
  545      69676E65 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 13
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 13
 
 
  545      6420696E 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  565 016f 63686172 		.ascii	"char\000"
  565      00
  566              	.LASF13:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 14
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccZLEygz.s 			page 14
 
 
  567 0174 4C43445F 		.ascii	"LCD_BACKUP_STRUCT\000"
@@ -786,47 +786,46 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\cc6l50qd.s 			page 1
  567      55505F53 
  567      54525543 
  567      5400
- 568              	.LASF22:
- 569 0186 473A5C4D 		.ascii	"G:\\My Drive\\Husky Robotics\\Electronics\\Arm_Elec"
- 569      79204472 
- 569      6976655C 
- 569      4875736B 
- 569      7920526F 
- 570 01b5 74726F6E 		.ascii	"tronics\\PSoC Workspaces\\MotorBoard2017-18_PSoC Wo"
- 570      6963735C 
- 570      50536F43 
- 570      20576F72 
- 570      6B737061 
- 571 01e6 726B7370 		.ascii	"rkspace\\PioneerLSeries.cydsn\000"
- 571      6163655C 
- 571      50696F6E 
- 571      6565724C 
- 571      53657269 
- 572              	.LASF2:
- 573 0203 73686F72 		.ascii	"short int\000"
- 573      7420696E 
- 573      7400
- 574              	.LASF12:
- 575 020d 75696E74 		.ascii	"uint8\000"
- 575      3800
- 576              	.LASF24:
- 577 0213 4C43445F 		.ascii	"LCD_backup\000"
- 577      6261636B 
- 577      757000
- 578              	.LASF4:
- 579 021e 6C6F6E67 		.ascii	"long int\000"
- 579      20696E74 
- 579      00
- 580              	.LASF23:
- 581 0227 656E6162 		.ascii	"enableState\000"
- 581      6C655374 
- 581      61746500 
- 582              	.LASF0:
- 583 0233 7369676E 		.ascii	"signed char\000"
- 583      65642063 
- 583      68617200 
+ 568              	.LASF2:
+ 569 0186 73686F72 		.ascii	"short int\000"
+ 569      7420696E 
+ 569      7400
+ 570              	.LASF12:
+ 571 0190 75696E74 		.ascii	"uint8\000"
+ 571      3800
+ 572              	.LASF24:
+ 573 0196 4C43445F 		.ascii	"LCD_backup\000"
+ 573      6261636B 
+ 573      757000
+ 574              	.LASF4:
+ 575 01a1 6C6F6E67 		.ascii	"long int\000"
+ 575      20696E74 
+ 575      00
+ 576              	.LASF23:
+ 577 01aa 656E6162 		.ascii	"enableState\000"
+ 577      6C655374 
+ 577      61746500 
+ 578              	.LASF0:
+ 579 01b6 7369676E 		.ascii	"signed char\000"
+ 579      65642063 
+ 579      68617200 
+ 580              	.LASF22:
+ 581 01c2 433A5C55 		.ascii	"C:\\Users\\Default User.DESKTOP-J8EE37M\\Documents\\"
+ 581      73657273 
+ 581      5C446566 
+ 581      61756C74 
+ 581      20557365 
+ 582 01f2 50536F43 		.ascii	"PSoC Creator\\HuskyRobotics\\PioneerLSeries\\Pionee"
+ 582      20437265 
+ 582      61746F72 
+ 582      5C487573 
+ 582      6B79526F 
+ 583 0222 724C5365 		.ascii	"rLSeries.cydsn\000"
+ 583      72696573 
+ 583      2E637964 
+ 583      736E00
  584              	.LASF17:
- 585 023f 4C43445F 		.ascii	"LCD_Wakeup\000"
+ 585 0231 4C43445F 		.ascii	"LCD_Wakeup\000"
  585      57616B65 
  585      757000
  586              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
   28:Generated_Source\PSoC4/ADC_intClock.c **** * Summary:
   29:Generated_Source\PSoC4/ADC_intClock.c **** *  Starts the clock, aligned to the specified running clock.
   30:Generated_Source\PSoC4/ADC_intClock.c **** *
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 2
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 2
 
 
   31:Generated_Source\PSoC4/ADC_intClock.c **** * Parameters:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
   60              		.align	2
   61              		.global	ADC_intClock_Stop
   62              		.code	16
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 3
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 3
 
 
   63              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
   72              	.L6:
   97:Generated_Source\PSoC4/ADC_intClock.c **** #if defined CYREG_PERI_DIV_CMD
   98:Generated_Source\PSoC4/ADC_intClock.c **** 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 4
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 4
 
 
   99:Generated_Source\PSoC4/ADC_intClock.c ****     /* Make sure any previous start command has finished. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  125:Generated_Source\PSoC4/ADC_intClock.c **** * Parameters:
  126:Generated_Source\PSoC4/ADC_intClock.c **** *  clkDivider:  Divider register value (0-65535). This value is NOT the
  127:Generated_Source\PSoC4/ADC_intClock.c **** *    divider; the clock hardware divides by clkDivider plus one. For example,
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 5
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 5
 
 
  128:Generated_Source\PSoC4/ADC_intClock.c **** *    to divide the clock by 2, this parameter should be set to 1.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  151:Generated_Source\PSoC4/ADC_intClock.c ****     maskVal = ADC_intClock_DIV_REG & (uint32)(~(uint32)ADC_intClock__DIVIDER_MASK);
  152:Generated_Source\PSoC4/ADC_intClock.c ****     /* combine mask and new divider val into 32-bit value */
  153:Generated_Source\PSoC4/ADC_intClock.c ****     regVal = clkDivider | maskVal;
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 6
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 6
 
 
  154:Generated_Source\PSoC4/ADC_intClock.c ****     
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  159 0006 80B2     		uxth	r0, r0
  179:Generated_Source\PSoC4/ADC_intClock.c ****         >> ADC_intClock_DIV_INT_SHIFT);
  180:Generated_Source\PSoC4/ADC_intClock.c **** }
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 7
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 7
 
 
  160              		.loc 1 180 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  187              		.cfi_endproc
  188              	.LFE4:
  189              		.size	ADC_intClock_GetFractionalDividerRegister, .-ADC_intClock_GetFractionalDividerRegister
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 8
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 8
 
 
  190              		.text
@@ -434,14 +434,14 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  200 000c 2E010000 		.4byte	.LASF25
  201 0010 0C       		.byte	0xc
  202 0011 4A000000 		.4byte	.LASF26
- 203 0015 F9010000 		.4byte	.LASF27
+ 203 0015 33020000 		.4byte	.LASF27
  204 0019 00000000 		.4byte	.Ldebug_ranges0+0
  205 001d 00000000 		.4byte	0
  206 0021 00000000 		.4byte	.Ldebug_line0
  207 0025 02       		.uleb128 0x2
  208 0026 01       		.byte	0x1
  209 0027 06       		.byte	0x6
- 210 0028 A4020000 		.4byte	.LASF0
+ 210 0028 27020000 		.4byte	.LASF0
  211 002c 02       		.uleb128 0x2
  212 002d 01       		.byte	0x1
  213 002e 08       		.byte	0x8
@@ -449,7 +449,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  215 0033 02       		.uleb128 0x2
  216 0034 02       		.byte	0x2
  217 0035 05       		.byte	0x5
- 218 0036 76020000 		.4byte	.LASF2
+ 218 0036 F9010000 		.4byte	.LASF2
  219 003a 02       		.uleb128 0x2
  220 003b 02       		.byte	0x2
  221 003c 07       		.byte	0x7
@@ -457,7 +457,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  223 0041 02       		.uleb128 0x2
  224 0042 04       		.byte	0x4
  225 0043 05       		.byte	0x5
- 226 0044 86020000 		.4byte	.LASF4
+ 226 0044 09020000 		.4byte	.LASF4
  227 0048 02       		.uleb128 0x2
  228 0049 04       		.byte	0x4
  229 004a 07       		.byte	0x7
@@ -478,11 +478,11 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  244 0065 04       		.byte	0x4
  245 0066 07       		.byte	0x7
  246 0067 0A010000 		.4byte	.LASF8
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 9
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 9
 
 
  247 006b 04       		.uleb128 0x4
- 248 006c 80020000 		.4byte	.LASF9
+ 248 006c 03020000 		.4byte	.LASF9
  249 0070 02       		.byte	0x2
  250 0071 D201     		.2byte	0x1d2
  251 0073 2C000000 		.4byte	0x2c
@@ -516,7 +516,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  279 00b0 05       		.uleb128 0x5
  280 00b1 83000000 		.4byte	0x83
  281 00b5 06       		.uleb128 0x6
- 282 00b6 8F020000 		.4byte	.LASF16
+ 282 00b6 12020000 		.4byte	.LASF16
  283 00ba 01       		.byte	0x1
  284 00bb 27       		.byte	0x27
  285 00bc 00000000 		.4byte	.LFB0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  301 00e1 00000000 		.4byte	.LFB1
  302 00e5 18000000 		.4byte	.LFE1-.LFB1
  303 00e9 01       		.uleb128 0x1
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 10
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 10
 
 
  304 00ea 9C       		.byte	0x9c
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  358 0165 00       		.byte	0
  359              		.section	.debug_abbrev,"",%progbits
  360              	.Ldebug_abbrev0:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 11
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 11
 
 
  361 0000 01       		.uleb128 0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  415 0036 05       		.uleb128 0x5
  416 0037 35       		.uleb128 0x35
  417 0038 00       		.byte	0
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 12
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 12
 
 
  418 0039 49       		.uleb128 0x49
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  472 0070 0B       		.uleb128 0xb
  473 0071 27       		.uleb128 0x27
  474 0072 19       		.uleb128 0x19
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 13
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 13
 
 
  475 0073 11       		.uleb128 0x11
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  529 00aa 13       		.uleb128 0x13
  530 00ab 11       		.uleb128 0x11
  531 00ac 01       		.uleb128 0x1
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 14
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 14
 
 
  532 00ad 12       		.uleb128 0x12
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  586 0063 0A000000 		.4byte	.LVL3
  587 0067 10000000 		.4byte	.LVL5
  588 006b 0100     		.2byte	0x1
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 15
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 15
 
 
  589 006d 53       		.byte	0x53
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  634 0030 6D61736B 		.ascii	"maskVal\000"
  634      56616C00 
  635              	.LASF28:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 16
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 16
 
 
  636 0038 4144435F 		.ascii	"ADC_intClock_Stop\000"
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  658      696F6E61 
  658      6C00
  659              	.LASF10:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 17
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 17
 
 
  660 00fc 75696E74 		.ascii	"uint16\000"
@@ -1007,44 +1007,43 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 1
  676      6C6F636B 
  676      5F476574 
  676      46726163 
- 677              	.LASF27:
- 678 01f9 473A5C4D 		.ascii	"G:\\My Drive\\Husky Robotics\\Electronics\\Arm_Elec"
- 678      79204472 
- 678      6976655C 
- 678      4875736B 
- 678      7920526F 
- 679 0228 74726F6E 		.ascii	"tronics\\PSoC Workspaces\\MotorBoard2017-18_PSoC Wo"
- 679      6963735C 
- 679      50536F43 
- 679      20576F72 
- 679      6B737061 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccaVjNoo.s 			page 18
+ 677              	.LASF2:
+ 678 01f9 73686F72 		.ascii	"short int\000"
+ 678      7420696E 
+ 678      7400
+ 679              	.LASF9:
+ 680 0203 75696E74 		.ascii	"uint8\000"
+ 680      3800
+ 681              	.LASF4:
+ 682 0209 6C6F6E67 		.ascii	"long int\000"
+ 682      20696E74 
+ 682      00
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccAqnD0D.s 			page 18
 
 
- 680 0259 726B7370 		.ascii	"rkspace\\PioneerLSeries.cydsn\000"
- 680      6163655C 
- 680      50696F6E 
- 680      6565724C 
- 680      53657269 
- 681              	.LASF2:
- 682 0276 73686F72 		.ascii	"short int\000"
- 682      7420696E 
- 682      7400
- 683              	.LASF9:
- 684 0280 75696E74 		.ascii	"uint8\000"
- 684      3800
- 685              	.LASF4:
- 686 0286 6C6F6E67 		.ascii	"long int\000"
- 686      20696E74 
- 686      00
- 687              	.LASF16:
- 688 028f 4144435F 		.ascii	"ADC_intClock_StartEx\000"
- 688      696E7443 
- 688      6C6F636B 
- 688      5F537461 
- 688      72744578 
- 689              	.LASF0:
- 690 02a4 7369676E 		.ascii	"signed char\000"
- 690      65642063 
- 690      68617200 
+ 683              	.LASF16:
+ 684 0212 4144435F 		.ascii	"ADC_intClock_StartEx\000"
+ 684      696E7443 
+ 684      6C6F636B 
+ 684      5F537461 
+ 684      72744578 
+ 685              	.LASF0:
+ 686 0227 7369676E 		.ascii	"signed char\000"
+ 686      65642063 
+ 686      68617200 
+ 687              	.LASF27:
+ 688 0233 433A5C55 		.ascii	"C:\\Users\\Default User.DESKTOP-J8EE37M\\Documents\\"
+ 688      73657273 
+ 688      5C446566 
+ 688      61756C74 
+ 688      20557365 
+ 689 0263 50536F43 		.ascii	"PSoC Creator\\HuskyRobotics\\PioneerLSeries\\Pionee"
+ 689      20437265 
+ 689      61746F72 
+ 689      5C487573 
+ 689      6B79526F 
+ 690 0293 724C5365 		.ascii	"rLSeries.cydsn\000"
+ 690      72696573 
+ 690      2E637964 
+ 690      736E00
  691              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

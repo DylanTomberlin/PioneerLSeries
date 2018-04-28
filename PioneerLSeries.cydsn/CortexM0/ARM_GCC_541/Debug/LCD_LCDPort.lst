@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
   28:Generated_Source\PSoC4/LCD_LCDPort.c **** #else
   29:Generated_Source\PSoC4/LCD_LCDPort.c ****     #if (CY_PSOC4_4200L)
   30:Generated_Source\PSoC4/LCD_LCDPort.c ****         #define LCD_LCDPort_SetP4PinDriveMode(shift, mode)  \
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 2
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 2
 
 
   31:Generated_Source\PSoC4/LCD_LCDPort.c ****         do { \
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
   38 0006 8A43     		bics	r2, r1
   39 0008 0243     		orrs	r2, r0
   40 000a 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 3
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 3
 
 
   75:Generated_Source\PSoC4/LCD_LCDPort.c **** 		LCD_LCDPort_SetP4PinDriveMode(LCD_LCDPort__1__SHIFT, mode);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
   88 0056 C046     		.align	2
   89              	.L2:
   90 0058 080B0440 		.word	1074006792
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 4
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 4
 
 
   91 005c 3FFEFFFF 		.word	-449
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  108              		.cfi_startproc
  109              		@ args = 0, pretend = 0, frame = 0
  110              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 5
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 5
 
 
  111              		@ link register save eliminated.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  139:Generated_Source\PSoC4/LCD_LCDPort.c **** * \funcusage
  140:Generated_Source\PSoC4/LCD_LCDPort.c **** *  \snippet LCD_LCDPort_SUT.c usage_LCD_LCDPort_Read  
  141:Generated_Source\PSoC4/LCD_LCDPort.c **** *******************************************************************************/
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 6
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 6
 
 
  142:Generated_Source\PSoC4/LCD_LCDPort.c **** uint8 LCD_LCDPort_Read(void)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  168:Generated_Source\PSoC4/LCD_LCDPort.c **** *  \snippet LCD_LCDPort_SUT.c usage_LCD_LCDPort_ReadDataReg 
  169:Generated_Source\PSoC4/LCD_LCDPort.c **** *******************************************************************************/
  170:Generated_Source\PSoC4/LCD_LCDPort.c **** uint8 LCD_LCDPort_ReadDataReg(void)
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 7
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 7
 
 
  171:Generated_Source\PSoC4/LCD_LCDPort.c **** {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  197:Generated_Source\PSoC4/LCD_LCDPort.c **** * \param mode
  198:Generated_Source\PSoC4/LCD_LCDPort.c **** *  Interrupt mode for the selected pins. Valid options are documented in
  199:Generated_Source\PSoC4/LCD_LCDPort.c **** *  \ref intrMode.
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 8
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 8
 
 
  200:Generated_Source\PSoC4/LCD_LCDPort.c **** *
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  220:Generated_Source\PSoC4/LCD_LCDPort.c **** 
  221:Generated_Source\PSoC4/LCD_LCDPort.c **** 
  222:Generated_Source\PSoC4/LCD_LCDPort.c **** /*******************************************************************************
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 9
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 9
 
 
  223:Generated_Source\PSoC4/LCD_LCDPort.c **** * Function Name: LCD_LCDPort_ClearInterrupt
@@ -538,21 +538,21 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  264 0004 0400     		.2byte	0x4
  265 0006 00000000 		.4byte	.Ldebug_abbrev0
  266 000a 04       		.byte	0x4
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 10
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 10
 
 
  267 000b 01       		.uleb128 0x1
  268 000c 3A010000 		.4byte	.LASF28
  269 0010 0C       		.byte	0xc
  270 0011 C6000000 		.4byte	.LASF29
- 271 0015 E8010000 		.4byte	.LASF30
+ 271 0015 1E020000 		.4byte	.LASF30
  272 0019 00000000 		.4byte	.Ldebug_ranges0+0
  273 001d 00000000 		.4byte	0
  274 0021 00000000 		.4byte	.Ldebug_line0
  275 0025 02       		.uleb128 0x2
  276 0026 01       		.byte	0x1
  277 0027 06       		.byte	0x6
- 278 0028 8F020000 		.4byte	.LASF0
+ 278 0028 12020000 		.4byte	.LASF0
  279 002c 02       		.uleb128 0x2
  280 002d 01       		.byte	0x1
  281 002e 08       		.byte	0x8
@@ -560,7 +560,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  283 0033 02       		.uleb128 0x2
  284 0034 02       		.byte	0x2
  285 0035 05       		.byte	0x5
- 286 0036 65020000 		.4byte	.LASF2
+ 286 0036 E8010000 		.4byte	.LASF2
  287 003a 02       		.uleb128 0x2
  288 003b 02       		.byte	0x2
  289 003c 07       		.byte	0x7
@@ -568,7 +568,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  291 0041 02       		.uleb128 0x2
  292 0042 04       		.byte	0x4
  293 0043 05       		.byte	0x5
- 294 0044 86020000 		.4byte	.LASF4
+ 294 0044 09020000 		.4byte	.LASF4
  295 0048 02       		.uleb128 0x2
  296 0049 04       		.byte	0x4
  297 004a 07       		.byte	0x7
@@ -590,7 +590,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  313 0066 07       		.byte	0x7
  314 0067 11010000 		.4byte	.LASF8
  315 006b 04       		.uleb128 0x4
- 316 006c 6F020000 		.4byte	.LASF9
+ 316 006c F2010000 		.4byte	.LASF9
  317 0070 02       		.byte	0x2
  318 0071 D201     		.2byte	0x1d2
  319 0073 2C000000 		.4byte	0x2c
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  321 0078 F2000000 		.4byte	.LASF10
  322 007c 02       		.byte	0x2
  323 007d D301     		.2byte	0x1d3
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 11
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 11
 
 
  324 007f 3A000000 		.4byte	0x3a
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  378 00f6 6B000000 		.4byte	0x6b
  379 00fa 21000000 		.4byte	.LLST1
  380 00fe 08       		.uleb128 0x8
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 12
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 12
 
 
  381 00ff 82000000 		.4byte	.LASF24
@@ -668,7 +668,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  385 0109 42000000 		.4byte	.LLST2
  386 010d 00       		.byte	0
  387 010e 09       		.uleb128 0x9
- 388 010f 75020000 		.4byte	.LASF20
+ 388 010f F8010000 		.4byte	.LASF20
  389 0113 01       		.byte	0x1
  390 0114 8E       		.byte	0x8e
  391 0115 6B000000 		.4byte	0x6b
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  435 0177 0C       		.uleb128 0xc
  436 0178 53000000 		.4byte	.LASF26
  437 017c 01       		.byte	0x1
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 13
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 13
 
 
  438 017d F2       		.byte	0xf2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  492 0025 03       		.uleb128 0x3
  493 0026 08       		.uleb128 0x8
  494 0027 00       		.byte	0
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 14
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 14
 
 
  495 0028 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  549 005f 0B       		.uleb128 0xb
  550 0060 49       		.uleb128 0x49
  551 0061 13       		.uleb128 0x13
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 15
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 15
 
 
  552 0062 02       		.uleb128 0x2
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  606 0099 13       		.uleb128 0x13
  607 009a 02       		.uleb128 0x2
  608 009b 18       		.uleb128 0x18
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 16
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 16
 
 
  609 009c 00       		.byte	0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  663 0016 01       		.uleb128 0x1
  664 0017 50       		.byte	0x50
  665 0018 9F       		.byte	0x9f
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 17
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 17
 
 
  666 0019 00000000 		.4byte	0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  720 0024 10000000 		.4byte	.LFE2-.LFB2
  721 0028 00000000 		.4byte	.LFB3
  722 002c 10000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 18
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 18
 
 
  723 0030 00000000 		.4byte	.LFB4
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  759 0053 4C43445F 		.ascii	"LCD_LCDPort_ClearInterrupt\000"
  759      4C434450 
  759      6F72745F 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 19
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 19
 
 
  759      436C6561 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  785 0111 756E7369 		.ascii	"unsigned int\000"
  785      676E6564 
  785      20696E74 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 20
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 20
 
 
  785      00
@@ -1180,44 +1180,43 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 1
  798              	.LASF14:
  799 01e3 63686172 		.ascii	"char\000"
  799      00
- 800              	.LASF30:
- 801 01e8 473A5C4D 		.ascii	"G:\\My Drive\\Husky Robotics\\Electronics\\Arm_Elec"
- 801      79204472 
- 801      6976655C 
- 801      4875736B 
- 801      7920526F 
- 802 0217 74726F6E 		.ascii	"tronics\\PSoC Workspaces\\MotorBoard2017-18_PSoC Wo"
- 802      6963735C 
- 802      50536F43 
- 802      20576F72 
- 802      6B737061 
- 803 0248 726B7370 		.ascii	"rkspace\\PioneerLSeries.cydsn\000"
- 803      6163655C 
- 803      50696F6E 
- 803      6565724C 
- 803      53657269 
- 804              	.LASF2:
- 805 0265 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccuTfFVB.s 			page 21
+ 800              	.LASF2:
+ 801 01e8 73686F72 		.ascii	"short int\000"
+ 801      7420696E 
+ 801      7400
+ 802              	.LASF9:
+ 803 01f2 75696E74 		.ascii	"uint8\000"
+ 803      3800
+ 804              	.LASF20:
+ 805 01f8 4C43445F 		.ascii	"LCD_LCDPort_Read\000"
+ 805      4C434450 
+ 805      6F72745F 
+ 805      52656164 
+ 805      00
+ 806              	.LASF4:
+ 807 0209 6C6F6E67 		.ascii	"long int\000"
+ 807      20696E74 
+ 807      00
+ 808              	.LASF0:
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccCdts0M.s 			page 21
 
 
- 805      7420696E 
- 805      7400
- 806              	.LASF9:
- 807 026f 75696E74 		.ascii	"uint8\000"
- 807      3800
- 808              	.LASF20:
- 809 0275 4C43445F 		.ascii	"LCD_LCDPort_Read\000"
- 809      4C434450 
- 809      6F72745F 
- 809      52656164 
- 809      00
- 810              	.LASF4:
- 811 0286 6C6F6E67 		.ascii	"long int\000"
- 811      20696E74 
- 811      00
- 812              	.LASF0:
- 813 028f 7369676E 		.ascii	"signed char\000"
- 813      65642063 
- 813      68617200 
+ 809 0212 7369676E 		.ascii	"signed char\000"
+ 809      65642063 
+ 809      68617200 
+ 810              	.LASF30:
+ 811 021e 433A5C55 		.ascii	"C:\\Users\\Default User.DESKTOP-J8EE37M\\Documents\\"
+ 811      73657273 
+ 811      5C446566 
+ 811      61756C74 
+ 811      20557365 
+ 812 024e 50536F43 		.ascii	"PSoC Creator\\HuskyRobotics\\PioneerLSeries\\Pionee"
+ 812      20437265 
+ 812      61746F72 
+ 812      5C487573 
+ 812      6B79526F 
+ 813 027e 724C5365 		.ascii	"rLSeries.cydsn\000"
+ 813      72696573 
+ 813      2E637964 
+ 813      736E00
  814              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

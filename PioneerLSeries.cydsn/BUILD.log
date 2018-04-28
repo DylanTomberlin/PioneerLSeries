@@ -1,51 +1,18 @@
---------------- Build Started: 04/21/2018 14:21:35 Project: PioneerLSeries, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-cydsfit.exe -.appdatapath "C:\Users\Dylan\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn\PioneerLSeries.cyprj" -d CY8C4248BZI-L489 -s "E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
-Elaborating Design...
-HDL Generation...
-Synthesis...
-Tech Mapping...
-Analog Placement...
-Analog Routing...
-Analog Code Generation...
-Digital Placement...
-Digital Routing...
-Bitstream Generation...
-Bitstream Verification...
-Static timing analysis...
-API Generation...
-Dependency Generation...
-Cleanup...
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/scheduler.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c scheduler.c -o .\CortexM0\ARM_GCC_541\Debug\scheduler.o
-scheduler.c: In function 'executeTask':
-scheduler.c:22:21: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
-         firstTCBPtr = (tcbPtr->nextTCBPtr); //probably need some malloc and free so that a bunch of tasks don't take up all the memory.
-                     ^
-scheduler.c: In function 'addTask':
-scheduler.c:29:32: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
-         lastTCBPtr->nextTCBPtr = newTask;  //add new task to the end of the linked list
-                                ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/display.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c display.c -o .\CortexM0\ARM_GCC_541\Debug\display.o
-In file included from Generated_Source\PSoC4/project.h:22:0,
-                 from top.h:19,
-                 from display.c:9:
-display.c: In function 'display':
-Generated_Source\PSoC4/LCD.h:110:51: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
- #define LCD_PrintNumber(value) LCD_PrintU32Number((uint16) (value))
-                                                   ^
-Generated_Source\PSoC4/LCD.h:303:37: note: in expansion of macro 'LCD_PrintNumber'
-     #define LCD_PrintDecUint16(x)   LCD_PrintNumber(x)  
-                                     ^
-display.c:16:5: note: in expansion of macro 'LCD_PrintDecUint16'
-     LCD_PrintDecUint16(*(displayDataPtr->potRawPtr));
-     ^
+--------------- Build Started: 04/28/2018 12:06:14 Project: PioneerLSeries, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
+main.c: In function 'main':
+main.c:50:9: warning: unused variable 'count' [-Wunused-variable]
+     int count = 0; //For testing/ call simulation purposes.
+         ^
 arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyDMA.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\ADC.o .\CortexM0\ARM_GCC_541\Debug\ADC_PM.o .\CortexM0\ARM_GCC_541\Debug\ADC_INT.o .\CortexM0\ARM_GCC_541\Debug\LCD.o .\CortexM0\ARM_GCC_541\Debug\LCD_PM.o .\CortexM0\ARM_GCC_541\Debug\Pot2Pin.o .\CortexM0\ARM_GCC_541\Debug\Pot2Pin_PM.o .\CortexM0\ARM_GCC_541\Debug\Pot1Pin.o .\CortexM0\ARM_GCC_541\Debug\Pot1Pin_PM.o .\CortexM0\ARM_GCC_541\Debug\Pot0Pin.o .\CortexM0\ARM_GCC_541\Debug\Pot0Pin_PM.o .\CortexM0\ARM_GCC_541\Debug\ADC_IRQ.o .\CortexM0\ARM_GCC_541\Debug\ADC_intClock.o .\CortexM0\ARM_GCC_541\Debug\LCD_LCDPort.o .\CortexM0\ARM_GCC_541\Debug\LCD_LCDPort_PM.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o "E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.elf" .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\pots.o .\CortexM0\ARM_GCC_541\Debug\scheduler.o .\CortexM0\ARM_GCC_541\Debug\display.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/PioneerLSeries.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
-cyelftool.exe -C "E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.elf" .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\pots.o .\CortexM0\ARM_GCC_541\Debug\scheduler.o .\CortexM0\ARM_GCC_541\Debug\display.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/PioneerLSeries.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C "C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
-cyelftool.exe -S "E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.elf"
-Flash used: 4848 of 262144 bytes (1.8%).
+cyelftool.exe -S "C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.elf"
+Flash used: 4888 of 262144 bytes (1.9%).
 SRAM used: 2704 of 32768 bytes (8.3%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 04/21/2018 14:21:46 ---------------
+--------------- Build Succeeded: 04/28/2018 12:06:15 ---------------

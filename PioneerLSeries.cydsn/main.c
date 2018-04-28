@@ -62,6 +62,7 @@ int main(void)
         //readPot(&motor0);
         //LCD_PrintDecUint16(motor0.posRaw);
         //CyDelay(500);
+        //addTask(&
         if(NULL != firstTCBPtr)
             executeTask(firstTCBPtr);
             

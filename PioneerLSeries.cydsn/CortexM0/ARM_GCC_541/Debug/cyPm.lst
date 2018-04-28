@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
   28:Generated_Source\PSoC4/cyPm.c **** * its main clock can be removed. It is identical to Active from a peripheral
   29:Generated_Source\PSoC4/cyPm.c **** * point of view. Any enabled interrupts can cause wakeup from the Sleep mode.
   30:Generated_Source\PSoC4/cyPm.c **** *
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 2
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 2
 
 
   31:Generated_Source\PSoC4/cyPm.c **** *******************************************************************************/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
   67              		.align	2
   68              		.global	CySysPmDeepSleep
   69              		.code	16
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 3
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 3
 
 
   70              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
   95 0012 1360     		str	r3, [r2]
   75:Generated_Source\PSoC4/cyPm.c ****     #endif /* (CY_IP_SRSSV2) */
   76:Generated_Source\PSoC4/cyPm.c **** 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 4
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 4
 
 
   77:Generated_Source\PSoC4/cyPm.c ****     #if (CY_IP_CPUSS && CY_IP_SRSSV2)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  126 0038 2B60     		str	r3, [r5]
  101:Generated_Source\PSoC4/cyPm.c ****     #endif /* (CY_IP_SRSSV2) */
  102:Generated_Source\PSoC4/cyPm.c **** 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 5
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 5
 
 
  103:Generated_Source\PSoC4/cyPm.c ****     #if (CY_IP_CPUSS && CY_IP_SRSSV2)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  129:Generated_Source\PSoC4/cyPm.c ****     * corresponding variable should be defined with CY_NOINIT attribute. It
  130:Generated_Source\PSoC4/cyPm.c ****     * prevents data from being initialized to zero on startup. The interrupt
  131:Generated_Source\PSoC4/cyPm.c ****     * cause of the hibernate peripheral is retained, such that it can be either
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 6
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 6
 
 
  132:Generated_Source\PSoC4/cyPm.c ****     * read by the firmware or cause an interrupt after the firmware has booted and
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
   30:Generated_Source\PSoC4/cyPm.h **** Deep Sleep, Hibernate, and Stop. Active, Sleep and Deep-Sleep are standard ARM defined power modes,
   31:Generated_Source\PSoC4/cyPm.h **** ARM CPUs. Hibernate/Stop are even lower power modes that are entered from firmware just like Deep-S
   32:Generated_Source\PSoC4/cyPm.h **** the CPU (and all peripherals) goes through a full reset.
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 7
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 7
 
 
   33:Generated_Source\PSoC4/cyPm.h **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
   87:Generated_Source\PSoC4/cyPm.h **** void CySysPmDeepSleep(void);
   88:Generated_Source\PSoC4/cyPm.h **** 
   89:Generated_Source\PSoC4/cyPm.h **** #if(CY_IP_SRSSV2)
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 8
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 8
 
 
   90:Generated_Source\PSoC4/cyPm.h ****     void CySysPmHibernate(void);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  144:Generated_Source\PSoC4/cyPm.h ****     #define CY_PM_CPU_SCR_PTR                   ( (reg32 *) CYREG_CM0P_SCR)
  145:Generated_Source\PSoC4/cyPm.h **** #endif /* (CY_IP_CPUSS_CM0) */
  146:Generated_Source\PSoC4/cyPm.h **** 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 9
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 9
 
 
  147:Generated_Source\PSoC4/cyPm.h **** /* Power System Key & Delay Register */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  201:Generated_Source\PSoC4/cyPm.h ****     #define CY_PM_PWR_KEY_DELAY_REG_DEFAULT     ((uint32) 248u)
  202:Generated_Source\PSoC4/cyPm.h ****     #define CY_PM_PWR_KEY_DELAY_FREQ_DEFAULT    (48u)
  203:Generated_Source\PSoC4/cyPm.h **** #endif /* (CY_IP_SRSSV2) */
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 10
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 10
 
 
  204:Generated_Source\PSoC4/cyPm.h **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  189 0026 1368     		ldr	r3, [r2]
  190 0028 9B00     		lsls	r3, r3, #2
  191 002a 9B08     		lsrs	r3, r3, #2
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 11
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 11
 
 
  192 002c 1360     		str	r3, [r2]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  261:Generated_Source\PSoC4/cyPm.h ****                 CY_CLEAR_REG32_FIELD( CYREG_GPIO_PRT9_PC, CYFLD_GPIO_PRT_PORT_IB_MODE_SEL);
  223              		.loc 2 261 0
  224 0060 204A     		ldr	r2, .L8+36
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 12
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 12
 
 
  225 0062 1368     		ldr	r3, [r2]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  256              		.loc 1 153 0
  257 0094 184B     		ldr	r3, .L8+56
  258 0096 1B88     		ldrh	r3, [r3]
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 13
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 13
 
 
  259 0098 9BB2     		uxth	r3, r3
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  294 00c4 08010440 		.word	1074004232
  295 00c8 08020440 		.word	1074004488
  296 00cc 08030440 		.word	1074004744
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 14
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 14
 
 
  297 00d0 08040440 		.word	1074005000
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  202:Generated_Source\PSoC4/cyPm.c ****         CY_PM_PWR_STOP_REG = (CY_PM_PWR_STOP_REG & CY_PM_PWR_STOP_POLARITY) | CY_PM_PWR_STOP_TOKEN_
  203:Generated_Source\PSoC4/cyPm.c **** 
  204:Generated_Source\PSoC4/cyPm.c ****         /* Freeze IO-Cells to save IO-Cell state */
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 15
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 15
 
 
  205:Generated_Source\PSoC4/cyPm.c ****         CySysPmFreezeIo();
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  334              	.LVL10:
  247:Generated_Source\PSoC4/cyPm.c **** 
  248:Generated_Source\PSoC4/cyPm.c ****         CY_PM_PWR_STOP_REG = (CY_PM_STOP_WAKEUP_ACTIVE_LOW != polarity) ?
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 16
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 16
 
 
  249:Generated_Source\PSoC4/cyPm.c ****                             (CY_PM_PWR_STOP_REG | CY_PM_PWR_STOP_POLARITY) :
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  257:Generated_Source\PSoC4/cyPm.c ****     * Function Name: CySysPmGetResetReason
  258:Generated_Source\PSoC4/cyPm.c ****     ****************************************************************************//**
  259:Generated_Source\PSoC4/cyPm.c ****     *
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 17
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 17
 
 
  260:Generated_Source\PSoC4/cyPm.c ****     * Retrieves the last reset reason - transition from OFF/XRES/STOP/HIBERNATE to
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  285:Generated_Source\PSoC4/cyPm.c **** 
  286:Generated_Source\PSoC4/cyPm.c ****         /* Wakeup from Stop (through WAKEUP pin assert) */
  287:Generated_Source\PSoC4/cyPm.c ****         case CY_PM_PWR_STOP_TOKEN_STOP:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 18
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 18
 
 
  288:Generated_Source\PSoC4/cyPm.c ****             reason = CY_PM_RESET_REASON_WAKEUP_STOP;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  313:Generated_Source\PSoC4/cyPm.c ****     {
  435              		.loc 1 313 0
  436              		.cfi_startproc
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 19
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 19
 
 
  437              		@ args = 0, pretend = 0, frame = 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  466 0022 1A60     		str	r2, [r3]
  467              	.L24:
  338:Generated_Source\PSoC4/cyPm.c ****         }
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 20
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 20
 
 
  339:Generated_Source\PSoC4/cyPm.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  514              		.loc 1 208 0
  515 001a 2368     		ldr	r3, [r4]
  516 001c 8022     		movs	r2, #128
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 21
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 21
 
 
  517 001e 1206     		lsls	r2, r2, #24
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  353:Generated_Source\PSoC4/cyPm.c ****     * value must be read and re-written to the data register before calling this
  354:Generated_Source\PSoC4/cyPm.c ****     * API. Furthermore, the drive mode must be re-programmed.  If this is not done,
  355:Generated_Source\PSoC4/cyPm.c ****     * the pin state will change to default state the moment the freeze is removed.
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 22
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 22
 
 
  356:Generated_Source\PSoC4/cyPm.c ****     *
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  380:Generated_Source\PSoC4/cyPm.c **** 
  381:Generated_Source\PSoC4/cyPm.c ****         CyExitCriticalSection(interruptState);
  585              		.loc 1 381 0
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 23
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 23
 
 
  586 0020 FFF7FEFF 		bl	CyExitCriticalSection
@@ -1348,15 +1348,15 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  609 000b 01       		.uleb128 0x1
  610 000c 70010000 		.4byte	.LASF32
  611 0010 0C       		.byte	0xc
- 612 0011 C8020000 		.4byte	.LASF33
- 613 0015 27020000 		.4byte	.LASF34
+ 612 0011 4B020000 		.4byte	.LASF33
+ 613 0015 81020000 		.4byte	.LASF34
  614 0019 00000000 		.4byte	.Ldebug_ranges0+0
  615 001d 00000000 		.4byte	0
  616 0021 00000000 		.4byte	.Ldebug_line0
  617 0025 02       		.uleb128 0x2
  618 0026 01       		.byte	0x1
  619 0027 06       		.byte	0x6
- 620 0028 F2020000 		.4byte	.LASF0
+ 620 0028 75020000 		.4byte	.LASF0
  621 002c 02       		.uleb128 0x2
  622 002d 01       		.byte	0x1
  623 002e 08       		.byte	0x8
@@ -1364,7 +1364,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  625 0033 02       		.uleb128 0x2
  626 0034 02       		.byte	0x2
  627 0035 05       		.byte	0x5
- 628 0036 A4020000 		.4byte	.LASF2
+ 628 0036 27020000 		.4byte	.LASF2
  629 003a 02       		.uleb128 0x2
  630 003b 02       		.byte	0x2
  631 003c 07       		.byte	0x7
@@ -1372,13 +1372,13 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  633 0041 02       		.uleb128 0x2
  634 0042 04       		.byte	0x4
  635 0043 05       		.byte	0x5
- 636 0044 BF020000 		.4byte	.LASF4
+ 636 0044 42020000 		.4byte	.LASF4
  637 0048 02       		.uleb128 0x2
  638 0049 04       		.byte	0x4
  639 004a 07       		.byte	0x7
  640 004b AE000000 		.4byte	.LASF5
  641 004f 02       		.uleb128 0x2
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 24
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 24
 
 
  642 0050 08       		.byte	0x8
@@ -1438,12 +1438,12 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  696 00c1 05       		.uleb128 0x5
  697 00c2 83000000 		.4byte	0x83
  698 00c6 02       		.uleb128 0x2
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 25
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 25
 
 
  699 00c7 08       		.byte	0x8
  700 00c8 04       		.byte	0x4
- 701 00c9 E6020000 		.4byte	.LASF17
+ 701 00c9 69020000 		.4byte	.LASF17
  702 00cd 02       		.uleb128 0x2
  703 00ce 04       		.byte	0x4
  704 00cf 07       		.byte	0x7
@@ -1471,7 +1471,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  726 0106 CE020000 		.4byte	0x2ce
  727 010a 00       		.byte	0
  728 010b 06       		.uleb128 0x6
- 729 010c AE020000 		.4byte	.LASF20
+ 729 010c 31020000 		.4byte	.LASF20
  730 0110 01       		.byte	0x1
  731 0111 3F       		.byte	0x3f
  732 0112 00000000 		.4byte	.LFB3
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  753 0142 C3020000 		.4byte	0x2c3
  754 0146 0A       		.uleb128 0xa
  755 0147 34000000 		.4byte	.LVL4
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 26
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 26
 
 
  756 014b D9020000 		.4byte	0x2d9
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  810 01bd 01       		.byte	0x1
  811 01be F2       		.byte	0xf2
  812 01bf 00000000 		.4byte	.LFB6
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 27
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 27
 
 
  813 01c3 34000000 		.4byte	.LFE6-.LFB6
@@ -1602,7 +1602,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  851 0224 78000000 		.4byte	.LLST5
  852 0228 00       		.byte	0
  853 0229 12       		.uleb128 0x12
- 854 022a FE020000 		.4byte	.LASF26
+ 854 022a F0020000 		.4byte	.LASF26
  855 022e 01       		.byte	0x1
  856 022f 3801     		.2byte	0x138
  857 0231 00000000 		.4byte	.LFB8
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  867 024b BB000000 		.4byte	.LLST6
  868 024f 08       		.uleb128 0x8
  869 0250 06000000 		.4byte	.LVL18
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 28
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 28
 
 
  870 0254 C3020000 		.4byte	0x2c3
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  924 02da 33010000 		.4byte	.LASF31
  925 02de 33010000 		.4byte	.LASF31
  926 02e2 04       		.byte	0x4
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 29
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 29
 
 
  927 02e3 6B       		.byte	0x6b
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  981 0032 49       		.uleb128 0x49
  982 0033 13       		.uleb128 0x13
  983 0034 00       		.byte	0
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 30
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 30
 
 
  984 0035 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1038 006e 13       		.uleb128 0x13
  1039 006f 00       		.byte	0
  1040 0070 00       		.byte	0
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 31
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 31
 
 
  1041 0071 09       		.uleb128 0x9
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1095 00ae 19       		.uleb128 0x19
  1096 00af 20       		.uleb128 0x20
  1097 00b0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 32
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 32
 
 
  1098 00b1 00       		.byte	0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1152 00e8 19       		.uleb128 0x19
  1153 00e9 01       		.uleb128 0x1
  1154 00ea 13       		.uleb128 0x13
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 33
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 33
 
 
  1155 00eb 00       		.byte	0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1209 0122 0B       		.uleb128 0xb
  1210 0123 3B       		.uleb128 0x3b
  1211 0124 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 34
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 34
 
 
  1212 0125 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1266 0080 0200     		.2byte	0x2
  1267 0082 30       		.byte	0x30
  1268 0083 9F       		.byte	0x9f
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 35
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 35
 
 
  1269 0084 18000000 		.4byte	.LVL14
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1323 003c 38000000 		.4byte	.LFE8-.LFB8
  1324 0040 00000000 		.4byte	.LFB5
  1325 0044 30000000 		.4byte	.LFE5-.LFB5
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 36
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 36
 
 
  1326 0048 00000000 		.4byte	.LFB9
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1363              	.LASF23:
  1364 0045 43795379 		.ascii	"CySysPmHibernate\000"
  1364      73506D48 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 37
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 37
 
 
  1364      69626572 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1388 00f2 75696E74 		.ascii	"uint32\000"
  1388      333200
  1389              	.LASF29:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 38
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 38
 
 
  1390 00f9 4379456E 		.ascii	"CyEnterCriticalSection\000"
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1408      00
  1409              	.LASF6:
  1410 0207 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 39
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 39
 
 
  1410      206C6F6E 
@@ -2292,56 +2292,55 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 1
  1414      656C6563 
  1414      74526567 
  1414      00
- 1415              	.LASF34:
- 1416 0227 473A5C4D 		.ascii	"G:\\My Drive\\Husky Robotics\\Electronics\\Arm_Elec"
- 1416      79204472 
- 1416      6976655C 
- 1416      4875736B 
- 1416      7920526F 
- 1417 0256 74726F6E 		.ascii	"tronics\\PSoC Workspaces\\MotorBoard2017-18_PSoC Wo"
- 1417      6963735C 
- 1417      50536F43 
- 1417      20576F72 
- 1417      6B737061 
- 1418 0287 726B7370 		.ascii	"rkspace\\PioneerLSeries.cydsn\000"
- 1418      6163655C 
- 1418      50696F6E 
- 1418      6565724C 
- 1418      53657269 
- 1419              	.LASF2:
- 1420 02a4 73686F72 		.ascii	"short int\000"
- 1420      7420696E 
- 1420      7400
- 1421              	.LASF20:
- 1422 02ae 43795379 		.ascii	"CySysPmDeepSleep\000"
- 1422      73506D44 
- 1422      65657053 
- 1422      6C656570 
- 1422      00
- 1423              	.LASF4:
- 1424 02bf 6C6F6E67 		.ascii	"long int\000"
- 1424      20696E74 
- 1424      00
- 1425              	.LASF33:
- 1426 02c8 47656E65 		.ascii	"Generated_Source\\PSoC4\\cyPm.c\000"
- 1426      72617465 
- 1426      645F536F 
- 1426      75726365 
- 1426      5C50536F 
- 1427              	.LASF17:
- 1428 02e6 6C6F6E67 		.ascii	"long double\000"
- 1428      20646F75 
- 1428      626C6500 
- 1429              	.LASF0:
- 1430 02f2 7369676E 		.ascii	"signed char\000"
- 1430      65642063 
- 1430      68617200 
+ 1415              	.LASF2:
+ 1416 0227 73686F72 		.ascii	"short int\000"
+ 1416      7420696E 
+ 1416      7400
+ 1417              	.LASF20:
+ 1418 0231 43795379 		.ascii	"CySysPmDeepSleep\000"
+ 1418      73506D44 
+ 1418      65657053 
+ 1418      6C656570 
+ 1418      00
+ 1419              	.LASF4:
+ 1420 0242 6C6F6E67 		.ascii	"long int\000"
+ 1420      20696E74 
+ 1420      00
+ 1421              	.LASF33:
+ 1422 024b 47656E65 		.ascii	"Generated_Source\\PSoC4\\cyPm.c\000"
+ 1422      72617465 
+ 1422      645F536F 
+ 1422      75726365 
+ 1422      5C50536F 
+ 1423              	.LASF17:
+ 1424 0269 6C6F6E67 		.ascii	"long double\000"
+ 1424      20646F75 
+ 1424      626C6500 
+ 1425              	.LASF0:
+ 1426 0275 7369676E 		.ascii	"signed char\000"
+ 1426      65642063 
+ 1426      68617200 
+ 1427              	.LASF34:
+ 1428 0281 433A5C55 		.ascii	"C:\\Users\\Default User.DESKTOP-J8EE37M\\Documents\\"
+ 1428      73657273 
+ 1428      5C446566 
+ 1428      61756C74 
+ 1428      20557365 
+ 1429 02b1 50536F43 		.ascii	"PSoC Creator\\HuskyRobotics\\PioneerLSeries\\Pionee"
+ 1429      20437265 
+ 1429      61746F72 
+ 1429      5C487573 
+ 1429      6B79526F 
+ 1430 02e1 724C5365 		.ascii	"rLSeries.cydsn\000"
+ 1430      72696573 
+ 1430      2E637964 
+ 1430      736E00
  1431              	.LASF26:
- 1432 02fe 43795379 		.ascii	"CySysPmFreezeIo\000"
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccPahxOF.s 			page 40
-
-
+ 1432 02f0 43795379 		.ascii	"CySysPmFreezeIo\000"
  1432      73506D46 
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccJGLmbu.s 			page 40
+
+
  1432      7265657A 
  1432      65496F00 
  1433              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
