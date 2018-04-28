@@ -16,10 +16,11 @@ void executeTask(tcb *tcbPtr)
     
     tcbPtr->currTask((void*) tcbPtr->dataPtr);
     //moves linked list pointer forward unless there is nothing left, at which point it grounds the first element pointer
-    if(0 == tcbPtr->nextTCBPtr)
-        firstTCBPtr = 0;
+    if(NULL == tcbPtr->nextTCBPtr)
+        firstTCBPtr = NULL;
     else
         firstTCBPtr = (tcbPtr->nextTCBPtr); //probably need some malloc and free so that a bunch of tasks don't take up all the memory.
+    groundTask(tcbPtr);
 }
 
 void addTask(tcb *newTask)
@@ -38,17 +39,23 @@ void addTask(tcb *newTask)
 
 void groundTask(tcb *taskPtr)
 {
-       
+    tcb *previousTask = findPreviousTask(taskPtr);
+    if(NULL != previousTask)
+        previousTask->nextTCBPtr = NULL;
+    taskPtr->nextTCBPtr = NULL;
 }
 
 tcb* findPreviousTask(tcb *targetTaskPtr)//not the cleanest code ever, work in progress
 {
+    tcb *currentTaskPtr = firstTCBPtr;
     if(NULL == targetTaskPtr)
         return NULL;
     else if(NULL == firstTCBPtr)
         return NULL;
     else {
         tcb *currentTaskPtr = firstTCBPtr;
-        while(currentTaskPtr.nextTask
+        while(NULL != currentTaskPtr->nextTCBPtr->nextTCBPtr)
+            currentTaskPtr = currentTaskPtr->nextTCBPtr;   
     }
+    return currentTaskPtr;
 }

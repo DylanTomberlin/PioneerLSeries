@@ -11,7 +11,6 @@
 */
 #include "top.h"
 
-
 //local function prototypes
 void initialize(void);
 void initDataStructs(void);
@@ -52,10 +51,10 @@ int main(void)
     
     for(;;)
     {
-        if(0 == count % 6)
-            addTask((void*) &potTCB);
-        if(0 == count % 17)
-            addTask((void*) &displayTCB);
+//        if(0 == count % 6)
+//            addtask((void*) &pottcb);
+//        if(0 == count % 17)
+//            addtask((void*) &displaytcb);
         //readPot(&motor0);
         //CyDelay(500);
         //LCD_Position(1, 0);
@@ -63,8 +62,9 @@ int main(void)
         //readPot(&motor0);
         //LCD_PrintDecUint16(motor0.posRaw);
         //CyDelay(500);
-        if(0 != firstTCBPtr)
+        if(NULL != firstTCBPtr)
             executeTask(firstTCBPtr);
+            
     }
 }
 

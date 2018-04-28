@@ -12,15 +12,17 @@
     //global constants
     #include "constants.h"
     
-    //global function prototypes
-    
-    
     //global includes
     #include "project.h"
     #include "motor.h"
     #include "tcb.h"
     #include "structs.h"
-    
+   
+     //global function prototypes
+    tcb* findPreviousTask(tcb *targetTaskPtr);
+    void groundTask(tcb *taskPtr);
+    void addTask(tcb *newTask);
+    void executeTask(tcb *tcbPtr);
     //cypress files:
     //#include "cytypes.h"
     
