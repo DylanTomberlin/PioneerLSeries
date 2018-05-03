@@ -1,4 +1,4 @@
---------------- Clean Started: 05/02/2018 19:48:07 Project: PioneerLSeries, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Clean Started: 05/02/2018 20:35:36 Project: PioneerLSeries, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 Deleting file ".\CortexM0\ARM_GCC_541\Debug\main.o"
 Deleting file ".\CortexM0\ARM_GCC_541\Debug\pots.o"
 Deleting file ".\CortexM0\ARM_GCC_541\Debug\scheduler.o"
@@ -73,4 +73,4 @@ Deleting file ".\PioneerLSeries.rpt"
 Deleting file ".\PioneerLSeries_timing.html"
 Deleting file ".\CortexM0\ARM_GCC_541\Debug\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
 Deleting file ".\CortexM0\ARM_GCC_541\Debug\.deps\SOURCE_ASM__ARM_GCC_GENERIC.P"
---------------- Clean Succeeded: 05/02/2018 19:48:07 ---------------
+--------------- Clean Succeeded: 05/02/2018 20:35:37 ---------------
