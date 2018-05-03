@@ -56,15 +56,21 @@ void groundTask(tcb *taskPtr)
 
 tcb* findPreviousTask(tcb *targetTaskPtr)//not the cleanest code ever, work in progress
 {
-    tcb *currentTaskPtr = firstTCBPtr;
+    //Targets which do not have previous tasks
     if(NULL == targetTaskPtr)
         return NULL;
     else if(NULL == firstTCBPtr)
         return NULL;
-    else {
-        tcb *currentTaskPtr = firstTCBPtr;
-        while(NULL != currentTaskPtr->nextTCBPtr->nextTCBPtr)
-            currentTaskPtr = currentTaskPtr->nextTCBPtr;   
-    }
+    else if(targetTaskPtr == firstTCBPtr)
+        return NULL;
+    
+    //Target is second task
+    if(firstTCBPtr->nextTCBPtr == targetTaskPtr)
+        return firstTCBPtr;
+    
+    //Target is third or later task
+    tcb *currentTaskPtr = firstTCBPtr;
+    while(NULL != currentTaskPtr->nextTCBPtr->nextTCBPtr)
+        currentTaskPtr = currentTaskPtr->nextTCBPtr;   
     return currentTaskPtr;
 }

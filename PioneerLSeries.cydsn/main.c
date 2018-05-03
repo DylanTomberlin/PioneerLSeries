@@ -41,6 +41,7 @@ displayData myDisplayData;
 tcb potTCB;
 tcb displayTCB;
 
+/*
 CY_ISR(isrLim0)
 {
     LCD_Position(0,0);
@@ -54,7 +55,7 @@ CY_ISR(isrLim1)
     LCD_PrintString("Display interrupt");
     addTask(&displayTCB);   
 }
-
+*/
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
@@ -62,9 +63,12 @@ int main(void)
     initialize();
     
     int count = 0; //For testing/ call simulation purposes.
-    
+    addTask(&displayTCB);
     for(;;)
     {
+        tcb *myFirstTCBPtr = firstTCBPtr;
+        addTask(&displayTCB);
+        myFirstTCBPtr = firstTCBPtr;
 //        if(0 == count % 6)
 //            addtask((void*) &pottcb);
 //        if(0 == count % 17)
@@ -81,6 +85,8 @@ int main(void)
           //  executeTask(firstTCBPtr);
         //addTask(&displayTCB);    
         executeTask(firstTCBPtr);
+        myFirstTCBPtr = firstTCBPtr;
+        LCD_PrintString("Hi");
     }
 }
 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
   28:Generated_Source\PSoC4/PWM2_PM.c **** * Summary:
   29:Generated_Source\PSoC4/PWM2_PM.c **** *  All configuration registers are retention. Nothing to save here.
   30:Generated_Source\PSoC4/PWM2_PM.c **** *
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 2
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 2
 
 
   31:Generated_Source\PSoC4/PWM2_PM.c **** * Parameters:
@@ -118,13 +118,13 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
   53              		.cfi_offset 4, -8
   54              		.cfi_offset 14, -4
   60:Generated_Source\PSoC4/PWM2_PM.c ****     if(0u != (PWM2_BLOCK_CONTROL_REG & PWM2_MASK))
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 3
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 3
 
 
   55              		.loc 1 60 0
   56 0002 074B     		ldr	r3, .L5
   57 0004 1B68     		ldr	r3, [r3]
-  58 0006 DB07     		lsls	r3, r3, #31
+  58 0006 9B07     		lsls	r3, r3, #30
   59 0008 03D5     		bpl	.L3
   61:Generated_Source\PSoC4/PWM2_PM.c ****     {
   62:Generated_Source\PSoC4/PWM2_PM.c ****         PWM2_backup.enableState = 1u;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
   77:Generated_Source\PSoC4/PWM2_PM.c **** *
   78:Generated_Source\PSoC4/PWM2_PM.c **** * Summary:
   79:Generated_Source\PSoC4/PWM2_PM.c **** *  All configuration registers are retention. Nothing to restore here.
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 4
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 4
 
 
   80:Generated_Source\PSoC4/PWM2_PM.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  117              		.cfi_def_cfa_offset 8
  118              		.cfi_offset 4, -8
  119              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 5
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 5
 
 
  110:Generated_Source\PSoC4/PWM2_PM.c ****     PWM2_RestoreConfig();
@@ -285,40 +285,40 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  154 0006 00000000 		.4byte	.Ldebug_abbrev0
  155 000a 04       		.byte	0x4
  156 000b 01       		.uleb128 0x1
- 157 000c 78010000 		.4byte	.LASF24
+ 157 000c 0E000000 		.4byte	.LASF24
  158 0010 0C       		.byte	0xc
- 159 0011 75000000 		.4byte	.LASF25
- 160 0015 E0000000 		.4byte	.LASF26
+ 159 0011 03010000 		.4byte	.LASF25
+ 160 0015 89010000 		.4byte	.LASF26
  161 0019 00000000 		.4byte	.Ldebug_ranges0+0
  162 001d 00000000 		.4byte	0
  163 0021 00000000 		.4byte	.Ldebug_line0
  164 0025 02       		.uleb128 0x2
  165 0026 01       		.byte	0x1
  166 0027 06       		.byte	0x6
- 167 0028 19020000 		.4byte	.LASF0
+ 167 0028 0B020000 		.4byte	.LASF0
  168 002c 02       		.uleb128 0x2
  169 002d 01       		.byte	0x1
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 6
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 6
 
 
  170 002e 08       		.byte	0x8
- 171 002f 2E000000 		.4byte	.LASF1
+ 171 002f BC000000 		.4byte	.LASF1
  172 0033 02       		.uleb128 0x2
  173 0034 02       		.byte	0x2
  174 0035 05       		.byte	0x5
- 175 0036 54000000 		.4byte	.LASF2
+ 175 0036 E2000000 		.4byte	.LASF2
  176 003a 02       		.uleb128 0x2
  177 003b 02       		.byte	0x2
  178 003c 07       		.byte	0x7
- 179 003d 06020000 		.4byte	.LASF3
+ 179 003d F8010000 		.4byte	.LASF3
  180 0041 02       		.uleb128 0x2
  181 0042 04       		.byte	0x4
  182 0043 05       		.byte	0x5
- 183 0044 69010000 		.4byte	.LASF4
+ 183 0044 7A010000 		.4byte	.LASF4
  184 0048 02       		.uleb128 0x2
  185 0049 04       		.byte	0x4
  186 004a 07       		.byte	0x7
- 187 004b 42000000 		.4byte	.LASF5
+ 187 004b D0000000 		.4byte	.LASF5
  188 004f 02       		.uleb128 0x2
  189 0050 08       		.byte	0x8
  190 0051 05       		.byte	0x5
@@ -326,7 +326,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  192 0056 02       		.uleb128 0x2
  193 0057 08       		.byte	0x8
  194 0058 07       		.byte	0x7
- 195 0059 5E000000 		.4byte	.LASF7
+ 195 0059 EC000000 		.4byte	.LASF7
  196 005d 03       		.uleb128 0x3
  197 005e 04       		.byte	0x4
  198 005f 05       		.byte	0x5
@@ -334,34 +334,34 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  200 0064 02       		.uleb128 0x2
  201 0065 04       		.byte	0x4
  202 0066 07       		.byte	0x7
- 203 0067 21000000 		.4byte	.LASF8
+ 203 0067 A8000000 		.4byte	.LASF8
  204 006b 04       		.uleb128 0x4
- 205 006c 3C000000 		.4byte	.LASF9
+ 205 006c CA000000 		.4byte	.LASF9
  206 0070 02       		.byte	0x2
  207 0071 D201     		.2byte	0x1d2
  208 0073 2C000000 		.4byte	0x2c
  209 0077 04       		.uleb128 0x4
- 210 0078 0E000000 		.4byte	.LASF10
+ 210 0078 B5000000 		.4byte	.LASF10
  211 007c 02       		.byte	0x2
  212 007d D401     		.2byte	0x1d4
  213 007f 48000000 		.4byte	0x48
  214 0083 02       		.uleb128 0x2
  215 0084 04       		.byte	0x4
  216 0085 04       		.byte	0x4
- 217 0086 96000000 		.4byte	.LASF11
+ 217 0086 24010000 		.4byte	.LASF11
  218 008a 02       		.uleb128 0x2
  219 008b 08       		.byte	0x8
  220 008c 04       		.byte	0x4
- 221 008d D9000000 		.4byte	.LASF12
+ 221 008d 67010000 		.4byte	.LASF12
  222 0091 02       		.uleb128 0x2
  223 0092 01       		.byte	0x1
  224 0093 08       		.byte	0x8
- 225 0094 A6000000 		.4byte	.LASF13
+ 225 0094 34010000 		.4byte	.LASF13
  226 0098 04       		.uleb128 0x4
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 7
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 7
 
 
- 227 0099 72010000 		.4byte	.LASF14
+ 227 0099 83010000 		.4byte	.LASF14
  228 009d 02       		.byte	0x2
  229 009e 7E02     		.2byte	0x27e
  230 00a0 A4000000 		.4byte	0xa4
@@ -370,30 +370,30 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  233 00a9 02       		.uleb128 0x2
  234 00aa 08       		.byte	0x8
  235 00ab 04       		.byte	0x4
- 236 00ac 31020000 		.4byte	.LASF15
+ 236 00ac 23020000 		.4byte	.LASF15
  237 00b0 02       		.uleb128 0x2
  238 00b1 04       		.byte	0x4
  239 00b2 07       		.byte	0x7
- 240 00b3 50020000 		.4byte	.LASF16
+ 240 00b3 42020000 		.4byte	.LASF16
  241 00b7 06       		.uleb128 0x6
  242 00b8 01       		.byte	0x1
  243 00b9 03       		.byte	0x3
  244 00ba 21       		.byte	0x21
  245 00bb CC000000 		.4byte	0xcc
  246 00bf 07       		.uleb128 0x7
- 247 00c0 15000000 		.4byte	.LASF27
+ 247 00c0 9C000000 		.4byte	.LASF27
  248 00c4 03       		.byte	0x3
  249 00c5 23       		.byte	0x23
  250 00c6 6B000000 		.4byte	0x6b
  251 00ca 00       		.byte	0
  252 00cb 00       		.byte	0
  253 00cc 08       		.uleb128 0x8
- 254 00cd C6000000 		.4byte	.LASF17
+ 254 00cd 54010000 		.4byte	.LASF17
  255 00d1 03       		.byte	0x3
  256 00d2 24       		.byte	0x24
  257 00d3 B7000000 		.4byte	0xb7
  258 00d7 09       		.uleb128 0x9
- 259 00d8 AB000000 		.4byte	.LASF18
+ 259 00d8 39010000 		.4byte	.LASF18
  260 00dc 01       		.byte	0x1
  261 00dd 26       		.byte	0x26
  262 00de 00000000 		.4byte	.LFB1
@@ -401,7 +401,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  264 00e6 01       		.uleb128 0x1
  265 00e7 9C       		.byte	0x9c
  266 00e8 0A       		.uleb128 0xa
- 267 00e9 BB000000 		.4byte	.LASF20
+ 267 00e9 49010000 		.4byte	.LASF20
  268 00ed 01       		.byte	0x1
  269 00ee 3A       		.byte	0x3a
  270 00ef 00000000 		.4byte	.LFB2
@@ -414,18 +414,18 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  277 0102 48010000 		.4byte	0x148
  278 0106 00       		.byte	0
  279 0107 09       		.uleb128 0x9
- 280 0108 3D020000 		.4byte	.LASF19
+ 280 0108 2F020000 		.4byte	.LASF19
  281 010c 01       		.byte	0x1
  282 010d 58       		.byte	0x58
  283 010e 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 8
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 8
 
 
  284 0112 02000000 		.4byte	.LFE3-.LFB3
  285 0116 01       		.uleb128 0x1
  286 0117 9C       		.byte	0x9c
  287 0118 0A       		.uleb128 0xa
- 288 0119 59020000 		.4byte	.LASF21
+ 288 0119 4B020000 		.4byte	.LASF21
  289 011d 01       		.byte	0x1
  290 011e 6C       		.byte	0x6c
  291 011f 00000000 		.4byte	.LFB4
@@ -438,7 +438,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  298 0132 54010000 		.4byte	0x154
  299 0136 00       		.byte	0
  300 0137 0C       		.uleb128 0xc
- 301 0138 5D010000 		.4byte	.LASF28
+ 301 0138 6E010000 		.4byte	.LASF28
  302 013c 01       		.byte	0x1
  303 013d 15       		.byte	0x15
  304 013e CC000000 		.4byte	0xcc
@@ -446,13 +446,13 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  306 0143 03       		.byte	0x3
  307 0144 00000000 		.4byte	PWM2_backup
  308 0148 0D       		.uleb128 0xd
- 309 0149 9C000000 		.4byte	.LASF22
- 310 014d 9C000000 		.4byte	.LASF22
+ 309 0149 2A010000 		.4byte	.LASF22
+ 310 014d 2A010000 		.4byte	.LASF22
  311 0151 03       		.byte	0x3
  312 0152 3301     		.2byte	0x133
  313 0154 0D       		.uleb128 0xd
- 314 0155 25020000 		.4byte	.LASF23
- 315 0159 25020000 		.4byte	.LASF23
+ 314 0155 17020000 		.4byte	.LASF23
+ 315 0159 17020000 		.4byte	.LASF23
  316 015d 03       		.byte	0x3
  317 015e 3101     		.2byte	0x131
  318 0160 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  338 0011 00       		.byte	0
  339 0012 00       		.byte	0
  340 0013 02       		.uleb128 0x2
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 9
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 9
 
 
  341 0014 24       		.uleb128 0x24
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  395 004a 07       		.uleb128 0x7
  396 004b 0D       		.uleb128 0xd
  397 004c 00       		.byte	0
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 10
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 10
 
 
  398 004d 03       		.uleb128 0x3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  452 0084 0E       		.uleb128 0xe
  453 0085 3A       		.uleb128 0x3a
  454 0086 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 11
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 11
 
 
  455 0087 3B       		.uleb128 0x3b
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  509 00c0 05       		.uleb128 0x5
  510 00c1 00       		.byte	0
  511 00c2 00       		.byte	0
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 12
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 12
 
 
  512 00c3 00       		.byte	0
@@ -704,158 +704,157 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 1
  547      206C6F6E 
  547      6720696E 
  547      7400
- 548              	.LASF10:
- 549 000e 75696E74 		.ascii	"uint32\000"
- 549      333200
- 550              	.LASF27:
- 551 0015 656E6162 		.ascii	"enableState\000"
- 551      6C655374 
- 551      61746500 
- 552              	.LASF8:
- 553 0021 756E7369 		.ascii	"unsigned int\000"
- 553      676E6564 
- 553      20696E74 
- 553      00
- 554              	.LASF1:
- 555 002e 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 13
+ 548              	.LASF24:
+ 549 000e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 549      43313120 
+ 549      352E342E 
+ 549      31203230 
+ 549      31363036 
+ 550 0041 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 550      20726576 
+ 550      6973696F 
+ 550      6E203233 
+ 550      37373135 
+ 551 0074 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 551      66756E63 
+ 551      74696F6E 
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 13
 
 
+ 551      2D736563 
+ 551      74696F6E 
+ 552              	.LASF27:
+ 553 009c 656E6162 		.ascii	"enableState\000"
+ 553      6C655374 
+ 553      61746500 
+ 554              	.LASF8:
+ 555 00a8 756E7369 		.ascii	"unsigned int\000"
  555      676E6564 
- 555      20636861 
- 555      7200
- 556              	.LASF9:
- 557 003c 75696E74 		.ascii	"uint8\000"
- 557      3800
- 558              	.LASF5:
- 559 0042 6C6F6E67 		.ascii	"long unsigned int\000"
- 559      20756E73 
- 559      69676E65 
- 559      6420696E 
- 559      7400
- 560              	.LASF2:
- 561 0054 73686F72 		.ascii	"short int\000"
- 561      7420696E 
- 561      7400
- 562              	.LASF7:
- 563 005e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 563      206C6F6E 
- 563      6720756E 
- 563      7369676E 
- 563      65642069 
- 564              	.LASF25:
- 565 0075 47656E65 		.ascii	"Generated_Source\\PSoC4\\PWM2_PM.c\000"
- 565      72617465 
- 565      645F536F 
- 565      75726365 
- 565      5C50536F 
- 566              	.LASF11:
- 567 0096 666C6F61 		.ascii	"float\000"
- 567      7400
- 568              	.LASF22:
- 569 009c 50574D32 		.ascii	"PWM2_Stop\000"
- 569      5F53746F 
- 569      7000
- 570              	.LASF13:
- 571 00a6 63686172 		.ascii	"char\000"
- 571      00
- 572              	.LASF18:
- 573 00ab 50574D32 		.ascii	"PWM2_SaveConfig\000"
- 573      5F536176 
- 573      65436F6E 
- 573      66696700 
- 574              	.LASF20:
- 575 00bb 50574D32 		.ascii	"PWM2_Sleep\000"
- 575      5F536C65 
- 575      657000
- 576              	.LASF17:
- 577 00c6 50574D32 		.ascii	"PWM2_BACKUP_STRUCT\000"
- 577      5F424143 
- 577      4B55505F 
- 577      53545255 
- 577      435400
- 578              	.LASF12:
- 579 00d9 646F7562 		.ascii	"double\000"
- 579      6C6500
- 580              	.LASF26:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 14
+ 555      20696E74 
+ 555      00
+ 556              	.LASF10:
+ 557 00b5 75696E74 		.ascii	"uint32\000"
+ 557      333200
+ 558              	.LASF1:
+ 559 00bc 756E7369 		.ascii	"unsigned char\000"
+ 559      676E6564 
+ 559      20636861 
+ 559      7200
+ 560              	.LASF9:
+ 561 00ca 75696E74 		.ascii	"uint8\000"
+ 561      3800
+ 562              	.LASF5:
+ 563 00d0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 563      20756E73 
+ 563      69676E65 
+ 563      6420696E 
+ 563      7400
+ 564              	.LASF2:
+ 565 00e2 73686F72 		.ascii	"short int\000"
+ 565      7420696E 
+ 565      7400
+ 566              	.LASF7:
+ 567 00ec 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 567      206C6F6E 
+ 567      6720756E 
+ 567      7369676E 
+ 567      65642069 
+ 568              	.LASF25:
+ 569 0103 47656E65 		.ascii	"Generated_Source\\PSoC4\\PWM2_PM.c\000"
+ 569      72617465 
+ 569      645F536F 
+ 569      75726365 
+ 569      5C50536F 
+ 570              	.LASF11:
+ 571 0124 666C6F61 		.ascii	"float\000"
+ 571      7400
+ 572              	.LASF22:
+ 573 012a 50574D32 		.ascii	"PWM2_Stop\000"
+ 573      5F53746F 
+ 573      7000
+ 574              	.LASF13:
+ 575 0134 63686172 		.ascii	"char\000"
+ 575      00
+ 576              	.LASF18:
+ 577 0139 50574D32 		.ascii	"PWM2_SaveConfig\000"
+ 577      5F536176 
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 14
 
 
- 581 00e0 473A5C4D 		.ascii	"G:\\My Drive\\Husky Robotics\\Electronics\\Arm_Elec"
- 581      79204472 
- 581      6976655C 
- 581      4875736B 
- 581      7920526F 
- 582 010f 74726F6E 		.ascii	"tronics\\PSoC Workspaces\\MotorBoard2017-18_PSoC Wo"
- 582      6963735C 
- 582      50536F43 
- 582      20576F72 
- 582      6B737061 
- 583 0140 726B7370 		.ascii	"rkspace\\PioneerLSeries.cydsn\000"
- 583      6163655C 
- 583      50696F6E 
- 583      6565724C 
- 583      53657269 
+ 577      65436F6E 
+ 577      66696700 
+ 578              	.LASF20:
+ 579 0149 50574D32 		.ascii	"PWM2_Sleep\000"
+ 579      5F536C65 
+ 579      657000
+ 580              	.LASF17:
+ 581 0154 50574D32 		.ascii	"PWM2_BACKUP_STRUCT\000"
+ 581      5F424143 
+ 581      4B55505F 
+ 581      53545255 
+ 581      435400
+ 582              	.LASF12:
+ 583 0167 646F7562 		.ascii	"double\000"
+ 583      6C6500
  584              	.LASF28:
- 585 015d 50574D32 		.ascii	"PWM2_backup\000"
+ 585 016e 50574D32 		.ascii	"PWM2_backup\000"
  585      5F626163 
  585      6B757000 
  586              	.LASF4:
- 587 0169 6C6F6E67 		.ascii	"long int\000"
+ 587 017a 6C6F6E67 		.ascii	"long int\000"
  587      20696E74 
  587      00
  588              	.LASF14:
- 589 0172 72656733 		.ascii	"reg32\000"
+ 589 0183 72656733 		.ascii	"reg32\000"
  589      3200
- 590              	.LASF24:
- 591 0178 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 591      43313120 
- 591      352E342E 
- 591      31203230 
- 591      31363036 
- 592 01ab 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 592      20726576 
- 592      6973696F 
- 592      6E203233 
- 592      37373135 
- 593 01de 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 593      66756E63 
- 593      74696F6E 
- 593      2D736563 
- 593      74696F6E 
+ 590              	.LASF26:
+ 591 0189 433A5C55 		.ascii	"C:\\Users\\Default User.DESKTOP-J8EE37M\\Documents\\"
+ 591      73657273 
+ 591      5C446566 
+ 591      61756C74 
+ 591      20557365 
+ 592 01b9 50536F43 		.ascii	"PSoC Creator\\HuskyRobotics\\PioneerLSeries\\Pionee"
+ 592      20437265 
+ 592      61746F72 
+ 592      5C487573 
+ 592      6B79526F 
+ 593 01e9 724C5365 		.ascii	"rLSeries.cydsn\000"
+ 593      72696573 
+ 593      2E637964 
+ 593      736E00
  594              	.LASF3:
- 595 0206 73686F72 		.ascii	"short unsigned int\000"
+ 595 01f8 73686F72 		.ascii	"short unsigned int\000"
  595      7420756E 
  595      7369676E 
  595      65642069 
  595      6E7400
  596              	.LASF0:
- 597 0219 7369676E 		.ascii	"signed char\000"
+ 597 020b 7369676E 		.ascii	"signed char\000"
  597      65642063 
  597      68617200 
  598              	.LASF23:
- 599 0225 50574D32 		.ascii	"PWM2_Enable\000"
+ 599 0217 50574D32 		.ascii	"PWM2_Enable\000"
  599      5F456E61 
  599      626C6500 
  600              	.LASF15:
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccHWkRsP.s 			page 15
+ 601 0223 6C6F6E67 		.ascii	"long double\000"
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccb9VWmE.s 			page 15
 
 
- 601 0231 6C6F6E67 		.ascii	"long double\000"
  601      20646F75 
  601      626C6500 
  602              	.LASF19:
- 603 023d 50574D32 		.ascii	"PWM2_RestoreConfig\000"
+ 603 022f 50574D32 		.ascii	"PWM2_RestoreConfig\000"
  603      5F526573 
  603      746F7265 
  603      436F6E66 
  603      696700
  604              	.LASF16:
- 605 0250 73697A65 		.ascii	"sizetype\000"
+ 605 0242 73697A65 		.ascii	"sizetype\000"
  605      74797065 
  605      00
  606              	.LASF21:
- 607 0259 50574D32 		.ascii	"PWM2_Wakeup\000"
+ 607 024b 50574D32 		.ascii	"PWM2_Wakeup\000"
  607      5F57616B 
  607      65757000 
  608              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

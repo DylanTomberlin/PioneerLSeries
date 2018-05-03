@@ -32,6 +32,70 @@
   <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\Pot0Pin.h" value="HEADER;;;;;Pot0Pin" />
   <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\Pot0Pin_aliases.h" value="HEADER;;;;;Pot0Pin" />
   <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\Pot0Pin_PM.c" value="SOURCE_C;CortexM0;;;;Pot0Pin" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\PWM0.c" value="SOURCE_C;CortexM0;;;;PWM0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\PWM0.h" value="HEADER;;;;;PWM0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\PWM0_PM.c" value="SOURCE_C;CortexM0;;;;PWM0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\PWM1.c" value="SOURCE_C;CortexM0;;;;PWM1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\PWM1.h" value="HEADER;;;;;PWM1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\PWM1_PM.c" value="SOURCE_C;CortexM0;;;;PWM1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\PWM2.c" value="SOURCE_C;CortexM0;;;;PWM2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\PWM2.h" value="HEADER;;;;;PWM2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\PWM2_PM.c" value="SOURCE_C;CortexM0;;;;PWM2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM0;;;;Clock_1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\isrLim2.c" value="SOURCE_C;CortexM0;;;;isrLim2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\isrLim2.h" value="HEADER;;;;;isrLim2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\isrLim1.c" value="SOURCE_C;CortexM0;;;;isrLim1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\isrLim1.h" value="HEADER;;;;;isrLim1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\isrLim0.c" value="SOURCE_C;CortexM0;;;;isrLim0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\isrLim0.h" value="HEADER;;;;;isrLim0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin0.c" value="SOURCE_C;CortexM0;;;;LimitPin0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin0.h" value="HEADER;;;;;LimitPin0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin0_aliases.h" value="HEADER;;;;;LimitPin0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin0_PM.c" value="SOURCE_C;CortexM0;;;;LimitPin0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin2.c" value="SOURCE_C;CortexM0;;;;LimitPin2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin2.h" value="HEADER;;;;;LimitPin2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin2_aliases.h" value="HEADER;;;;;LimitPin2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin2_PM.c" value="SOURCE_C;CortexM0;;;;LimitPin2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin1.c" value="SOURCE_C;CortexM0;;;;LimitPin1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin1.h" value="HEADER;;;;;LimitPin1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin1_aliases.h" value="HEADER;;;;;LimitPin1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\LimitPin1_PM.c" value="SOURCE_C;CortexM0;;;;LimitPin1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadDec1.c" value="SOURCE_C;CortexM0;;;;QuadDec1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadDec1.h" value="HEADER;;;;;QuadDec1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadDec1_PM.c" value="SOURCE_C;CortexM0;;;;QuadDec1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadDec2.c" value="SOURCE_C;CortexM0;;;;QuadDec2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadDec2.h" value="HEADER;;;;;QuadDec2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadDec2_PM.c" value="SOURCE_C;CortexM0;;;;QuadDec2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadDec0.c" value="SOURCE_C;CortexM0;;;;QuadDec0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadDec0.h" value="HEADER;;;;;QuadDec0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadDec0_PM.c" value="SOURCE_C;CortexM0;;;;QuadDec0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A1.c" value="SOURCE_C;CortexM0;;;;A1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A1.h" value="HEADER;;;;;A1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A1_aliases.h" value="HEADER;;;;;A1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A1_PM.c" value="SOURCE_C;CortexM0;;;;A1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B1.c" value="SOURCE_C;CortexM0;;;;B1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B1.h" value="HEADER;;;;;B1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B1_aliases.h" value="HEADER;;;;;B1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B1_PM.c" value="SOURCE_C;CortexM0;;;;B1" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A2.c" value="SOURCE_C;CortexM0;;;;A2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A2.h" value="HEADER;;;;;A2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A2_aliases.h" value="HEADER;;;;;A2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A2_PM.c" value="SOURCE_C;CortexM0;;;;A2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B2.c" value="SOURCE_C;CortexM0;;;;B2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B2.h" value="HEADER;;;;;B2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B2_aliases.h" value="HEADER;;;;;B2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B2_PM.c" value="SOURCE_C;CortexM0;;;;B2" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A0.c" value="SOURCE_C;CortexM0;;;;A0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A0.h" value="HEADER;;;;;A0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A0_aliases.h" value="HEADER;;;;;A0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\A0_PM.c" value="SOURCE_C;CortexM0;;;;A0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B0.c" value="SOURCE_C;CortexM0;;;;B0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B0.h" value="HEADER;;;;;B0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B0_aliases.h" value="HEADER;;;;;B0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\B0_PM.c" value="SOURCE_C;CortexM0;;;;B0" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadClock.c" value="SOURCE_C;CortexM0;;;;QuadClock" />
+  <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\QuadClock.h" value="HEADER;;;;;QuadClock" />
   <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\ADC_IRQ.c" value="SOURCE_C;CortexM0;;;;ADC_IRQ" />
   <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\ADC_IRQ.h" value="HEADER;;;;;ADC_IRQ" />
   <file name="C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\codegentemp\ADC_intClock.c" value="SOURCE_C;CortexM0;;;;ADC_intClock" />

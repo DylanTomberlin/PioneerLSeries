@@ -61,6 +61,17 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitteriar.inc</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cydisabledsheets.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM0_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM2_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_1.h</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">Generated_Source\PSoC4\cm0gcc.ld</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">Generated_Source\PSoC4\Cm0RealView.scat</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Cm0Start.c</File>
@@ -121,6 +132,59 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LCD_LCDPort_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cy_em_eeprom.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cy_em_eeprom.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin2_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadClock.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadClock.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isrLim2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isrLim2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isrLim1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isrLim1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isrLim0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\isrLim0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin0_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LimitPin0_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec2_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\QuadDec0_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A2_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B2_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A0_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A0_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B0_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B0_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">

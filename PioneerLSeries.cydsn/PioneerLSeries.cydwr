@@ -12,9 +12,18 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
+      <Data key="3ed8f462-4628-4623-aa9d-b08e4fa41319" value="A1" />
+      <Data key="3fa37665-a359-4c9d-b094-cebd01b3eae6" value="B2" />
+      <Data key="6ef45a02-b067-41a0-b619-09e03a4c2d17" value="LimitPin2" />
+      <Data key="6fdb62c3-6752-4638-b620-ecff83d16bee" value="LimitPin0" />
+      <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="LimitPin1" />
+      <Data key="14e6321f-9fdc-4c8d-9d2a-42c438c11329" value="A2" />
+      <Data key="90f39142-ac86-40b1-aa0f-c350d4760718" value="B1" />
       <Data key="690e2a23-e363-4b42-8cb1-0ad2b3a32786/ed092b9b-d398-4703-be89-cebf998501f6" value="LCD_LCDPort" />
+      <Data key="8373abc0-275b-4978-8255-7a42968e3cbc" value="A0" />
       <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="Pot0Pin" />
       <Data key="b05bf64a-8a94-4c4b-9a81-4b3da3e3a94f" value="Pot1Pin" />
+      <Data key="c7de5a5f-5a7b-4778-b0b6-eea90802a928" value="B0" />
       <Data key="d87111f8-a31e-4e73-b5fc-e70508409c2b" value="Pot2Pin" />
     </Group>
   </Group>
@@ -3632,6 +3641,21 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="6ef45a02-b067-41a0-b619-09e03a4c2d17">
+      <Group key="0">
+        <Data key="Port Format" value="1,3" />
+      </Group>
+    </Group>
+    <Group key="6fdb62c3-6752-4638-b620-ecff83d16bee">
+      <Group key="0">
+        <Data key="Port Format" value="5,5" />
+      </Group>
+    </Group>
+    <Group key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba">
+      <Group key="0">
+        <Data key="Port Format" value="5,4" />
+      </Group>
+    </Group>
     <Group key="690e2a23-e363-4b42-8cb1-0ad2b3a32786/ed092b9b-d398-4703-be89-cebf998501f6">
       <Group key="0">
         <Data key="Port Format" value="11,0" />
