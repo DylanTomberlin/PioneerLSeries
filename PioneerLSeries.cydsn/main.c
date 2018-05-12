@@ -16,6 +16,8 @@ void initialize(void);
 void initDataStructs(void);
 void initTCBs(void);
 void initMotor(motor *currMotorPtr, int motorID);
+void initEncoders(void);
+void initPWMs(void);
 
 //external function prototypes
 //void addTask(tcb *newTask);
@@ -101,6 +103,8 @@ void initialize()
     initDataStructs();
     initTCBs();
     addTask(&potTCB);
+    initEncoders();
+    initPWMs();
 }
 
 void initMotor(motor *currMotorPtr, int motorID)
@@ -125,4 +129,20 @@ void initTCBs(void)
     potTCB.dataPtr  = &myPotData;
     displayTCB.currTask = display;
     displayTCB.dataPtr = &myDisplayData;
+}
+
+// This may start an unnecessary number of decoders if less than 3 are used
+void initEncoders(void)
+{
+    QuadDec0_Start();
+    QuadDec1_Start();
+    QuadDec2_Start();
+}
+
+// This may start the pwm signals at start which may make the motors run at startup, fix
+void initPWMs(void)
+{
+    PWM0_Start();
+    PWM1_Start();
+    PWM2_Start();
 }
