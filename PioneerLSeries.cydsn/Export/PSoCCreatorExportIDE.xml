@@ -45,6 +45,7 @@
           <File BuildType="BUILD" Toolchain="">tcb.h</File>
           <File BuildType="BUILD" Toolchain="">structs.h</File>
           <File BuildType="BUILD" Toolchain="">top.h</File>
+          <File BuildType="BUILD" Toolchain="">constants.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="E:\Users\Dylan\Documents\Husky Robotics\PSoCWorkspaces\HuskyRobotics2017-2018\PioneerLSeries\PioneerLSeries.cydsn\Generated_Source\PSoC4">

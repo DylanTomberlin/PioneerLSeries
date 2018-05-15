@@ -9,5 +9,5 @@
 #define CONSTANTS
     
     #define NUM_MOTORS 3  //Number of motors in the project
-    
+    #define NUM_FLAGS 5
 #endif

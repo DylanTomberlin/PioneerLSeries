@@ -30,17 +30,25 @@ void display(void *dataPointer);
 //declare motor variables from motor.h
 motor motor0;
 
-//declare global variables
-tcb *firstTCBPtr = 0;
-tcb *lastTCBPtr = 0;
-
 //data structs
 potData myPotData;
 displayData myDisplayData;
 
+
+//declare global variables
+
 //tcb structs
 tcb potTCB;
 tcb displayTCB;
+
+char addFlags[NUM_FLAGS];
+char removeFlags[NUM_FLAGS];
+tcb *taskArray[NUM_FLAGS] = {&potTCB, &displayTCB};
+
+tcb *firstTCBPtr = 0;
+tcb *lastTCBPtr = 0;
+
+
 
 int main(void)
 {

@@ -9,7 +9,7 @@ Archive member included to satisfy reference by file (symbol)
 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
                               .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o) (ADC_ISR)
 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                              .\CortexM0\ARM_GCC_541\Debug\main.o (LCD_Start)
+                              .\CortexM0\ARM_GCC_541\Debug\display.o (LCD_PrintString)
 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyBootAsmGnu.o)
                               .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o) (CyDelayCycles)
 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
@@ -483,7 +483,7 @@ END GROUP
                 0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
                 0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
 
-.text           0x00000000     0x11c8
+.text           0x00000000     0x11d8
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -523,239 +523,242 @@ END GROUP
                 0x00000244                executeTask
  .text.addTask  0x00000268       0x28 .\CortexM0\ARM_GCC_541\Debug\scheduler.o
                 0x00000268                addTask
- .text.display  0x00000290       0x18 .\CortexM0\ARM_GCC_541\Debug\display.o
+ .text.display  0x00000290       0x2c .\CortexM0\ARM_GCC_541\Debug\display.o
                 0x00000290                display
  .text.CYMEMZERO
-                0x000002a8        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000002bc        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.SetAnalogRoutingPumps
-                0x000002b4       0x20 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x000002b4                SetAnalogRoutingPumps
+                0x000002c8       0x20 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000002c8                SetAnalogRoutingPumps
  .text.AnalogSetDefault
-                0x000002d4       0x44 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000002e8       0x44 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.IntDefaultHandler
-                0x00000318       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00000318                IntDefaultHandler
- .text.Start_c  0x00000328       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00000328                Start_c
+                0x0000032c       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x0000032c                IntDefaultHandler
+ .text.Start_c  0x0000033c       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x0000033c                Start_c
  .text.initialize_psoc
-                0x00000370       0x4c .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00000370                initialize_psoc
+                0x00000384       0x4c .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000384                initialize_psoc
  .text.CySysClkImoDisableWcoLock
-                0x000003bc       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x000003bc                CySysClkImoDisableWcoLock
- .text.CySysClkImoGetWcoLock
                 0x000003d0       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x000003d0                CySysClkImoGetWcoLock
+                0x000003d0                CySysClkImoDisableWcoLock
+ .text.CySysClkImoGetWcoLock
+                0x000003e4       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x000003e4                CySysClkImoGetWcoLock
  .text.CySysClkImoEnableUsbLock
-                0x000003e4       0x3c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x000003e4                CySysClkImoEnableUsbLock
+                0x000003f8       0x3c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x000003f8                CySysClkImoEnableUsbLock
  .text.CySysClkImoDisableUsbLock
-                0x00000420       0x28 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x00000420                CySysClkImoDisableUsbLock
+                0x00000434       0x28 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x00000434                CySysClkImoDisableUsbLock
  .text.CySysClkImoGetUsbLock
-                0x00000448       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x00000448                CySysClkImoGetUsbLock
- .text.CyIntEnable
                 0x0000045c       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x0000045c                CyIntEnable
- .text.CyHalt   0x00000470        0x4 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x00000470                CyHalt
+                0x0000045c                CySysClkImoGetUsbLock
+ .text.CyIntEnable
+                0x00000470       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x00000470                CyIntEnable
+ .text.CyHalt   0x00000484        0x4 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x00000484                CyHalt
  .text.CyIntSetVector
-                0x00000474       0x24 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x00000474                CyIntSetVector
+                0x00000488       0x24 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x00000488                CyIntSetVector
  .text.CyIntSetPriority
-                0x00000498       0x4c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x00000498                CyIntSetPriority
- .text.CyDelay  0x000004e4       0x30 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x000004e4                CyDelay
+                0x000004ac       0x4c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x000004ac                CyIntSetPriority
+ .text.CyDelay  0x000004f8       0x30 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x000004f8                CyDelay
  .text.CySysClkImoEnableWcoLock
-                0x00000514       0xfc .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x00000514                CySysClkImoEnableWcoLock
+                0x00000528       0xfc .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x00000528                CySysClkImoEnableWcoLock
  .text.CyDelayUs
-                0x00000610       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x00000610                CyDelayUs
+                0x00000624       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x00000624                CyDelayUs
  .text.CySysClkWriteImoFreq
-                0x00000624      0x1e0 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x00000624                CySysClkWriteImoFreq
+                0x00000638      0x1e0 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x00000638                CySysClkWriteImoFreq
  .text.CySysWdtLocked
-                0x00000804       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
- .text.CySysClkWcoEnabled
                 0x00000818       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
-                0x00000818                CySysClkWcoEnabled
+ .text.CySysClkWcoEnabled
+                0x0000082c       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
+                0x0000082c                CySysClkWcoEnabled
  .text.CySysWdtLock
-                0x0000082c       0x1c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
-                0x0000082c                CySysWdtLock
+                0x00000840       0x1c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
+                0x00000840                CySysWdtLock
  .text.CySysWdtUnlock
-                0x00000848       0x30 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
-                0x00000848                CySysWdtUnlock
+                0x0000085c       0x30 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
+                0x0000085c                CySysWdtUnlock
  .text.CySysWdtClearInterrupt
-                0x00000878       0x4c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
-                0x00000878                CySysWdtClearInterrupt
+                0x0000088c       0x4c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
+                0x0000088c                CySysWdtClearInterrupt
  .text.CySysWdtIsr
-                0x000008c4       0xa4 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
-                0x000008c4                CySysWdtIsr
+                0x000008d8       0xa4 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
+                0x000008d8                CySysWdtIsr
  .text.ADC_Init
-                0x00000968      0x16c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
-                0x00000968                ADC_Init
+                0x0000097c      0x16c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
+                0x0000097c                ADC_Init
  .text.ADC_Enable
-                0x00000ad4       0x30 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
-                0x00000ad4                ADC_Enable
+                0x00000ae8       0x30 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
+                0x00000ae8                ADC_Enable
  .text.ADC_Start
-                0x00000b04       0x20 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
-                0x00000b04                ADC_Start
+                0x00000b18       0x20 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
+                0x00000b18                ADC_Start
  .text.ADC_GetResult16
-                0x00000b24       0x2c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
-                0x00000b24                ADC_GetResult16
- .text.ADC_ISR  0x00000b50        0xc .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
-                0x00000b50                ADC_ISR
+                0x00000b38       0x2c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
+                0x00000b38                ADC_GetResult16
+ .text.ADC_ISR  0x00000b64        0xc .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
+                0x00000b64                ADC_ISR
  .text.LCD_WrCntrlNib
-                0x00000b5c       0x34 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000b70       0x34 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
  .text.LCD_WrDatNib
-                0x00000b90       0x44 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000ba4       0x44 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
  .text.LCD_IsReady
-                0x00000bd4       0xb4 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                0x00000bd4                LCD_IsReady
+                0x00000be8       0xb4 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000be8                LCD_IsReady
  .text.LCD_WriteData
-                0x00000c88       0x18 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                0x00000c88                LCD_WriteData
+                0x00000c9c       0x18 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000c9c                LCD_WriteData
  .text.LCD_PrintString
-                0x00000ca0       0x1c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                0x00000ca0                LCD_PrintString
+                0x00000cb4       0x1c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000cb4                LCD_PrintString
  .text.LCD_WriteControl
-                0x00000cbc       0x18 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                0x00000cbc                LCD_WriteControl
+                0x00000cd0       0x18 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000cd0                LCD_WriteControl
  .text.LCD_Init
-                0x00000cd4       0x6c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                0x00000cd4                LCD_Init
+                0x00000ce8       0x6c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000ce8                LCD_Init
  .text.LCD_Enable
-                0x00000d40       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                0x00000d40                LCD_Enable
+                0x00000d54       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000d54                LCD_Enable
  .text.LCD_Start
-                0x00000d54       0x20 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                0x00000d54                LCD_Start
+                0x00000d68       0x20 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000d68                LCD_Start
  .text.LCD_Position
-                0x00000d74       0x3c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                0x00000d74                LCD_Position
+                0x00000d88       0x3c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000d88                LCD_Position
  .text.LCD_PrintU32Number
-                0x00000db0       0x4c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
-                0x00000db0                LCD_PrintU32Number
- *fill*         0x00000dfc        0x4 
- .text          0x00000e00       0x20 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyBootAsmGnu.o)
-                0x00000e00                CyDelayCycles
-                0x00000e12                CyEnterCriticalSection
-                0x00000e1a                CyExitCriticalSection
+                0x00000dc4       0x4c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+                0x00000dc4                LCD_PrintU32Number
+ .text          0x00000e10       0x20 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyBootAsmGnu.o)
+                0x00000e10                CyDelayCycles
+                0x00000e22                CyEnterCriticalSection
+                0x00000e2a                CyExitCriticalSection
  .text.CySysFlashSetWaitCycles
-                0x00000e20       0x54 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
-                0x00000e20                CySysFlashSetWaitCycles
- .text          0x00000e74      0x114 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
-                0x00000e74                __aeabi_uidiv
-                0x00000e74                __udivsi3
-                0x00000f80                __aeabi_uidivmod
- .text          0x00000f88      0x1d4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
-                0x00000f88                __divsi3
-                0x00000f88                __aeabi_idiv
-                0x00001154                __aeabi_idivmod
- .text          0x0000115c        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
-                0x0000115c                __aeabi_idiv0
-                0x0000115c                __aeabi_ldiv0
- .text.__errno  0x00001160        0xc e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
-                0x00001160                __errno
+                0x00000e30       0x54 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
+                0x00000e30                CySysFlashSetWaitCycles
+ .text          0x00000e84      0x114 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                0x00000e84                __aeabi_uidiv
+                0x00000e84                __udivsi3
+                0x00000f90                __aeabi_uidivmod
+ .text          0x00000f98      0x1d4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
+                0x00000f98                __divsi3
+                0x00000f98                __aeabi_idiv
+                0x00001164                __aeabi_idivmod
+ .text          0x0000116c        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x0000116c                __aeabi_idiv0
+                0x0000116c                __aeabi_ldiv0
+ .text.__errno  0x00001170        0xc e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x00001170                __errno
  .text.__libc_init_array
-                0x0000116c       0x4c e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
-                0x0000116c                __libc_init_array
- .text.memset   0x000011b8       0x10 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
-                0x000011b8                memset
+                0x0000117c       0x4c e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x0000117c                __libc_init_array
+ .text.memset   0x000011c8       0x10 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x000011c8                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x000011c8        0x0 linker stubs
+ .glue_7t       0x000011d8        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x000011c8        0x0 linker stubs
+ .glue_7        0x000011d8        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x000011c8        0x0 linker stubs
+ .vfp11_veneer  0x000011d8        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x000011c8        0x0
- .v4_bx         0x000011c8        0x0 linker stubs
+.v4_bx          0x000011d8        0x0
+ .v4_bx         0x000011d8        0x0 linker stubs
 
-.iplt           0x000011c8        0x0
- .iplt          0x000011c8        0x0 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.iplt           0x000011d8        0x0
+ .iplt          0x000011d8        0x0 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x000011c8        0x4
+.eh_frame       0x000011d8        0x4
  *(.eh_frame)
- .eh_frame      0x000011c8        0x0 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .eh_frame      0x000011c8        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .eh_frame      0x000011d8        0x0 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .eh_frame      0x000011d8        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000011cc                __exidx_end = .
+                0x000011dc                __exidx_end = .
 
-.rodata         0x000011cc       0x9c
+.rodata         0x000011dc       0xac
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x000011cc        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .rodata        0x000011d8       0x47 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
-                0x000011d8                cyImoFreqMhz2Reg
-                0x00001208                cyImoFreqMhz2DpllOffset
- *fill*         0x0000121f        0x1 
- .rodata        0x00001220        0xf .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
+ .rodata.str1.4
+                0x000011dc        0xc .\CortexM0\ARM_GCC_541\Debug\display.o
+                                  0xb (size before relaxing)
+ .rodata        0x000011e8        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata        0x000011f4       0x47 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+                0x000011f4                cyImoFreqMhz2Reg
+                0x00001224                cyImoFreqMhz2DpllOffset
+ *fill*         0x0000123b        0x1 
+ .rodata        0x0000123c        0xf .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
  .rodata.str1.1
-                0x0000122f        0x2 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
-                0x00001234                . = ALIGN (0x4)
- *fill*         0x00001231        0x3 
+                0x0000124b        0x2 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x00001250                . = ALIGN (0x4)
+ *fill*         0x0000124d        0x3 
  *(.init)
- .init          0x00001234        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00001234                _init
- .init          0x00001238        0x8 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x00001240                . = ALIGN (0x4)
-                0x00001240                __preinit_array_start = .
+ .init          0x00001250        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00001250                _init
+ .init          0x00001254        0x8 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x0000125c                . = ALIGN (0x4)
+                0x0000125c                __preinit_array_start = .
  *(.preinit_array)
-                0x00001240                __preinit_array_end = .
-                0x00001240                . = ALIGN (0x4)
-                0x00001240                __init_array_start = .
+                0x0000125c                __preinit_array_end = .
+                0x0000125c                . = ALIGN (0x4)
+                0x0000125c                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00001240        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .init_array    0x00001244        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00001248                __init_array_end = .
-                0x00001248                . = ALIGN (0x4)
+ .init_array    0x0000125c        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .init_array    0x00001260        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00001264                __init_array_end = .
+                0x00001264                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00001248        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00001248                _fini
- .fini          0x0000124c        0x8 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x00001254                . = ALIGN (0x4)
-                0x00001254                __fini_array_start = .
+ .fini          0x00001264        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00001264                _fini
+ .fini          0x00001268        0x8 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00001270                . = ALIGN (0x4)
+                0x00001270                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00001254        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .fini_array    0x00001270        0x4 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00001258                __fini_array_end = .
-                0x00001258                . = ALIGN (0x4)
+                0x00001274                __fini_array_end = .
+                0x00001274                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00001258                . = ALIGN (0x4)
+                0x00001274                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00001258                . = ALIGN (0x4)
-                0x00001258                __cy_regions = .
-                0x00001258        0x4 LONG 0x1268 __cy_region_init_ram
-                0x0000125c        0x4 LONG 0x200000c0 __cy_region_start_data
-                0x00001260        0x4 LONG 0x88 __cy_region_init_size_ram
-                0x00001264        0x4 LONG 0xc8 __cy_region_zero_size_ram
-                0x00001268                __cy_regions_end = .
-                0x00001268                . = ALIGN (0x8)
-                0x00001268                _etext = .
+                0x00001274                . = ALIGN (0x4)
+                0x00001274                __cy_regions = .
+                0x00001274        0x4 LONG 0x1288 __cy_region_init_ram
+                0x00001278        0x4 LONG 0x200000c0 __cy_region_start_data
+                0x0000127c        0x4 LONG 0x88 __cy_region_init_size_ram
+                0x00001280        0x4 LONG 0xc8 __cy_region_zero_size_ram
+                0x00001284                __cy_regions_end = .
+                0x00001288                . = ALIGN (0x8)
+ *fill*         0x00001284        0x4 
+                0x00001288                _etext = .
 
 .cy_checksum_exclude
-                0x00001268        0x0
+                0x00001288        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x20000000       0xc0
@@ -767,7 +770,7 @@ END GROUP
 .noinit
  *(.noinit)
 
-.data           0x200000c0       0x88 load address 0x00001268
+.data           0x200000c0       0x88 load address 0x00001288
                 0x200000c0                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x200000c0        0x0 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
@@ -793,10 +796,10 @@ END GROUP
  *(.ram)
                 0x20000148                _edata = .
 
-.igot.plt       0x20000148        0x0 load address 0x000012f0
+.igot.plt       0x20000148        0x0 load address 0x00001310
  .igot.plt      0x20000148        0x0 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.bss            0x20000148       0xc8 load address 0x000012f0
+.bss            0x20000148       0xc8 load address 0x00001310
                 0x20000148                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -831,11 +834,11 @@ END GROUP
                 0x20000210                __end = .
                 0x20000210                PROVIDE (end, .)
                 0x20000210                PROVIDE (__bss_end__, .)
-                0x00001268                __cy_region_init_ram = LOADADDR (.data)
+                0x00001288                __cy_region_init_ram = LOADADDR (.data)
                 0x00000088                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x000000c8                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x20000210       0x80 load address 0x000012f0
+.heap           0x20000210       0x80 load address 0x00001310
                 0x20000210                . = _end
                 0x20000290                . = (. + 0x80)
  *fill*         0x20000210       0x80 
@@ -875,8 +878,8 @@ END GROUP
                 0x90600000        0x1 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                 0x90600000                cy_meta_chipprotect
 
-.rel.dyn        0x000012f0        0x0 load address 0x90600004
- .rel.iplt      0x000012f0        0x0 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.rel.dyn        0x00001310        0x0 load address 0x90600004
+ .rel.iplt      0x00001310        0x0 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -930,56 +933,56 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x47fc
+.debug_info     0x00000000     0x4825
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x389 .\CortexM0\ARM_GCC_541\Debug\main.o
  .debug_info    0x00000389      0x12f .\CortexM0\ARM_GCC_541\Debug\pots.o
- .debug_info    0x000004b8      0x149 .\CortexM0\ARM_GCC_541\Debug\scheduler.o
- .debug_info    0x00000601      0x150 .\CortexM0\ARM_GCC_541\Debug\display.o
- .debug_info    0x00000751      0x2df .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x00000a30       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x00000b28      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_info    0x00000eca     0x172c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
- .debug_info    0x000025f6     0x1058 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
- .debug_info    0x0000364e      0x5a5 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
- .debug_info    0x00003bf3       0xcb .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
- .debug_info    0x00003cbe      0x721 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
- .debug_info    0x000043df       0xcb .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyBootAsmGnu.o)
- .debug_info    0x000044aa      0x352 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
+ .debug_info    0x000004b8      0x148 .\CortexM0\ARM_GCC_541\Debug\scheduler.o
+ .debug_info    0x00000600      0x17a .\CortexM0\ARM_GCC_541\Debug\display.o
+ .debug_info    0x0000077a      0x2df .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00000a59       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00000b51      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_info    0x00000ef3     0x172c .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+ .debug_info    0x0000261f     0x1058 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
+ .debug_info    0x00003677      0x5a5 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
+ .debug_info    0x00003c1c       0xcb .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
+ .debug_info    0x00003ce7      0x721 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+ .debug_info    0x00004408       0xcb .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyBootAsmGnu.o)
+ .debug_info    0x000044d3      0x352 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
 
-.debug_abbrev   0x00000000     0x11c8
+.debug_abbrev   0x00000000     0x11cc
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x173 .\CortexM0\ARM_GCC_541\Debug\main.o
  .debug_abbrev  0x00000173       0xf1 .\CortexM0\ARM_GCC_541\Debug\pots.o
- .debug_abbrev  0x00000264       0xdf .\CortexM0\ARM_GCC_541\Debug\scheduler.o
- .debug_abbrev  0x00000343       0xef .\CortexM0\ARM_GCC_541\Debug\display.o
- .debug_abbrev  0x00000432      0x188 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_abbrev  0x000005ba       0x5d .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_abbrev  0x00000617      0x1d7 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_abbrev  0x000007ee      0x288 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
- .debug_abbrev  0x00000a76      0x248 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
- .debug_abbrev  0x00000cbe      0x19e .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
- .debug_abbrev  0x00000e5c       0x65 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
- .debug_abbrev  0x00000ec1      0x171 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
- .debug_abbrev  0x00001032       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00001046      0x182 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
+ .debug_abbrev  0x00000264       0xd8 .\CortexM0\ARM_GCC_541\Debug\scheduler.o
+ .debug_abbrev  0x0000033c       0xfa .\CortexM0\ARM_GCC_541\Debug\display.o
+ .debug_abbrev  0x00000436      0x188 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x000005be       0x5d .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x0000061b      0x1d7 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_abbrev  0x000007f2      0x288 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+ .debug_abbrev  0x00000a7a      0x248 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
+ .debug_abbrev  0x00000cc2      0x19e .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
+ .debug_abbrev  0x00000e60       0x65 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
+ .debug_abbrev  0x00000ec5      0x171 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+ .debug_abbrev  0x00001036       0x14 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x0000104a      0x182 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
 
-.debug_line     0x00000000     0x1c1d
+.debug_line     0x00000000     0x1c1f
  *(.debug_line)
  .debug_line    0x00000000       0xf1 .\CortexM0\ARM_GCC_541\Debug\main.o
  .debug_line    0x000000f1       0x83 .\CortexM0\ARM_GCC_541\Debug\pots.o
  .debug_line    0x00000174       0x5f .\CortexM0\ARM_GCC_541\Debug\scheduler.o
- .debug_line    0x000001d3       0x76 .\CortexM0\ARM_GCC_541\Debug\display.o
- .debug_line    0x00000249      0x162 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x000003ab      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x000004ec      0x236 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_line    0x00000722      0x87d .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
- .debug_line    0x00000f9f      0x5d1 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
- .debug_line    0x00001570      0x28a .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
- .debug_line    0x000017fa       0x62 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
- .debug_line    0x0000185c      0x1e6 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
- .debug_line    0x00001a42       0x68 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyBootAsmGnu.o)
- .debug_line    0x00001aaa      0x173 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
+ .debug_line    0x000001d3       0x78 .\CortexM0\ARM_GCC_541\Debug\display.o
+ .debug_line    0x0000024b      0x162 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x000003ad      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x000004ee      0x236 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_line    0x00000724      0x87d .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+ .debug_line    0x00000fa1      0x5d1 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
+ .debug_line    0x00001572      0x28a .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
+ .debug_line    0x000017fc       0x62 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
+ .debug_line    0x0000185e      0x1e6 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+ .debug_line    0x00001a44       0x68 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyBootAsmGnu.o)
+ .debug_line    0x00001aac      0x173 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
 
 .debug_frame    0x00000000     0x1468
  *(.debug_frame)
@@ -1009,33 +1012,33 @@ END GROUP
  .debug_frame   0x00001420       0x28 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
  .debug_frame   0x00001448       0x20 e:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x1a62
+.debug_str      0x00000000     0x1a6c
  *(.debug_str)
  .debug_str     0x00000000      0x2c1 .\CortexM0\ARM_GCC_541\Debug\main.o
                                 0x307 (size before relaxing)
  .debug_str     0x000002c1       0x36 .\CortexM0\ARM_GCC_541\Debug\pots.o
                                 0x201 (size before relaxing)
- .debug_str     0x000002f7       0x98 .\CortexM0\ARM_GCC_541\Debug\scheduler.o
-                                0x20d (size before relaxing)
- .debug_str     0x0000038f       0x54 .\CortexM0\ARM_GCC_541\Debug\display.o
-                                0x21b (size before relaxing)
- .debug_str     0x000003e3       0xf3 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_str     0x000002f7       0xa2 .\CortexM0\ARM_GCC_541\Debug\scheduler.o
+                                0x217 (size before relaxing)
+ .debug_str     0x00000399       0x64 .\CortexM0\ARM_GCC_541\Debug\display.o
+                                0x225 (size before relaxing)
+ .debug_str     0x000003fd       0xf3 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x2bd (size before relaxing)
- .debug_str     0x000004d6       0x63 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x000004f0       0x63 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                                 0x203 (size before relaxing)
- .debug_str     0x00000539      0x13a .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_str     0x00000553      0x13a .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
                                 0x33c (size before relaxing)
- .debug_str     0x00000673      0x926 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
+ .debug_str     0x0000068d      0x926 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLib.o)
                                 0xb60 (size before relaxing)
- .debug_str     0x00000f99      0x6de .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
+ .debug_str     0x00000fb3      0x6de .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyLFClk.o)
                                 0x958 (size before relaxing)
- .debug_str     0x00001677      0x1c4 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
+ .debug_str     0x00001691      0x1c4 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC.o)
                                 0x413 (size before relaxing)
- .debug_str     0x0000183b       0x35 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
+ .debug_str     0x00001855       0x35 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(ADC_INT.o)
                                 0x1f8 (size before relaxing)
- .debug_str     0x00001870      0x140 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
+ .debug_str     0x0000188a      0x130 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(LCD.o)
                                 0x367 (size before relaxing)
- .debug_str     0x000019b0       0xb2 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
+ .debug_str     0x000019ba       0xb2 .\CortexM0\ARM_GCC_541\Debug\PioneerLSeries.a(CyFlash.o)
                                 0x2eb (size before relaxing)
 
 .debug_loc      0x00000000     0x323b
