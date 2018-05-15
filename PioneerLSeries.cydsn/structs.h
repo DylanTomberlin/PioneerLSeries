@@ -34,6 +34,14 @@ typedef struct
     int pwmData[NUM_MOTORS];
 } pwmData;
 
+//Dummy data struct for debugging
+typedef struct
+{
+    int number;
+    char myChar[2];
+} dummyData;
+
+
 // an enum for whether a motor is a Talon or Cytron
 enum motorType{Talon = 0, Cytron = 1};
 // stores the type of each motor  as an int

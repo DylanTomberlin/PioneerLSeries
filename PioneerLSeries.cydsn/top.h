@@ -23,6 +23,10 @@
     void groundTask(tcb *taskPtr);
     void addTask(tcb *newTask);
     void executeTask(tcb *tcbPtr);
+    
+    //global variables
+    extern char addFlags[], removeFlags[];
+    extern int debugCount;
     //cypress files:
     //#include "cytypes.h"
     

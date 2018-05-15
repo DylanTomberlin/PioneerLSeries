@@ -1,11 +1,7 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * Dylan Tomberlin
+ * Husky Robotics Team 2017-2018
  *
  * ========================================
 */
@@ -18,12 +14,19 @@ void initTCBs(void);
 void initMotor(motor *currMotorPtr, int motorID);
 void initEncoders(void);
 void initPWMs(void);
+void initDummy(void);
 
 //external function prototypes
 //void addTask(tcb *newTask);
 //void executeTask(tcb *tcbPtr);
+void scheduler(void);
+
 void readPot(void* currDataPtr);
 void display(void *dataPointer);
+
+void dummyTask1(void *dataPtr);
+void dummyTask2(void *dataPtr);
+void dummyTask3(void *dataPtr);
 
 //void initMotor(motor *currMotorPtr, int motorID);
 //void readPot();
@@ -34,29 +37,34 @@ motor motor0;
 //data structs
 potData myPotData;
 displayData myDisplayData;
-
+dummyData dummyData1, dummyData2, dummyData3;
 
 //declare global variables
 
 //tcb structs
 tcb potTCB;
 tcb displayTCB;
+tcb dummyTCB1, dummyTCB2, dummyTCB3;
 
-char addFlags[NUM_FLAGS];
-char removeFlags[NUM_FLAGS];
-tcb *taskArray[NUM_FLAGS] = {&potTCB, &displayTCB};
+char addFlags[NUM_TASKS];
+char removeFlags[NUM_TASKS];
+tcb *taskArray[NUM_TASKS] = {&potTCB, &displayTCB, &dummyTCB1, &dummyTCB2, &dummyTCB3};
+
+int debugCount;
 
 tcb *firstTCBPtr = 0;
 tcb *lastTCBPtr = 0;
 
-/*
+
 CY_ISR(isrLim0)
 {
-    LCD_Position(0,0);
-    LCD_PrintString("Pot interrupt");
-    addTask(&potTCB);
+    //LCD_Position(0,0);
+    //LCD_PrintString("Pot interrupt");
+    //addTask(&potTCB);
+    addFlags[1] = 1;
 }
 
+/*
 CY_ISR(isrLim1)
 {
     LCD_Position(0, 0);
@@ -71,31 +79,11 @@ int main(void)
     
     initialize();
     
-    int count = 0; //For testing/ call simulation purposes.
-    addTask(&displayTCB);
+    //int count = 0; //For testing/ call simulation purposes.
+    //addTask(&displayTCB);
     for(;;)
     {
-        tcb *myFirstTCBPtr = firstTCBPtr;
-        addTask(&displayTCB);
-        myFirstTCBPtr = firstTCBPtr;
-//        if(0 == count % 6)
-//            addtask((void*) &pottcb);
-//        if(0 == count % 17)
-//            addtask((void*) &displaytcb);
-        //readPot(&motor0);
-        //CyDelay(500);
-        //LCD_Position(1, 0);
-        //LCD_PrintString("Reading: ");
-        //readPot(&motor0);
-        //LCD_PrintDecUint16(motor0.posRaw);
-        //CyDelay(500);
-        //addTask(&
-        //if(NULL != firstTCBPtr)
-          //  executeTask(firstTCBPtr);
-        //addTask(&displayTCB);    
-        executeTask(firstTCBPtr);
-        myFirstTCBPtr = firstTCBPtr;
-        LCD_PrintString("Hi");
+        scheduler();
     }
 }
 
@@ -112,6 +100,15 @@ void initialize()
     addTask(&potTCB);
     initEncoders();
     initPWMs();
+    initDummy();
+    
+    for(int i = 0; i < NUM_TASKS; i++)
+    {
+        addFlags[i]         = 1;
+        removeFlags[i]      = 0;
+        taskArray[i]->index = i;
+    }
+    debugCount = 0;
 }
 
 void initMotor(motor *currMotorPtr, int motorID)
@@ -131,7 +128,7 @@ void initDataStructs(void)
 
 void initTCBs(void)
 {
-    LCD_PrintString("TCB Init");
+    //LCD_PrintString("TCB Init");
     potTCB.currTask = readPot;
     potTCB.dataPtr  = &myPotData;
     displayTCB.currTask = display;
@@ -152,4 +149,23 @@ void initPWMs(void)
     PWM0_Start();
     PWM1_Start();
     PWM2_Start();
+}
+
+void initDummy(void)
+{
+    dummyTCB1.dataPtr = (void *) &dummyData1;
+    dummyTCB2.dataPtr = (void *) &dummyData2;
+    dummyTCB3.dataPtr = (void *) &dummyData3;
+    
+    dummyTCB1.currTask = dummyTask1;
+    dummyTCB2.currTask = dummyTask2;
+    dummyTCB3.currTask = dummyTask3;
+    
+    dummyData1.myChar[0] = 'a';
+    dummyData2.myChar[0] = 'b';
+    dummyData3.myChar[0] = 'c';
+    
+    dummyData1.myChar[1] = 0;
+    dummyData2.myChar[1] = 0;
+    dummyData3.myChar[1] = 0;
 }

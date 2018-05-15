@@ -15,6 +15,6 @@ void display(void *dataPointer)
     LCD_Position(0, 0);
     //LCD_PrintDecUint16(*(displayDataPtr->potRawPtr));
     //LCD_PrintNumber(*(displayDataPtr->potRawPtr));
-    LCD_Position(1, 0);
+   // LCD_Position(1, 0);
     LCD_PrintString("HelloWorld");
 }

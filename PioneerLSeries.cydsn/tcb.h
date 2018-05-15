@@ -13,6 +13,7 @@ typedef struct tcbStruct        //needed extra name in order to create self refe
     void(*currTask)(void *currDataPtr);
     void *dataPtr;
     struct tcbStruct *nextTCBPtr;
+    int index;
 }tcb;        
     
 #endif
