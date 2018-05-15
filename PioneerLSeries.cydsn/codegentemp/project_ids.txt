@@ -1,7 +1,0 @@
-C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\HuskyRobotics\PioneerLSeries\PioneerLSeries.cydsn\PioneerLSeries.cyprj|724e9c6d-d506-49f1-b003-c5403b8d01fc
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c59c62e3-ee54-4970-8daa-c668de12f85c
-C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|e62014fa-480f-4c77-933c-0f880d324185
-C:\Users\Default User.DESKTOP-J8EE37M\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\Downloads ( 4.1).cyprj|51bc79b5-ebe3-41b3-8648-7c6fa824bccf
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|1686cfd3-4106-4a51-aa27-568929425efd
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|ee995a12-434d-4748-9f0a-e8c995911e76
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|67953466-89f1-4b4f-8c1c-dad4ccd9fb6f

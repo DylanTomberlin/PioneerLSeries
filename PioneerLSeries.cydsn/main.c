@@ -42,7 +42,6 @@ displayData myDisplayData;
 tcb potTCB;
 tcb displayTCB;
 
-<<<<<<< HEAD
 char addFlags[NUM_FLAGS];
 char removeFlags[NUM_FLAGS];
 tcb *taskArray[NUM_FLAGS] = {&potTCB, &displayTCB};
@@ -50,9 +49,6 @@ tcb *taskArray[NUM_FLAGS] = {&potTCB, &displayTCB};
 tcb *firstTCBPtr = 0;
 tcb *lastTCBPtr = 0;
 
-
-
-=======
 /*
 CY_ISR(isrLim0)
 {
@@ -68,7 +64,7 @@ CY_ISR(isrLim1)
     addTask(&displayTCB);   
 }
 */
->>>>>>> refs/remotes/origin/master
+
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
