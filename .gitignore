@@ -17,6 +17,6 @@ Export/
 *.cyfit
 *.rpt
 *.svd
-
+*/Debug/
 
 # End of https://www.gitignore.io/api/psoccreator
