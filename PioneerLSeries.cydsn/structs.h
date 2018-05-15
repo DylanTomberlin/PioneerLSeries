@@ -22,4 +22,24 @@ typedef struct
     int *potRawPtr[NUM_MOTORS];
 } displayData;
 
+// Encoder data struct
+typedef struct
+{
+    int encRaw[NUM_MOTORS];
+} encData;
+
+// PWM data struct
+typedef struct
+{
+    int pwmData[NUM_MOTORS];
+} pwmData;
+
+// an enum for whether a motor is a Talon or Cytron
+enum motorType{Talon = 0, Cytron = 1};
+// stores the type of each motor  as an int
+typedef struct
+{
+    enum motorType my_Types[NUM_MOTORS];
+} motorData;
+
 #endif

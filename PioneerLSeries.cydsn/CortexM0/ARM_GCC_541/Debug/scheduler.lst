@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccC949Mw.s 			page 1
+=======
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 1
+>>>>>>> refs/remotes/origin/master
 
 
    1              		.syntax unified
@@ -19,14 +23,14 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccC949Mw.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.section	.text.executeTask,"ax",%progbits
+  19              		.section	.text.addTask,"ax",%progbits
   20              		.align	2
-  21              		.global	executeTask
+  21              		.global	addTask
   22              		.code	16
   23              		.thumb_func
-  24              		.type	executeTask, %function
-  25              	executeTask:
-  26              	.LFB34:
+  24              		.type	addTask, %function
+  25              	addTask:
+  26              	.LFB35:
   27              		.file 1 "scheduler.c"
    1:scheduler.c   **** /* ========================================
    2:scheduler.c   ****  * scheduler.c
@@ -43,10 +47,27 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccC949Mw.s 			page 1
   13:scheduler.c   **** 
   14:scheduler.c   **** void executeTask(tcb *tcbPtr)
   15:scheduler.c   **** {
-  28              		.loc 1 15 0
+  16:scheduler.c   ****     if(NULL == tcbPtr )
+  17:scheduler.c   ****         return;
+  18:scheduler.c   ****     tcbPtr->currTask((void*) tcbPtr->dataPtr);
+  19:scheduler.c   ****     //moves linked list pointer forward unless there is nothing left, at which point it grounds the
+  20:scheduler.c   ****     if(NULL == tcbPtr->nextTCBPtr)
+  21:scheduler.c   ****         firstTCBPtr = NULL;
+  22:scheduler.c   ****     else
+  23:scheduler.c   ****         firstTCBPtr = (tcbPtr->nextTCBPtr); //probably need some malloc and free so that a bunch of
+  24:scheduler.c   ****     groundTask(tcbPtr);
+  25:scheduler.c   **** }
+  26:scheduler.c   **** 
+  27:scheduler.c   **** void addTask(tcb *newTask)
+  28:scheduler.c   **** {
+  28              		.loc 1 28 0
   29              		.cfi_startproc
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 2
+
+
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
+<<<<<<< HEAD
   32              	.LVL0:
   33 0000 10B5     		push	{r4, lr}
   34              		.cfi_def_cfa_offset 8
@@ -756,3 +777,1167 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccC949Mw.s 			page 1
  601      74797065 
  601      00
  602              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+=======
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  29:scheduler.c   ****     if(NULL == firstTCBPtr)
+  34              		.loc 1 29 0
+  35 0000 084B     		ldr	r3, .L4
+  36 0002 1B68     		ldr	r3, [r3]
+  37 0004 002B     		cmp	r3, #0
+  38 0006 06D1     		bne	.L2
+  30:scheduler.c   ****     {
+  31:scheduler.c   ****         firstTCBPtr = newTask;
+  39              		.loc 1 31 0
+  40 0008 064B     		ldr	r3, .L4
+  41 000a 1860     		str	r0, [r3]
+  32:scheduler.c   ****         lastTCBPtr  = newTask;
+  42              		.loc 1 32 0
+  43 000c 064B     		ldr	r3, .L4+4
+  44 000e 1860     		str	r0, [r3]
+  33:scheduler.c   ****         
+  34:scheduler.c   ****         firstTCBPtr->nextTCBPtr = NULL;
+  45              		.loc 1 34 0
+  46 0010 0023     		movs	r3, #0
+  47 0012 8360     		str	r3, [r0, #8]
+  48 0014 05E0     		b	.L1
+  49              	.L2:
+  35:scheduler.c   ****         lastTCBPtr->nextTCBPtr  = NULL;
+  36:scheduler.c   ****         //lastTCBPtr->nextTCBPtr = newTask;  //add new task to the end of the linked list
+  37:scheduler.c   ****         //lastTCBPtr = newTask;           //move forward the last item pointer to newTask
+  38:scheduler.c   ****         //lastTCBPtr->nextTCBPtr = 0;        //ground pointer of new last list item
+  39:scheduler.c   ****     } else
+  40:scheduler.c   ****     {
+  41:scheduler.c   ****         lastTCBPtr->nextTCBPtr = newTask;
+  50              		.loc 1 41 0
+  51 0016 044B     		ldr	r3, .L4+4
+  52 0018 1A68     		ldr	r2, [r3]
+  53 001a 9060     		str	r0, [r2, #8]
+  42:scheduler.c   ****         lastTCBPtr = newTask;
+  54              		.loc 1 42 0
+  55 001c 1860     		str	r0, [r3]
+  43:scheduler.c   ****         lastTCBPtr->nextTCBPtr = NULL;
+  56              		.loc 1 43 0
+  57 001e 0023     		movs	r3, #0
+  58 0020 8360     		str	r3, [r0, #8]
+  59              	.L1:
+  44:scheduler.c   ****         //firstTCBPtr = newTask;
+  45:scheduler.c   ****         //lastTCBPtr = newTask;           //Check this else statement... Is it possible for lastTCB
+  46:scheduler.c   ****     }
+  47:scheduler.c   **** }
+  60              		.loc 1 47 0
+  61              		@ sp needed
+  62 0022 7047     		bx	lr
+  63              	.L5:
+  64              		.align	2
+  65              	.L4:
+  66 0024 00000000 		.word	firstTCBPtr
+  67 0028 00000000 		.word	lastTCBPtr
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 3
+
+
+  68              		.cfi_endproc
+  69              	.LFE35:
+  70              		.size	addTask, .-addTask
+  71              		.section	.text.findPreviousTask,"ax",%progbits
+  72              		.align	2
+  73              		.global	findPreviousTask
+  74              		.code	16
+  75              		.thumb_func
+  76              		.type	findPreviousTask, %function
+  77              	findPreviousTask:
+  78              	.LFB37:
+  48:scheduler.c   **** 
+  49:scheduler.c   **** void groundTask(tcb *taskPtr)
+  50:scheduler.c   **** {
+  51:scheduler.c   ****     tcb *previousTask = findPreviousTask(taskPtr);
+  52:scheduler.c   ****     if(NULL != previousTask)
+  53:scheduler.c   ****         previousTask->nextTCBPtr = NULL;
+  54:scheduler.c   ****     taskPtr->nextTCBPtr = NULL;
+  55:scheduler.c   **** }
+  56:scheduler.c   **** 
+  57:scheduler.c   **** tcb* findPreviousTask(tcb *targetTaskPtr)//not the cleanest code ever, work in progress
+  58:scheduler.c   **** {
+  79              		.loc 1 58 0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              		@ link register save eliminated.
+  84              	.LVL1:
+  59:scheduler.c   ****     //Targets which do not have previous tasks
+  60:scheduler.c   ****     if(NULL == targetTaskPtr)
+  85              		.loc 1 60 0
+  86 0000 0028     		cmp	r0, #0
+  87 0002 10D0     		beq	.L9
+  61:scheduler.c   ****         return NULL;
+  62:scheduler.c   ****     else if(NULL == firstTCBPtr)
+  88              		.loc 1 62 0
+  89 0004 0C4B     		ldr	r3, .L14
+  90 0006 1A68     		ldr	r2, [r3]
+  91 0008 002A     		cmp	r2, #0
+  92 000a 0ED0     		beq	.L10
+  63:scheduler.c   ****         return NULL;
+  64:scheduler.c   ****     else if(targetTaskPtr == firstTCBPtr)
+  93              		.loc 1 64 0
+  94 000c 9042     		cmp	r0, r2
+  95 000e 0ED0     		beq	.L11
+  65:scheduler.c   ****         return NULL;
+  66:scheduler.c   ****     
+  67:scheduler.c   ****     //Target is second task
+  68:scheduler.c   ****     if(firstTCBPtr->nextTCBPtr == targetTaskPtr)
+  96              		.loc 1 68 0
+  97 0010 9368     		ldr	r3, [r2, #8]
+  98 0012 9842     		cmp	r0, r3
+  99 0014 01D1     		bne	.L8
+ 100 0016 0CE0     		b	.L12
+ 101              	.LVL2:
+ 102              	.L13:
+  69:scheduler.c   ****         return firstTCBPtr;
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 4
+
+
+  70:scheduler.c   ****     
+  71:scheduler.c   ****     //Target is third or later task
+  72:scheduler.c   ****     tcb *currentTaskPtr = firstTCBPtr;
+  73:scheduler.c   ****     while(NULL != currentTaskPtr->nextTCBPtr->nextTCBPtr)
+  74:scheduler.c   ****         currentTaskPtr = currentTaskPtr->nextTCBPtr;   
+ 103              		.loc 1 74 0
+ 104 0018 1A00     		movs	r2, r3
+ 105              	.LVL3:
+ 106              	.L8:
+  73:scheduler.c   ****         currentTaskPtr = currentTaskPtr->nextTCBPtr;   
+ 107              		.loc 1 73 0
+ 108 001a 9368     		ldr	r3, [r2, #8]
+ 109 001c 9968     		ldr	r1, [r3, #8]
+ 110 001e 0029     		cmp	r1, #0
+ 111 0020 FAD1     		bne	.L13
+  75:scheduler.c   ****     return currentTaskPtr;
+ 112              		.loc 1 75 0
+ 113 0022 1000     		movs	r0, r2
+ 114              	.LVL4:
+ 115 0024 06E0     		b	.L7
+ 116              	.LVL5:
+ 117              	.L9:
+  61:scheduler.c   ****     else if(NULL == firstTCBPtr)
+ 118              		.loc 1 61 0
+ 119 0026 0020     		movs	r0, #0
+ 120              	.LVL6:
+ 121 0028 04E0     		b	.L7
+ 122              	.LVL7:
+ 123              	.L10:
+  63:scheduler.c   ****     else if(targetTaskPtr == firstTCBPtr)
+ 124              		.loc 1 63 0
+ 125 002a 0020     		movs	r0, #0
+ 126              	.LVL8:
+ 127 002c 02E0     		b	.L7
+ 128              	.LVL9:
+ 129              	.L11:
+  65:scheduler.c   ****     
+ 130              		.loc 1 65 0
+ 131 002e 0020     		movs	r0, #0
+ 132              	.LVL10:
+ 133 0030 00E0     		b	.L7
+ 134              	.LVL11:
+ 135              	.L12:
+  69:scheduler.c   ****     
+ 136              		.loc 1 69 0
+ 137 0032 1000     		movs	r0, r2
+ 138              	.LVL12:
+ 139              	.L7:
+  76:scheduler.c   **** }...
+ 140              		.loc 1 76 0
+ 141              		@ sp needed
+ 142 0034 7047     		bx	lr
+ 143              	.L15:
+ 144 0036 C046     		.align	2
+ 145              	.L14:
+ 146 0038 00000000 		.word	firstTCBPtr
+ 147              		.cfi_endproc
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 5
+
+
+ 148              	.LFE37:
+ 149              		.size	findPreviousTask, .-findPreviousTask
+ 150              		.section	.text.groundTask,"ax",%progbits
+ 151              		.align	2
+ 152              		.global	groundTask
+ 153              		.code	16
+ 154              		.thumb_func
+ 155              		.type	groundTask, %function
+ 156              	groundTask:
+ 157              	.LFB36:
+  50:scheduler.c   **** {
+ 158              		.loc 1 50 0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162              	.LVL13:
+ 163 0000 10B5     		push	{r4, lr}
+ 164              		.cfi_def_cfa_offset 8
+ 165              		.cfi_offset 4, -8
+ 166              		.cfi_offset 14, -4
+ 167 0002 0400     		movs	r4, r0
+  51:scheduler.c   ****     tcb *previousTask = findPreviousTask(taskPtr);
+ 168              		.loc 1 51 0
+ 169 0004 FFF7FEFF 		bl	findPreviousTask
+ 170              	.LVL14:
+  52:scheduler.c   ****     if(NULL != previousTask)
+ 171              		.loc 1 52 0
+ 172 0008 0028     		cmp	r0, #0
+ 173 000a 01D0     		beq	.L17
+  53:scheduler.c   ****         previousTask->nextTCBPtr = NULL;
+ 174              		.loc 1 53 0
+ 175 000c 0023     		movs	r3, #0
+ 176 000e 8360     		str	r3, [r0, #8]
+ 177              	.L17:
+  54:scheduler.c   ****     taskPtr->nextTCBPtr = NULL;
+ 178              		.loc 1 54 0
+ 179 0010 0023     		movs	r3, #0
+ 180 0012 A360     		str	r3, [r4, #8]
+  55:scheduler.c   **** }
+ 181              		.loc 1 55 0
+ 182              		@ sp needed
+ 183              	.LVL15:
+ 184 0014 10BD     		pop	{r4, pc}
+ 185              		.cfi_endproc
+ 186              	.LFE36:
+ 187              		.size	groundTask, .-groundTask
+ 188 0016 C046     		.section	.text.executeTask,"ax",%progbits
+ 189              		.align	2
+ 190              		.global	executeTask
+ 191              		.code	16
+ 192              		.thumb_func
+ 193              		.type	executeTask, %function
+ 194              	executeTask:
+ 195              	.LFB34:
+  15:scheduler.c   **** {
+ 196              		.loc 1 15 0
+ 197              		.cfi_startproc
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 6
+
+
+ 198              		@ args = 0, pretend = 0, frame = 0
+ 199              		@ frame_needed = 0, uses_anonymous_args = 0
+ 200              	.LVL16:
+ 201 0000 10B5     		push	{r4, lr}
+ 202              		.cfi_def_cfa_offset 8
+ 203              		.cfi_offset 4, -8
+ 204              		.cfi_offset 14, -4
+ 205 0002 041E     		subs	r4, r0, #0
+  16:scheduler.c   ****     if(NULL == tcbPtr )
+ 206              		.loc 1 16 0
+ 207 0004 0ED0     		beq	.L18
+  18:scheduler.c   ****     tcbPtr->currTask((void*) tcbPtr->dataPtr);
+ 208              		.loc 1 18 0
+ 209 0006 4068     		ldr	r0, [r0, #4]
+ 210              	.LVL17:
+ 211 0008 2368     		ldr	r3, [r4]
+ 212 000a 9847     		blx	r3
+ 213              	.LVL18:
+  20:scheduler.c   ****     if(NULL == tcbPtr->nextTCBPtr)
+ 214              		.loc 1 20 0
+ 215 000c A368     		ldr	r3, [r4, #8]
+ 216 000e 002B     		cmp	r3, #0
+ 217 0010 03D1     		bne	.L20
+  21:scheduler.c   ****         firstTCBPtr = NULL;
+ 218              		.loc 1 21 0
+ 219 0012 0022     		movs	r2, #0
+ 220 0014 044B     		ldr	r3, .L22
+ 221 0016 1A60     		str	r2, [r3]
+ 222 0018 01E0     		b	.L21
+ 223              	.L20:
+  23:scheduler.c   ****         firstTCBPtr = (tcbPtr->nextTCBPtr); //probably need some malloc and free so that a bunch of
+ 224              		.loc 1 23 0
+ 225 001a 034A     		ldr	r2, .L22
+ 226 001c 1360     		str	r3, [r2]
+ 227              	.L21:
+  24:scheduler.c   ****     groundTask(tcbPtr);
+ 228              		.loc 1 24 0
+ 229 001e 2000     		movs	r0, r4
+ 230 0020 FFF7FEFF 		bl	groundTask
+ 231              	.LVL19:
+ 232              	.L18:
+  25:scheduler.c   **** }
+ 233              		.loc 1 25 0
+ 234              		@ sp needed
+ 235              	.LVL20:
+ 236 0024 10BD     		pop	{r4, pc}
+ 237              	.L23:
+ 238 0026 C046     		.align	2
+ 239              	.L22:
+ 240 0028 00000000 		.word	firstTCBPtr
+ 241              		.cfi_endproc
+ 242              	.LFE34:
+ 243              		.size	executeTask, .-executeTask
+ 244              		.text
+ 245              	.Letext0:
+ 246              		.file 2 "tcb.h"
+ 247              		.section	.debug_info,"",%progbits
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 7
+
+
+ 248              	.Ldebug_info0:
+ 249 0000 CE010000 		.4byte	0x1ce
+ 250 0004 0400     		.2byte	0x4
+ 251 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 252 000a 04       		.byte	0x4
+ 253 000b 01       		.uleb128 0x1
+ 254 000c EF000000 		.4byte	.LASF28
+ 255 0010 0C       		.byte	0xc
+ 256 0011 9E000000 		.4byte	.LASF29
+ 257 0015 EA010000 		.4byte	.LASF30
+ 258 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 259 001d 00000000 		.4byte	0
+ 260 0021 00000000 		.4byte	.Ldebug_line0
+ 261 0025 02       		.uleb128 0x2
+ 262 0026 01       		.byte	0x1
+ 263 0027 06       		.byte	0x6
+ 264 0028 DE010000 		.4byte	.LASF0
+ 265 002c 02       		.uleb128 0x2
+ 266 002d 01       		.byte	0x1
+ 267 002e 08       		.byte	0x8
+ 268 002f 89000000 		.4byte	.LASF1
+ 269 0033 02       		.uleb128 0x2
+ 270 0034 02       		.byte	0x2
+ 271 0035 05       		.byte	0x5
+ 272 0036 BF010000 		.4byte	.LASF2
+ 273 003a 02       		.uleb128 0x2
+ 274 003b 02       		.byte	0x2
+ 275 003c 07       		.byte	0x7
+ 276 003d 6A000000 		.4byte	.LASF3
+ 277 0041 02       		.uleb128 0x2
+ 278 0042 04       		.byte	0x4
+ 279 0043 05       		.byte	0x5
+ 280 0044 C9010000 		.4byte	.LASF4
+ 281 0048 02       		.uleb128 0x2
+ 282 0049 04       		.byte	0x4
+ 283 004a 07       		.byte	0x7
+ 284 004b 58000000 		.4byte	.LASF5
+ 285 004f 02       		.uleb128 0x2
+ 286 0050 08       		.byte	0x8
+ 287 0051 05       		.byte	0x5
+ 288 0052 91010000 		.4byte	.LASF6
+ 289 0056 02       		.uleb128 0x2
+ 290 0057 08       		.byte	0x8
+ 291 0058 07       		.byte	0x7
+ 292 0059 B7000000 		.4byte	.LASF7
+ 293 005d 03       		.uleb128 0x3
+ 294 005e 04       		.byte	0x4
+ 295 005f 05       		.byte	0x5
+ 296 0060 696E7400 		.ascii	"int\000"
+ 297 0064 02       		.uleb128 0x2
+ 298 0065 04       		.byte	0x4
+ 299 0066 07       		.byte	0x7
+ 300 0067 AA000000 		.4byte	.LASF8
+ 301 006b 02       		.uleb128 0x2
+ 302 006c 04       		.byte	0x4
+ 303 006d 04       		.byte	0x4
+ 304 006e 2A000000 		.4byte	.LASF9
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 8
+
+
+ 305 0072 02       		.uleb128 0x2
+ 306 0073 08       		.byte	0x8
+ 307 0074 04       		.byte	0x4
+ 308 0075 97000000 		.4byte	.LASF10
+ 309 0079 02       		.uleb128 0x2
+ 310 007a 01       		.byte	0x1
+ 311 007b 08       		.byte	0x8
+ 312 007c A7010000 		.4byte	.LASF11
+ 313 0080 02       		.uleb128 0x2
+ 314 0081 08       		.byte	0x8
+ 315 0082 04       		.byte	0x4
+ 316 0083 D2010000 		.4byte	.LASF12
+ 317 0087 02       		.uleb128 0x2
+ 318 0088 04       		.byte	0x4
+ 319 0089 07       		.byte	0x7
+ 320 008a 88010000 		.4byte	.LASF13
+ 321 008e 04       		.uleb128 0x4
+ 322 008f 04       		.byte	0x4
+ 323 0090 05       		.uleb128 0x5
+ 324 0091 11000000 		.4byte	.LASF31
+ 325 0095 0C       		.byte	0xc
+ 326 0096 02       		.byte	0x2
+ 327 0097 0B       		.byte	0xb
+ 328 0098 C1000000 		.4byte	0xc1
+ 329 009c 06       		.uleb128 0x6
+ 330 009d 59020000 		.4byte	.LASF14
+ 331 00a1 02       		.byte	0x2
+ 332 00a2 0D       		.byte	0xd
+ 333 00a3 CC000000 		.4byte	0xcc
+ 334 00a7 00       		.byte	0
+ 335 00a8 06       		.uleb128 0x6
+ 336 00a9 50000000 		.4byte	.LASF15
+ 337 00ad 02       		.byte	0x2
+ 338 00ae 0E       		.byte	0xe
+ 339 00af 8E000000 		.4byte	0x8e
+ 340 00b3 04       		.byte	0x4
+ 341 00b4 06       		.uleb128 0x6
+ 342 00b5 7D010000 		.4byte	.LASF16
+ 343 00b9 02       		.byte	0x2
+ 344 00ba 0F       		.byte	0xf
+ 345 00bb D2000000 		.4byte	0xd2
+ 346 00bf 08       		.byte	0x8
+ 347 00c0 00       		.byte	0
+ 348 00c1 07       		.uleb128 0x7
+ 349 00c2 CC000000 		.4byte	0xcc
+ 350 00c6 08       		.uleb128 0x8
+ 351 00c7 8E000000 		.4byte	0x8e
+ 352 00cb 00       		.byte	0
+ 353 00cc 09       		.uleb128 0x9
+ 354 00cd 04       		.byte	0x4
+ 355 00ce C1000000 		.4byte	0xc1
+ 356 00d2 09       		.uleb128 0x9
+ 357 00d3 04       		.byte	0x4
+ 358 00d4 90000000 		.4byte	0x90
+ 359 00d8 0A       		.uleb128 0xa
+ 360 00d9 74636200 		.ascii	"tcb\000"
+ 361 00dd 02       		.byte	0x2
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 9
+
+
+ 362 00de 10       		.byte	0x10
+ 363 00df 90000000 		.4byte	0x90
+ 364 00e3 0B       		.uleb128 0xb
+ 365 00e4 AC010000 		.4byte	.LASF19
+ 366 00e8 01       		.byte	0x1
+ 367 00e9 1B       		.byte	0x1b
+ 368 00ea 00000000 		.4byte	.LFB35
+ 369 00ee 2C000000 		.4byte	.LFE35-.LFB35
+ 370 00f2 01       		.uleb128 0x1
+ 371 00f3 9C       		.byte	0x9c
+ 372 00f4 06010000 		.4byte	0x106
+ 373 00f8 0C       		.uleb128 0xc
+ 374 00f9 9F010000 		.4byte	.LASF17
+ 375 00fd 01       		.byte	0x1
+ 376 00fe 1B       		.byte	0x1b
+ 377 00ff 06010000 		.4byte	0x106
+ 378 0103 01       		.uleb128 0x1
+ 379 0104 50       		.byte	0x50
+ 380 0105 00       		.byte	0
+ 381 0106 09       		.uleb128 0x9
+ 382 0107 04       		.byte	0x4
+ 383 0108 D8000000 		.4byte	0xd8
+ 384 010c 0D       		.uleb128 0xd
+ 385 010d 00000000 		.4byte	.LASF32
+ 386 0111 01       		.byte	0x1
+ 387 0112 39       		.byte	0x39
+ 388 0113 06010000 		.4byte	0x106
+ 389 0117 00000000 		.4byte	.LFB37
+ 390 011b 3C000000 		.4byte	.LFE37-.LFB37
+ 391 011f 01       		.uleb128 0x1
+ 392 0120 9C       		.byte	0x9c
+ 393 0121 44010000 		.4byte	0x144
+ 394 0125 0E       		.uleb128 0xe
+ 395 0126 E1000000 		.4byte	.LASF18
+ 396 012a 01       		.byte	0x1
+ 397 012b 39       		.byte	0x39
+ 398 012c 06010000 		.4byte	0x106
+ 399 0130 00000000 		.4byte	.LLST0
+ 400 0134 0F       		.uleb128 0xf
+ 401 0135 1B000000 		.4byte	.LASF22
+ 402 0139 01       		.byte	0x1
+ 403 013a 48       		.byte	0x48
+ 404 013b 06010000 		.4byte	0x106
+ 405 013f 85000000 		.4byte	.LLST1
+ 406 0143 00       		.byte	0
+ 407 0144 0B       		.uleb128 0xb
+ 408 0145 B4010000 		.4byte	.LASF20
+ 409 0149 01       		.byte	0x1
+ 410 014a 31       		.byte	0x31
+ 411 014b 00000000 		.4byte	.LFB36
+ 412 014f 16000000 		.4byte	.LFE36-.LFB36
+ 413 0153 01       		.uleb128 0x1
+ 414 0154 9C       		.byte	0x9c
+ 415 0155 86010000 		.4byte	0x186
+ 416 0159 0E       		.uleb128 0xe
+ 417 015a 30000000 		.4byte	.LASF21
+ 418 015e 01       		.byte	0x1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 10
+
+
+ 419 015f 31       		.byte	0x31
+ 420 0160 06010000 		.4byte	0x106
+ 421 0164 98000000 		.4byte	.LLST2
+ 422 0168 10       		.uleb128 0x10
+ 423 0169 43000000 		.4byte	.LASF23
+ 424 016d 01       		.byte	0x1
+ 425 016e 33       		.byte	0x33
+ 426 016f 06010000 		.4byte	0x106
+ 427 0173 01       		.uleb128 0x1
+ 428 0174 50       		.byte	0x50
+ 429 0175 11       		.uleb128 0x11
+ 430 0176 08000000 		.4byte	.LVL14
+ 431 017a 0C010000 		.4byte	0x10c
+ 432 017e 12       		.uleb128 0x12
+ 433 017f 01       		.uleb128 0x1
+ 434 0180 50       		.byte	0x50
+ 435 0181 02       		.uleb128 0x2
+ 436 0182 74       		.byte	0x74
+ 437 0183 00       		.sleb128 0
+ 438 0184 00       		.byte	0
+ 439 0185 00       		.byte	0
+ 440 0186 13       		.uleb128 0x13
+ 441 0187 7D000000 		.4byte	.LASF24
+ 442 018b 01       		.byte	0x1
+ 443 018c 0E       		.byte	0xe
+ 444 018d 00000000 		.4byte	.LFB34
+ 445 0191 2C000000 		.4byte	.LFE34-.LFB34
+ 446 0195 01       		.uleb128 0x1
+ 447 0196 9C       		.byte	0x9c
+ 448 0197 BB010000 		.4byte	0x1bb
+ 449 019b 0E       		.uleb128 0xe
+ 450 019c CE000000 		.4byte	.LASF25
+ 451 01a0 01       		.byte	0x1
+ 452 01a1 0E       		.byte	0xe
+ 453 01a2 06010000 		.4byte	0x106
+ 454 01a6 C4000000 		.4byte	.LLST3
+ 455 01aa 11       		.uleb128 0x11
+ 456 01ab 24000000 		.4byte	.LVL19
+ 457 01af 44010000 		.4byte	0x144
+ 458 01b3 12       		.uleb128 0x12
+ 459 01b4 01       		.uleb128 0x1
+ 460 01b5 50       		.byte	0x50
+ 461 01b6 02       		.uleb128 0x2
+ 462 01b7 74       		.byte	0x74
+ 463 01b8 00       		.sleb128 0
+ 464 01b9 00       		.byte	0
+ 465 01ba 00       		.byte	0
+ 466 01bb 14       		.uleb128 0x14
+ 467 01bc D5000000 		.4byte	.LASF26
+ 468 01c0 01       		.byte	0x1
+ 469 01c1 0B       		.byte	0xb
+ 470 01c2 06010000 		.4byte	0x106
+ 471 01c6 14       		.uleb128 0x14
+ 472 01c7 38000000 		.4byte	.LASF27
+ 473 01cb 01       		.byte	0x1
+ 474 01cc 0C       		.byte	0xc
+ 475 01cd 06010000 		.4byte	0x106
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 11
+
+
+ 476 01d1 00       		.byte	0
+ 477              		.section	.debug_abbrev,"",%progbits
+ 478              	.Ldebug_abbrev0:
+ 479 0000 01       		.uleb128 0x1
+ 480 0001 11       		.uleb128 0x11
+ 481 0002 01       		.byte	0x1
+ 482 0003 25       		.uleb128 0x25
+ 483 0004 0E       		.uleb128 0xe
+ 484 0005 13       		.uleb128 0x13
+ 485 0006 0B       		.uleb128 0xb
+ 486 0007 03       		.uleb128 0x3
+ 487 0008 0E       		.uleb128 0xe
+ 488 0009 1B       		.uleb128 0x1b
+ 489 000a 0E       		.uleb128 0xe
+ 490 000b 55       		.uleb128 0x55
+ 491 000c 17       		.uleb128 0x17
+ 492 000d 11       		.uleb128 0x11
+ 493 000e 01       		.uleb128 0x1
+ 494 000f 10       		.uleb128 0x10
+ 495 0010 17       		.uleb128 0x17
+ 496 0011 00       		.byte	0
+ 497 0012 00       		.byte	0
+ 498 0013 02       		.uleb128 0x2
+ 499 0014 24       		.uleb128 0x24
+ 500 0015 00       		.byte	0
+ 501 0016 0B       		.uleb128 0xb
+ 502 0017 0B       		.uleb128 0xb
+ 503 0018 3E       		.uleb128 0x3e
+ 504 0019 0B       		.uleb128 0xb
+ 505 001a 03       		.uleb128 0x3
+ 506 001b 0E       		.uleb128 0xe
+ 507 001c 00       		.byte	0
+ 508 001d 00       		.byte	0
+ 509 001e 03       		.uleb128 0x3
+ 510 001f 24       		.uleb128 0x24
+ 511 0020 00       		.byte	0
+ 512 0021 0B       		.uleb128 0xb
+ 513 0022 0B       		.uleb128 0xb
+ 514 0023 3E       		.uleb128 0x3e
+ 515 0024 0B       		.uleb128 0xb
+ 516 0025 03       		.uleb128 0x3
+ 517 0026 08       		.uleb128 0x8
+ 518 0027 00       		.byte	0
+ 519 0028 00       		.byte	0
+ 520 0029 04       		.uleb128 0x4
+ 521 002a 0F       		.uleb128 0xf
+ 522 002b 00       		.byte	0
+ 523 002c 0B       		.uleb128 0xb
+ 524 002d 0B       		.uleb128 0xb
+ 525 002e 00       		.byte	0
+ 526 002f 00       		.byte	0
+ 527 0030 05       		.uleb128 0x5
+ 528 0031 13       		.uleb128 0x13
+ 529 0032 01       		.byte	0x1
+ 530 0033 03       		.uleb128 0x3
+ 531 0034 0E       		.uleb128 0xe
+ 532 0035 0B       		.uleb128 0xb
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 12
+
+
+ 533 0036 0B       		.uleb128 0xb
+ 534 0037 3A       		.uleb128 0x3a
+ 535 0038 0B       		.uleb128 0xb
+ 536 0039 3B       		.uleb128 0x3b
+ 537 003a 0B       		.uleb128 0xb
+ 538 003b 01       		.uleb128 0x1
+ 539 003c 13       		.uleb128 0x13
+ 540 003d 00       		.byte	0
+ 541 003e 00       		.byte	0
+ 542 003f 06       		.uleb128 0x6
+ 543 0040 0D       		.uleb128 0xd
+ 544 0041 00       		.byte	0
+ 545 0042 03       		.uleb128 0x3
+ 546 0043 0E       		.uleb128 0xe
+ 547 0044 3A       		.uleb128 0x3a
+ 548 0045 0B       		.uleb128 0xb
+ 549 0046 3B       		.uleb128 0x3b
+ 550 0047 0B       		.uleb128 0xb
+ 551 0048 49       		.uleb128 0x49
+ 552 0049 13       		.uleb128 0x13
+ 553 004a 38       		.uleb128 0x38
+ 554 004b 0B       		.uleb128 0xb
+ 555 004c 00       		.byte	0
+ 556 004d 00       		.byte	0
+ 557 004e 07       		.uleb128 0x7
+ 558 004f 15       		.uleb128 0x15
+ 559 0050 01       		.byte	0x1
+ 560 0051 27       		.uleb128 0x27
+ 561 0052 19       		.uleb128 0x19
+ 562 0053 01       		.uleb128 0x1
+ 563 0054 13       		.uleb128 0x13
+ 564 0055 00       		.byte	0
+ 565 0056 00       		.byte	0
+ 566 0057 08       		.uleb128 0x8
+ 567 0058 05       		.uleb128 0x5
+ 568 0059 00       		.byte	0
+ 569 005a 49       		.uleb128 0x49
+ 570 005b 13       		.uleb128 0x13
+ 571 005c 00       		.byte	0
+ 572 005d 00       		.byte	0
+ 573 005e 09       		.uleb128 0x9
+ 574 005f 0F       		.uleb128 0xf
+ 575 0060 00       		.byte	0
+ 576 0061 0B       		.uleb128 0xb
+ 577 0062 0B       		.uleb128 0xb
+ 578 0063 49       		.uleb128 0x49
+ 579 0064 13       		.uleb128 0x13
+ 580 0065 00       		.byte	0
+ 581 0066 00       		.byte	0
+ 582 0067 0A       		.uleb128 0xa
+ 583 0068 16       		.uleb128 0x16
+ 584 0069 00       		.byte	0
+ 585 006a 03       		.uleb128 0x3
+ 586 006b 08       		.uleb128 0x8
+ 587 006c 3A       		.uleb128 0x3a
+ 588 006d 0B       		.uleb128 0xb
+ 589 006e 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 13
+
+
+ 590 006f 0B       		.uleb128 0xb
+ 591 0070 49       		.uleb128 0x49
+ 592 0071 13       		.uleb128 0x13
+ 593 0072 00       		.byte	0
+ 594 0073 00       		.byte	0
+ 595 0074 0B       		.uleb128 0xb
+ 596 0075 2E       		.uleb128 0x2e
+ 597 0076 01       		.byte	0x1
+ 598 0077 3F       		.uleb128 0x3f
+ 599 0078 19       		.uleb128 0x19
+ 600 0079 03       		.uleb128 0x3
+ 601 007a 0E       		.uleb128 0xe
+ 602 007b 3A       		.uleb128 0x3a
+ 603 007c 0B       		.uleb128 0xb
+ 604 007d 3B       		.uleb128 0x3b
+ 605 007e 0B       		.uleb128 0xb
+ 606 007f 27       		.uleb128 0x27
+ 607 0080 19       		.uleb128 0x19
+ 608 0081 11       		.uleb128 0x11
+ 609 0082 01       		.uleb128 0x1
+ 610 0083 12       		.uleb128 0x12
+ 611 0084 06       		.uleb128 0x6
+ 612 0085 40       		.uleb128 0x40
+ 613 0086 18       		.uleb128 0x18
+ 614 0087 9742     		.uleb128 0x2117
+ 615 0089 19       		.uleb128 0x19
+ 616 008a 01       		.uleb128 0x1
+ 617 008b 13       		.uleb128 0x13
+ 618 008c 00       		.byte	0
+ 619 008d 00       		.byte	0
+ 620 008e 0C       		.uleb128 0xc
+ 621 008f 05       		.uleb128 0x5
+ 622 0090 00       		.byte	0
+ 623 0091 03       		.uleb128 0x3
+ 624 0092 0E       		.uleb128 0xe
+ 625 0093 3A       		.uleb128 0x3a
+ 626 0094 0B       		.uleb128 0xb
+ 627 0095 3B       		.uleb128 0x3b
+ 628 0096 0B       		.uleb128 0xb
+ 629 0097 49       		.uleb128 0x49
+ 630 0098 13       		.uleb128 0x13
+ 631 0099 02       		.uleb128 0x2
+ 632 009a 18       		.uleb128 0x18
+ 633 009b 00       		.byte	0
+ 634 009c 00       		.byte	0
+ 635 009d 0D       		.uleb128 0xd
+ 636 009e 2E       		.uleb128 0x2e
+ 637 009f 01       		.byte	0x1
+ 638 00a0 3F       		.uleb128 0x3f
+ 639 00a1 19       		.uleb128 0x19
+ 640 00a2 03       		.uleb128 0x3
+ 641 00a3 0E       		.uleb128 0xe
+ 642 00a4 3A       		.uleb128 0x3a
+ 643 00a5 0B       		.uleb128 0xb
+ 644 00a6 3B       		.uleb128 0x3b
+ 645 00a7 0B       		.uleb128 0xb
+ 646 00a8 27       		.uleb128 0x27
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 14
+
+
+ 647 00a9 19       		.uleb128 0x19
+ 648 00aa 49       		.uleb128 0x49
+ 649 00ab 13       		.uleb128 0x13
+ 650 00ac 11       		.uleb128 0x11
+ 651 00ad 01       		.uleb128 0x1
+ 652 00ae 12       		.uleb128 0x12
+ 653 00af 06       		.uleb128 0x6
+ 654 00b0 40       		.uleb128 0x40
+ 655 00b1 18       		.uleb128 0x18
+ 656 00b2 9742     		.uleb128 0x2117
+ 657 00b4 19       		.uleb128 0x19
+ 658 00b5 01       		.uleb128 0x1
+ 659 00b6 13       		.uleb128 0x13
+ 660 00b7 00       		.byte	0
+ 661 00b8 00       		.byte	0
+ 662 00b9 0E       		.uleb128 0xe
+ 663 00ba 05       		.uleb128 0x5
+ 664 00bb 00       		.byte	0
+ 665 00bc 03       		.uleb128 0x3
+ 666 00bd 0E       		.uleb128 0xe
+ 667 00be 3A       		.uleb128 0x3a
+ 668 00bf 0B       		.uleb128 0xb
+ 669 00c0 3B       		.uleb128 0x3b
+ 670 00c1 0B       		.uleb128 0xb
+ 671 00c2 49       		.uleb128 0x49
+ 672 00c3 13       		.uleb128 0x13
+ 673 00c4 02       		.uleb128 0x2
+ 674 00c5 17       		.uleb128 0x17
+ 675 00c6 00       		.byte	0
+ 676 00c7 00       		.byte	0
+ 677 00c8 0F       		.uleb128 0xf
+ 678 00c9 34       		.uleb128 0x34
+ 679 00ca 00       		.byte	0
+ 680 00cb 03       		.uleb128 0x3
+ 681 00cc 0E       		.uleb128 0xe
+ 682 00cd 3A       		.uleb128 0x3a
+ 683 00ce 0B       		.uleb128 0xb
+ 684 00cf 3B       		.uleb128 0x3b
+ 685 00d0 0B       		.uleb128 0xb
+ 686 00d1 49       		.uleb128 0x49
+ 687 00d2 13       		.uleb128 0x13
+ 688 00d3 02       		.uleb128 0x2
+ 689 00d4 17       		.uleb128 0x17
+ 690 00d5 00       		.byte	0
+ 691 00d6 00       		.byte	0
+ 692 00d7 10       		.uleb128 0x10
+ 693 00d8 34       		.uleb128 0x34
+ 694 00d9 00       		.byte	0
+ 695 00da 03       		.uleb128 0x3
+ 696 00db 0E       		.uleb128 0xe
+ 697 00dc 3A       		.uleb128 0x3a
+ 698 00dd 0B       		.uleb128 0xb
+ 699 00de 3B       		.uleb128 0x3b
+ 700 00df 0B       		.uleb128 0xb
+ 701 00e0 49       		.uleb128 0x49
+ 702 00e1 13       		.uleb128 0x13
+ 703 00e2 02       		.uleb128 0x2
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 15
+
+
+ 704 00e3 18       		.uleb128 0x18
+ 705 00e4 00       		.byte	0
+ 706 00e5 00       		.byte	0
+ 707 00e6 11       		.uleb128 0x11
+ 708 00e7 898201   		.uleb128 0x4109
+ 709 00ea 01       		.byte	0x1
+ 710 00eb 11       		.uleb128 0x11
+ 711 00ec 01       		.uleb128 0x1
+ 712 00ed 31       		.uleb128 0x31
+ 713 00ee 13       		.uleb128 0x13
+ 714 00ef 00       		.byte	0
+ 715 00f0 00       		.byte	0
+ 716 00f1 12       		.uleb128 0x12
+ 717 00f2 8A8201   		.uleb128 0x410a
+ 718 00f5 00       		.byte	0
+ 719 00f6 02       		.uleb128 0x2
+ 720 00f7 18       		.uleb128 0x18
+ 721 00f8 9142     		.uleb128 0x2111
+ 722 00fa 18       		.uleb128 0x18
+ 723 00fb 00       		.byte	0
+ 724 00fc 00       		.byte	0
+ 725 00fd 13       		.uleb128 0x13
+ 726 00fe 2E       		.uleb128 0x2e
+ 727 00ff 01       		.byte	0x1
+ 728 0100 3F       		.uleb128 0x3f
+ 729 0101 19       		.uleb128 0x19
+ 730 0102 03       		.uleb128 0x3
+ 731 0103 0E       		.uleb128 0xe
+ 732 0104 3A       		.uleb128 0x3a
+ 733 0105 0B       		.uleb128 0xb
+ 734 0106 3B       		.uleb128 0x3b
+ 735 0107 0B       		.uleb128 0xb
+ 736 0108 27       		.uleb128 0x27
+ 737 0109 19       		.uleb128 0x19
+ 738 010a 11       		.uleb128 0x11
+ 739 010b 01       		.uleb128 0x1
+ 740 010c 12       		.uleb128 0x12
+ 741 010d 06       		.uleb128 0x6
+ 742 010e 40       		.uleb128 0x40
+ 743 010f 18       		.uleb128 0x18
+ 744 0110 9642     		.uleb128 0x2116
+ 745 0112 19       		.uleb128 0x19
+ 746 0113 01       		.uleb128 0x1
+ 747 0114 13       		.uleb128 0x13
+ 748 0115 00       		.byte	0
+ 749 0116 00       		.byte	0
+ 750 0117 14       		.uleb128 0x14
+ 751 0118 34       		.uleb128 0x34
+ 752 0119 00       		.byte	0
+ 753 011a 03       		.uleb128 0x3
+ 754 011b 0E       		.uleb128 0xe
+ 755 011c 3A       		.uleb128 0x3a
+ 756 011d 0B       		.uleb128 0xb
+ 757 011e 3B       		.uleb128 0x3b
+ 758 011f 0B       		.uleb128 0xb
+ 759 0120 49       		.uleb128 0x49
+ 760 0121 13       		.uleb128 0x13
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 16
+
+
+ 761 0122 3F       		.uleb128 0x3f
+ 762 0123 19       		.uleb128 0x19
+ 763 0124 3C       		.uleb128 0x3c
+ 764 0125 19       		.uleb128 0x19
+ 765 0126 00       		.byte	0
+ 766 0127 00       		.byte	0
+ 767 0128 00       		.byte	0
+ 768              		.section	.debug_loc,"",%progbits
+ 769              	.Ldebug_loc0:
+ 770              	.LLST0:
+ 771 0000 00000000 		.4byte	.LVL1
+ 772 0004 24000000 		.4byte	.LVL4
+ 773 0008 0100     		.2byte	0x1
+ 774 000a 50       		.byte	0x50
+ 775 000b 24000000 		.4byte	.LVL4
+ 776 000f 26000000 		.4byte	.LVL5
+ 777 0013 0400     		.2byte	0x4
+ 778 0015 F3       		.byte	0xf3
+ 779 0016 01       		.uleb128 0x1
+ 780 0017 50       		.byte	0x50
+ 781 0018 9F       		.byte	0x9f
+ 782 0019 26000000 		.4byte	.LVL5
+ 783 001d 28000000 		.4byte	.LVL6
+ 784 0021 0100     		.2byte	0x1
+ 785 0023 50       		.byte	0x50
+ 786 0024 28000000 		.4byte	.LVL6
+ 787 0028 2A000000 		.4byte	.LVL7
+ 788 002c 0400     		.2byte	0x4
+ 789 002e F3       		.byte	0xf3
+ 790 002f 01       		.uleb128 0x1
+ 791 0030 50       		.byte	0x50
+ 792 0031 9F       		.byte	0x9f
+ 793 0032 2A000000 		.4byte	.LVL7
+ 794 0036 2C000000 		.4byte	.LVL8
+ 795 003a 0100     		.2byte	0x1
+ 796 003c 50       		.byte	0x50
+ 797 003d 2C000000 		.4byte	.LVL8
+ 798 0041 2E000000 		.4byte	.LVL9
+ 799 0045 0400     		.2byte	0x4
+ 800 0047 F3       		.byte	0xf3
+ 801 0048 01       		.uleb128 0x1
+ 802 0049 50       		.byte	0x50
+ 803 004a 9F       		.byte	0x9f
+ 804 004b 2E000000 		.4byte	.LVL9
+ 805 004f 30000000 		.4byte	.LVL10
+ 806 0053 0100     		.2byte	0x1
+ 807 0055 50       		.byte	0x50
+ 808 0056 30000000 		.4byte	.LVL10
+ 809 005a 32000000 		.4byte	.LVL11
+ 810 005e 0400     		.2byte	0x4
+ 811 0060 F3       		.byte	0xf3
+ 812 0061 01       		.uleb128 0x1
+ 813 0062 50       		.byte	0x50
+ 814 0063 9F       		.byte	0x9f
+ 815 0064 32000000 		.4byte	.LVL11
+ 816 0068 34000000 		.4byte	.LVL12
+ 817 006c 0100     		.2byte	0x1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 17
+
+
+ 818 006e 50       		.byte	0x50
+ 819 006f 34000000 		.4byte	.LVL12
+ 820 0073 3C000000 		.4byte	.LFE37
+ 821 0077 0400     		.2byte	0x4
+ 822 0079 F3       		.byte	0xf3
+ 823 007a 01       		.uleb128 0x1
+ 824 007b 50       		.byte	0x50
+ 825 007c 9F       		.byte	0x9f
+ 826 007d 00000000 		.4byte	0
+ 827 0081 00000000 		.4byte	0
+ 828              	.LLST1:
+ 829 0085 18000000 		.4byte	.LVL2
+ 830 0089 26000000 		.4byte	.LVL5
+ 831 008d 0100     		.2byte	0x1
+ 832 008f 52       		.byte	0x52
+ 833 0090 00000000 		.4byte	0
+ 834 0094 00000000 		.4byte	0
+ 835              	.LLST2:
+ 836 0098 00000000 		.4byte	.LVL13
+ 837 009c 07000000 		.4byte	.LVL14-1
+ 838 00a0 0100     		.2byte	0x1
+ 839 00a2 50       		.byte	0x50
+ 840 00a3 07000000 		.4byte	.LVL14-1
+ 841 00a7 14000000 		.4byte	.LVL15
+ 842 00ab 0100     		.2byte	0x1
+ 843 00ad 54       		.byte	0x54
+ 844 00ae 14000000 		.4byte	.LVL15
+ 845 00b2 16000000 		.4byte	.LFE36
+ 846 00b6 0400     		.2byte	0x4
+ 847 00b8 F3       		.byte	0xf3
+ 848 00b9 01       		.uleb128 0x1
+ 849 00ba 50       		.byte	0x50
+ 850 00bb 9F       		.byte	0x9f
+ 851 00bc 00000000 		.4byte	0
+ 852 00c0 00000000 		.4byte	0
+ 853              	.LLST3:
+ 854 00c4 00000000 		.4byte	.LVL16
+ 855 00c8 08000000 		.4byte	.LVL17
+ 856 00cc 0100     		.2byte	0x1
+ 857 00ce 50       		.byte	0x50
+ 858 00cf 08000000 		.4byte	.LVL17
+ 859 00d3 24000000 		.4byte	.LVL20
+ 860 00d7 0100     		.2byte	0x1
+ 861 00d9 54       		.byte	0x54
+ 862 00da 24000000 		.4byte	.LVL20
+ 863 00de 2C000000 		.4byte	.LFE34
+ 864 00e2 0400     		.2byte	0x4
+ 865 00e4 F3       		.byte	0xf3
+ 866 00e5 01       		.uleb128 0x1
+ 867 00e6 50       		.byte	0x50
+ 868 00e7 9F       		.byte	0x9f
+ 869 00e8 00000000 		.4byte	0
+ 870 00ec 00000000 		.4byte	0
+ 871              		.section	.debug_aranges,"",%progbits
+ 872 0000 34000000 		.4byte	0x34
+ 873 0004 0200     		.2byte	0x2
+ 874 0006 00000000 		.4byte	.Ldebug_info0
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 18
+
+
+ 875 000a 04       		.byte	0x4
+ 876 000b 00       		.byte	0
+ 877 000c 0000     		.2byte	0
+ 878 000e 0000     		.2byte	0
+ 879 0010 00000000 		.4byte	.LFB35
+ 880 0014 2C000000 		.4byte	.LFE35-.LFB35
+ 881 0018 00000000 		.4byte	.LFB37
+ 882 001c 3C000000 		.4byte	.LFE37-.LFB37
+ 883 0020 00000000 		.4byte	.LFB36
+ 884 0024 16000000 		.4byte	.LFE36-.LFB36
+ 885 0028 00000000 		.4byte	.LFB34
+ 886 002c 2C000000 		.4byte	.LFE34-.LFB34
+ 887 0030 00000000 		.4byte	0
+ 888 0034 00000000 		.4byte	0
+ 889              		.section	.debug_ranges,"",%progbits
+ 890              	.Ldebug_ranges0:
+ 891 0000 00000000 		.4byte	.LFB35
+ 892 0004 2C000000 		.4byte	.LFE35
+ 893 0008 00000000 		.4byte	.LFB37
+ 894 000c 3C000000 		.4byte	.LFE37
+ 895 0010 00000000 		.4byte	.LFB36
+ 896 0014 16000000 		.4byte	.LFE36
+ 897 0018 00000000 		.4byte	.LFB34
+ 898 001c 2C000000 		.4byte	.LFE34
+ 899 0020 00000000 		.4byte	0
+ 900 0024 00000000 		.4byte	0
+ 901              		.section	.debug_line,"",%progbits
+ 902              	.Ldebug_line0:
+ 903 0000 8F000000 		.section	.debug_str,"MS",%progbits,1
+ 903      02002B00 
+ 903      00000201 
+ 903      FB0E0D00 
+ 903      01010101 
+ 904              	.LASF32:
+ 905 0000 66696E64 		.ascii	"findPreviousTask\000"
+ 905      50726576 
+ 905      696F7573 
+ 905      5461736B 
+ 905      00
+ 906              	.LASF31:
+ 907 0011 74636253 		.ascii	"tcbStruct\000"
+ 907      74727563 
+ 907      7400
+ 908              	.LASF22:
+ 909 001b 63757272 		.ascii	"currentTaskPtr\000"
+ 909      656E7454 
+ 909      61736B50 
+ 909      747200
+ 910              	.LASF9:
+ 911 002a 666C6F61 		.ascii	"float\000"
+ 911      7400
+ 912              	.LASF21:
+ 913 0030 7461736B 		.ascii	"taskPtr\000"
+ 913      50747200 
+ 914              	.LASF27:
+ 915 0038 6C617374 		.ascii	"lastTCBPtr\000"
+ 915      54434250 
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 19
+
+
+ 915      747200
+ 916              	.LASF23:
+ 917 0043 70726576 		.ascii	"previousTask\000"
+ 917      696F7573 
+ 917      5461736B 
+ 917      00
+ 918              	.LASF15:
+ 919 0050 64617461 		.ascii	"dataPtr\000"
+ 919      50747200 
+ 920              	.LASF5:
+ 921 0058 6C6F6E67 		.ascii	"long unsigned int\000"
+ 921      20756E73 
+ 921      69676E65 
+ 921      6420696E 
+ 921      7400
+ 922              	.LASF3:
+ 923 006a 73686F72 		.ascii	"short unsigned int\000"
+ 923      7420756E 
+ 923      7369676E 
+ 923      65642069 
+ 923      6E7400
+ 924              	.LASF24:
+ 925 007d 65786563 		.ascii	"executeTask\000"
+ 925      75746554 
+ 925      61736B00 
+ 926              	.LASF1:
+ 927 0089 756E7369 		.ascii	"unsigned char\000"
+ 927      676E6564 
+ 927      20636861 
+ 927      7200
+ 928              	.LASF10:
+ 929 0097 646F7562 		.ascii	"double\000"
+ 929      6C6500
+ 930              	.LASF29:
+ 931 009e 73636865 		.ascii	"scheduler.c\000"
+ 931      64756C65 
+ 931      722E6300 
+ 932              	.LASF8:
+ 933 00aa 756E7369 		.ascii	"unsigned int\000"
+ 933      676E6564 
+ 933      20696E74 
+ 933      00
+ 934              	.LASF7:
+ 935 00b7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 935      206C6F6E 
+ 935      6720756E 
+ 935      7369676E 
+ 935      65642069 
+ 936              	.LASF25:
+ 937 00ce 74636250 		.ascii	"tcbPtr\000"
+ 937      747200
+ 938              	.LASF26:
+ 939 00d5 66697273 		.ascii	"firstTCBPtr\000"
+ 939      74544342 
+ 939      50747200 
+ 940              	.LASF18:
+ 941 00e1 74617267 		.ascii	"targetTaskPtr\000"
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 20
+
+
+ 941      65745461 
+ 941      736B5074 
+ 941      7200
+ 942              	.LASF28:
+ 943 00ef 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 943      43313120 
+ 943      352E342E 
+ 943      31203230 
+ 943      31363036 
+ 944 0122 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 944      20726576 
+ 944      6973696F 
+ 944      6E203233 
+ 944      37373135 
+ 945 0155 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 945      66756E63 
+ 945      74696F6E 
+ 945      2D736563 
+ 945      74696F6E 
+ 946              	.LASF16:
+ 947 017d 6E657874 		.ascii	"nextTCBPtr\000"
+ 947      54434250 
+ 947      747200
+ 948              	.LASF13:
+ 949 0188 73697A65 		.ascii	"sizetype\000"
+ 949      74797065 
+ 949      00
+ 950              	.LASF6:
+ 951 0191 6C6F6E67 		.ascii	"long long int\000"
+ 951      206C6F6E 
+ 951      6720696E 
+ 951      7400
+ 952              	.LASF17:
+ 953 019f 6E657754 		.ascii	"newTask\000"
+ 953      61736B00 
+ 954              	.LASF11:
+ 955 01a7 63686172 		.ascii	"char\000"
+ 955      00
+ 956              	.LASF19:
+ 957 01ac 61646454 		.ascii	"addTask\000"
+ 957      61736B00 
+ 958              	.LASF20:
+ 959 01b4 67726F75 		.ascii	"groundTask\000"
+ 959      6E645461 
+ 959      736B00
+ 960              	.LASF2:
+ 961 01bf 73686F72 		.ascii	"short int\000"
+ 961      7420696E 
+ 961      7400
+ 962              	.LASF4:
+ 963 01c9 6C6F6E67 		.ascii	"long int\000"
+ 963      20696E74 
+ 963      00
+ 964              	.LASF12:
+ 965 01d2 6C6F6E67 		.ascii	"long double\000"
+ 965      20646F75 
+ 965      626C6500 
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccObRVuH.s 			page 21
+
+
+ 966              	.LASF0:
+ 967 01de 7369676E 		.ascii	"signed char\000"
+ 967      65642063 
+ 967      68617200 
+ 968              	.LASF30:
+ 969 01ea 433A5C55 		.ascii	"C:\\Users\\Default User.DESKTOP-J8EE37M\\Documents\\"
+ 969      73657273 
+ 969      5C446566 
+ 969      61756C74 
+ 969      20557365 
+ 970 021a 50536F43 		.ascii	"PSoC Creator\\HuskyRobotics\\PioneerLSeries\\Pionee"
+ 970      20437265 
+ 970      61746F72 
+ 970      5C487573 
+ 970      6B79526F 
+ 971 024a 724C5365 		.ascii	"rLSeries.cydsn\000"
+ 971      72696573 
+ 971      2E637964 
+ 971      736E00
+ 972              	.LASF14:
+ 973 0259 63757272 		.ascii	"currTask\000"
+ 973      5461736B 
+ 973      00
+ 974              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+>>>>>>> refs/remotes/origin/master

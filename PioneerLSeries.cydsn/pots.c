@@ -24,6 +24,7 @@ void readPot(void *currDataPtr){
     int i = 0;
     for(i = 0; i < NUM_MOTORS; i++)
     {
-        potDataPtr->potRaw[i] = ADC_GetResult16(i);   
+        //potDataPtr->potRaw[i] = ADC_GetResult16(i);   
+        potDataPtr->potRaw[i] = i;//Debug
     }
 }

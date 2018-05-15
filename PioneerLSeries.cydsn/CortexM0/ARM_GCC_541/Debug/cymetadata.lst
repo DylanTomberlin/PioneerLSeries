@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccjGLlih.s 			page 1
 
 
    1              		.syntax unified
@@ -57,11 +57,11 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
   50      00000000 
   51              		.text
   52              	.Letext0:
-  53              		.file 1 "e:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 2
+  53              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccjGLlih.s 			page 2
 
 
-  54              		.file 2 "e:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  54              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
   55              		.file 3 "Generated_Source\\PSoC4\\cymetadata.c"
   56              		.section	.debug_info,"",%progbits
   57              	.Ldebug_info0:
@@ -73,12 +73,12 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
   63 000c C2000000 		.4byte	.LASF15
   64 0010 0C       		.byte	0xc
   65 0011 38000000 		.4byte	.LASF16
-  66 0015 67010000 		.4byte	.LASF17
+  66 0015 86010000 		.4byte	.LASF17
   67 0019 00000000 		.4byte	.Ldebug_line0
   68 001d 02       		.uleb128 0x2
   69 001e 01       		.byte	0x1
   70 001f 06       		.byte	0x6
-  71 0020 F7010000 		.4byte	.LASF0
+  71 0020 7A010000 		.4byte	.LASF0
   72 0024 03       		.uleb128 0x3
   73 0025 00000000 		.4byte	.LASF9
   74 0029 01       		.byte	0x1
@@ -91,7 +91,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
   81 0036 02       		.uleb128 0x2
   82 0037 02       		.byte	0x2
   83 0038 05       		.byte	0x5
-  84 0039 E4010000 		.4byte	.LASF2
+  84 0039 67010000 		.4byte	.LASF2
   85 003d 02       		.uleb128 0x2
   86 003e 02       		.byte	0x2
   87 003f 07       		.byte	0x7
@@ -99,7 +99,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
   89 0044 02       		.uleb128 0x2
   90 0045 04       		.byte	0x4
   91 0046 05       		.byte	0x5
-  92 0047 EE010000 		.4byte	.LASF4
+  92 0047 71010000 		.4byte	.LASF4
   93 004b 02       		.uleb128 0x2
   94 004c 04       		.byte	0x4
   95 004d 07       		.byte	0x7
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
  108 0063 696E7400 		.ascii	"int\000"
  109 0067 02       		.uleb128 0x2
  110 0068 04       		.byte	0x4
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 3
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccjGLlih.s 			page 3
 
 
  111 0069 07       		.byte	0x7
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
  165 00e1 08       		.uleb128 0x8
  166 00e2 0A000000 		.4byte	.LASF14
  167 00e6 03       		.byte	0x3
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 4
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccjGLlih.s 			page 4
 
 
  168 00e7 4B       		.byte	0x4b
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
  222 002c 3E       		.uleb128 0x3e
  223 002d 0B       		.uleb128 0xb
  224 002e 03       		.uleb128 0x3
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 5
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccjGLlih.s 			page 5
 
 
  225 002f 08       		.uleb128 0x8
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
  279 0010 00000000 		.4byte	0
  280 0014 00000000 		.4byte	0
  281              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 6
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccjGLlih.s 			page 6
 
 
  282              	.Ldebug_line0:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
  302              	.LASF10:
  303 00a5 75696E74 		.ascii	"uint8_t\000"
  303      385F7400 
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 7
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccjGLlih.s 			page 7
 
 
  304              	.LASF12:
@@ -392,35 +392,34 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 1
  313      206C6F6E 
  313      6720696E 
  313      7400
- 314              	.LASF17:
- 315 0167 473A5C4D 		.ascii	"G:\\My Drive\\Husky Robotics\\Electronics\\Arm_Elec"
- 315      79204472 
- 315      6976655C 
- 315      4875736B 
- 315      7920526F 
- 316 0196 74726F6E 		.ascii	"tronics\\PSoC Workspaces\\MotorBoard2017-18_PSoC Wo"
- 316      6963735C 
- 316      50536F43 
- 316      20576F72 
- 316      6B737061 
- 317 01c7 726B7370 		.ascii	"rkspace\\PioneerLSeries.cydsn\000"
- 317      6163655C 
- 317      50696F6E 
- 317      6565724C 
- 317      53657269 
- 318              	.LASF2:
- 319 01e4 73686F72 		.ascii	"short int\000"
- 319      7420696E 
- 319      7400
- 320              	.LASF4:
- 321 01ee 6C6F6E67 		.ascii	"long int\000"
- 321      20696E74 
- 321      00
- 322              	.LASF0:
- 323 01f7 7369676E 		.ascii	"signed char\000"
-ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccwLGqlb.s 			page 8
+ 314              	.LASF2:
+ 315 0167 73686F72 		.ascii	"short int\000"
+ 315      7420696E 
+ 315      7400
+ 316              	.LASF4:
+ 317 0171 6C6F6E67 		.ascii	"long int\000"
+ 317      20696E74 
+ 317      00
+ 318              	.LASF0:
+ 319 017a 7369676E 		.ascii	"signed char\000"
+ 319      65642063 
+ 319      68617200 
+ 320              	.LASF17:
+ 321 0186 433A5C55 		.ascii	"C:\\Users\\Default User.DESKTOP-J8EE37M\\Documents\\"
+ 321      73657273 
+ 321      5C446566 
+ 321      61756C74 
+ 321      20557365 
+ 322 01b6 50536F43 		.ascii	"PSoC Creator\\HuskyRobotics\\PioneerLSeries\\Pionee"
+ 322      20437265 
+ 322      61746F72 
+ 322      5C487573 
+ 322      6B79526F 
+ 323 01e6 724C5365 		.ascii	"rLSeries.cydsn\000"
+ 323      72696573 
+ 323      2E637964 
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\ccjGLlih.s 			page 8
 
 
- 323      65642063 
- 323      68617200 
+ 323      736E00
  324              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

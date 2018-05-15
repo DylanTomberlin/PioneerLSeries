@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccWa0jk3.s 			page 1
+=======
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 1
+>>>>>>> refs/remotes/origin/master
 
 
    1              		.syntax unified
@@ -50,10 +54,10 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccWa0jk3.s 			page 1
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 4, -8
   36              		.cfi_offset 14, -4
-  37 0002 0400     		movs	r4, r0
-  38              	.LVL1:
+  37              	.LVL1:
   14:display.c     ****     displayData *displayDataPtr = (displayData*) dataPointer; //cast from generic data struct point
   15:display.c     ****     LCD_Position(0, 0);
+<<<<<<< HEAD
   39              		.loc 1 15 0
   40 0004 0021     		movs	r1, #0
   41 0006 0020     		movs	r0, #0
@@ -773,3 +777,660 @@ ARM GAS  C:\Users\Dylan\AppData\Local\Temp\ccWa0jk3.s 			page 1
  628      74537472 
  628      696E6700 
  629              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+=======
+  38              		.loc 1 15 0
+  39 0002 0021     		movs	r1, #0
+  40 0004 0020     		movs	r0, #0
+  41              	.LVL2:
+  42 0006 FFF7FEFF 		bl	LCD_Position
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 2
+
+
+  43              	.LVL3:
+  16:display.c     ****     //LCD_PrintDecUint16(*(displayDataPtr->potRawPtr));
+  17:display.c     ****     //LCD_PrintNumber(*(displayDataPtr->potRawPtr));
+  18:display.c     ****     LCD_Position(1, 0);
+  44              		.loc 1 18 0
+  45 000a 0021     		movs	r1, #0
+  46 000c 0120     		movs	r0, #1
+  47 000e FFF7FEFF 		bl	LCD_Position
+  48              	.LVL4:
+  19:display.c     ****     LCD_PrintString("HelloWorld");
+  49              		.loc 1 19 0
+  50 0012 0248     		ldr	r0, .L2
+  51 0014 FFF7FEFF 		bl	LCD_PrintString
+  52              	.LVL5:
+  20:display.c     **** }
+  53              		.loc 1 20 0
+  54              		@ sp needed
+  55 0018 10BD     		pop	{r4, pc}
+  56              	.L3:
+  57 001a C046     		.align	2
+  58              	.L2:
+  59 001c 00000000 		.word	.LC0
+  60              		.cfi_endproc
+  61              	.LFE34:
+  62              		.size	display, .-display
+  63              		.section	.rodata.str1.4,"aMS",%progbits,1
+  64              		.align	2
+  65              	.LC0:
+  66 0000 48656C6C 		.ascii	"HelloWorld\000"
+  66      6F576F72 
+  66      6C6400
+  67              		.text
+  68              	.Letext0:
+  69              		.file 2 "Generated_Source\\PSoC4/LCD.h"
+  70              		.file 3 "structs.h"
+  71              		.section	.debug_info,"",%progbits
+  72              	.Ldebug_info0:
+  73 0000 56010000 		.4byte	0x156
+  74 0004 0400     		.2byte	0x4
+  75 0006 00000000 		.4byte	.Ldebug_abbrev0
+  76 000a 04       		.byte	0x4
+  77 000b 01       		.uleb128 0x1
+  78 000c 0E000000 		.4byte	.LASF16
+  79 0010 0C       		.byte	0xc
+  80 0011 A9000000 		.4byte	.LASF17
+  81 0015 35010000 		.4byte	.LASF18
+  82 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  83 001d 00000000 		.4byte	0
+  84 0021 00000000 		.4byte	.Ldebug_line0
+  85 0025 02       		.uleb128 0x2
+  86 0026 01       		.byte	0x1
+  87 0027 06       		.byte	0x6
+  88 0028 B7010000 		.4byte	.LASF0
+  89 002c 02       		.uleb128 0x2
+  90 002d 01       		.byte	0x1
+  91 002e 08       		.byte	0x8
+  92 002f E2000000 		.4byte	.LASF1
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 3
+
+
+  93 0033 02       		.uleb128 0x2
+  94 0034 02       		.byte	0x2
+  95 0035 05       		.byte	0x5
+  96 0036 D9010000 		.4byte	.LASF2
+  97 003a 02       		.uleb128 0x2
+  98 003b 02       		.byte	0x2
+  99 003c 07       		.byte	0x7
+ 100 003d A4010000 		.4byte	.LASF3
+ 101 0041 02       		.uleb128 0x2
+ 102 0042 04       		.byte	0x4
+ 103 0043 05       		.byte	0x5
+ 104 0044 18010000 		.4byte	.LASF4
+ 105 0048 02       		.uleb128 0x2
+ 106 0049 04       		.byte	0x4
+ 107 004a 07       		.byte	0x7
+ 108 004b B3000000 		.4byte	.LASF5
+ 109 004f 02       		.uleb128 0x2
+ 110 0050 08       		.byte	0x8
+ 111 0051 05       		.byte	0x5
+ 112 0052 00000000 		.4byte	.LASF6
+ 113 0056 02       		.uleb128 0x2
+ 114 0057 08       		.byte	0x8
+ 115 0058 07       		.byte	0x7
+ 116 0059 C5000000 		.4byte	.LASF7
+ 117 005d 03       		.uleb128 0x3
+ 118 005e 04       		.byte	0x4
+ 119 005f 05       		.byte	0x5
+ 120 0060 696E7400 		.ascii	"int\000"
+ 121 0064 02       		.uleb128 0x2
+ 122 0065 04       		.byte	0x4
+ 123 0066 07       		.byte	0x7
+ 124 0067 9C000000 		.4byte	.LASF8
+ 125 006b 02       		.uleb128 0x2
+ 126 006c 04       		.byte	0x4
+ 127 006d 04       		.byte	0x4
+ 128 006e DC000000 		.4byte	.LASF9
+ 129 0072 02       		.uleb128 0x2
+ 130 0073 08       		.byte	0x8
+ 131 0074 04       		.byte	0x4
+ 132 0075 21010000 		.4byte	.LASF10
+ 133 0079 02       		.uleb128 0x2
+ 134 007a 01       		.byte	0x1
+ 135 007b 08       		.byte	0x8
+ 136 007c FF000000 		.4byte	.LASF11
+ 137 0080 02       		.uleb128 0x2
+ 138 0081 08       		.byte	0x8
+ 139 0082 04       		.byte	0x4
+ 140 0083 CD010000 		.4byte	.LASF12
+ 141 0087 02       		.uleb128 0x2
+ 142 0088 04       		.byte	0x4
+ 143 0089 07       		.byte	0x7
+ 144 008a E3010000 		.4byte	.LASF13
+ 145 008e 04       		.uleb128 0x4
+ 146 008f 04       		.byte	0x4
+ 147 0090 05       		.uleb128 0x5
+ 148 0091 0C       		.byte	0xc
+ 149 0092 03       		.byte	0x3
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 4
+
+
+ 150 0093 14       		.byte	0x14
+ 151 0094 A5000000 		.4byte	0xa5
+ 152 0098 06       		.uleb128 0x6
+ 153 0099 C3010000 		.4byte	.LASF19
+ 154 009d 03       		.byte	0x3
+ 155 009e 16       		.byte	0x16
+ 156 009f A5000000 		.4byte	0xa5
+ 157 00a3 00       		.byte	0
+ 158 00a4 00       		.byte	0
+ 159 00a5 07       		.uleb128 0x7
+ 160 00a6 B5000000 		.4byte	0xb5
+ 161 00aa B5000000 		.4byte	0xb5
+ 162 00ae 08       		.uleb128 0x8
+ 163 00af 87000000 		.4byte	0x87
+ 164 00b3 02       		.byte	0x2
+ 165 00b4 00       		.byte	0
+ 166 00b5 09       		.uleb128 0x9
+ 167 00b6 04       		.byte	0x4
+ 168 00b7 5D000000 		.4byte	0x5d
+ 169 00bb 0A       		.uleb128 0xa
+ 170 00bc EC010000 		.4byte	.LASF20
+ 171 00c0 03       		.byte	0x3
+ 172 00c1 17       		.byte	0x17
+ 173 00c2 90000000 		.4byte	0x90
+ 174 00c6 0B       		.uleb128 0xb
+ 175 00c7 04010000 		.4byte	.LASF21
+ 176 00cb 01       		.byte	0x1
+ 177 00cc 0C       		.byte	0xc
+ 178 00cd 00000000 		.4byte	.LFB34
+ 179 00d1 20000000 		.4byte	.LFE34-.LFB34
+ 180 00d5 01       		.uleb128 0x1
+ 181 00d6 9C       		.byte	0x9c
+ 182 00d7 3D010000 		.4byte	0x13d
+ 183 00db 0C       		.uleb128 0xc
+ 184 00dc 0C010000 		.4byte	.LASF22
+ 185 00e0 01       		.byte	0x1
+ 186 00e1 0C       		.byte	0xc
+ 187 00e2 8E000000 		.4byte	0x8e
+ 188 00e6 00000000 		.4byte	.LLST0
+ 189 00ea 0D       		.uleb128 0xd
+ 190 00eb F0000000 		.4byte	.LASF23
+ 191 00ef 01       		.byte	0x1
+ 192 00f0 0E       		.byte	0xe
+ 193 00f1 3D010000 		.4byte	0x13d
+ 194 00f5 21000000 		.4byte	.LLST1
+ 195 00f9 0E       		.uleb128 0xe
+ 196 00fa 0A000000 		.4byte	.LVL3
+ 197 00fe 43010000 		.4byte	0x143
+ 198 0102 11010000 		.4byte	0x111
+ 199 0106 0F       		.uleb128 0xf
+ 200 0107 01       		.uleb128 0x1
+ 201 0108 50       		.byte	0x50
+ 202 0109 01       		.uleb128 0x1
+ 203 010a 30       		.byte	0x30
+ 204 010b 0F       		.uleb128 0xf
+ 205 010c 01       		.uleb128 0x1
+ 206 010d 51       		.byte	0x51
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 5
+
+
+ 207 010e 01       		.uleb128 0x1
+ 208 010f 30       		.byte	0x30
+ 209 0110 00       		.byte	0
+ 210 0111 0E       		.uleb128 0xe
+ 211 0112 12000000 		.4byte	.LVL4
+ 212 0116 43010000 		.4byte	0x143
+ 213 011a 29010000 		.4byte	0x129
+ 214 011e 0F       		.uleb128 0xf
+ 215 011f 01       		.uleb128 0x1
+ 216 0120 50       		.byte	0x50
+ 217 0121 01       		.uleb128 0x1
+ 218 0122 31       		.byte	0x31
+ 219 0123 0F       		.uleb128 0xf
+ 220 0124 01       		.uleb128 0x1
+ 221 0125 51       		.byte	0x51
+ 222 0126 01       		.uleb128 0x1
+ 223 0127 30       		.byte	0x30
+ 224 0128 00       		.byte	0
+ 225 0129 10       		.uleb128 0x10
+ 226 012a 18000000 		.4byte	.LVL5
+ 227 012e 4E010000 		.4byte	0x14e
+ 228 0132 0F       		.uleb128 0xf
+ 229 0133 01       		.uleb128 0x1
+ 230 0134 50       		.byte	0x50
+ 231 0135 05       		.uleb128 0x5
+ 232 0136 03       		.byte	0x3
+ 233 0137 00000000 		.4byte	.LC0
+ 234 013b 00       		.byte	0
+ 235 013c 00       		.byte	0
+ 236 013d 09       		.uleb128 0x9
+ 237 013e 04       		.byte	0x4
+ 238 013f BB000000 		.4byte	0xbb
+ 239 0143 11       		.uleb128 0x11
+ 240 0144 28010000 		.4byte	.LASF14
+ 241 0148 28010000 		.4byte	.LASF14
+ 242 014c 02       		.byte	0x2
+ 243 014d 3D       		.byte	0x3d
+ 244 014e 11       		.uleb128 0x11
+ 245 014f F8010000 		.4byte	.LASF15
+ 246 0153 F8010000 		.4byte	.LASF15
+ 247 0157 02       		.byte	0x2
+ 248 0158 3C       		.byte	0x3c
+ 249 0159 00       		.byte	0
+ 250              		.section	.debug_abbrev,"",%progbits
+ 251              	.Ldebug_abbrev0:
+ 252 0000 01       		.uleb128 0x1
+ 253 0001 11       		.uleb128 0x11
+ 254 0002 01       		.byte	0x1
+ 255 0003 25       		.uleb128 0x25
+ 256 0004 0E       		.uleb128 0xe
+ 257 0005 13       		.uleb128 0x13
+ 258 0006 0B       		.uleb128 0xb
+ 259 0007 03       		.uleb128 0x3
+ 260 0008 0E       		.uleb128 0xe
+ 261 0009 1B       		.uleb128 0x1b
+ 262 000a 0E       		.uleb128 0xe
+ 263 000b 55       		.uleb128 0x55
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 6
+
+
+ 264 000c 17       		.uleb128 0x17
+ 265 000d 11       		.uleb128 0x11
+ 266 000e 01       		.uleb128 0x1
+ 267 000f 10       		.uleb128 0x10
+ 268 0010 17       		.uleb128 0x17
+ 269 0011 00       		.byte	0
+ 270 0012 00       		.byte	0
+ 271 0013 02       		.uleb128 0x2
+ 272 0014 24       		.uleb128 0x24
+ 273 0015 00       		.byte	0
+ 274 0016 0B       		.uleb128 0xb
+ 275 0017 0B       		.uleb128 0xb
+ 276 0018 3E       		.uleb128 0x3e
+ 277 0019 0B       		.uleb128 0xb
+ 278 001a 03       		.uleb128 0x3
+ 279 001b 0E       		.uleb128 0xe
+ 280 001c 00       		.byte	0
+ 281 001d 00       		.byte	0
+ 282 001e 03       		.uleb128 0x3
+ 283 001f 24       		.uleb128 0x24
+ 284 0020 00       		.byte	0
+ 285 0021 0B       		.uleb128 0xb
+ 286 0022 0B       		.uleb128 0xb
+ 287 0023 3E       		.uleb128 0x3e
+ 288 0024 0B       		.uleb128 0xb
+ 289 0025 03       		.uleb128 0x3
+ 290 0026 08       		.uleb128 0x8
+ 291 0027 00       		.byte	0
+ 292 0028 00       		.byte	0
+ 293 0029 04       		.uleb128 0x4
+ 294 002a 0F       		.uleb128 0xf
+ 295 002b 00       		.byte	0
+ 296 002c 0B       		.uleb128 0xb
+ 297 002d 0B       		.uleb128 0xb
+ 298 002e 00       		.byte	0
+ 299 002f 00       		.byte	0
+ 300 0030 05       		.uleb128 0x5
+ 301 0031 13       		.uleb128 0x13
+ 302 0032 01       		.byte	0x1
+ 303 0033 0B       		.uleb128 0xb
+ 304 0034 0B       		.uleb128 0xb
+ 305 0035 3A       		.uleb128 0x3a
+ 306 0036 0B       		.uleb128 0xb
+ 307 0037 3B       		.uleb128 0x3b
+ 308 0038 0B       		.uleb128 0xb
+ 309 0039 01       		.uleb128 0x1
+ 310 003a 13       		.uleb128 0x13
+ 311 003b 00       		.byte	0
+ 312 003c 00       		.byte	0
+ 313 003d 06       		.uleb128 0x6
+ 314 003e 0D       		.uleb128 0xd
+ 315 003f 00       		.byte	0
+ 316 0040 03       		.uleb128 0x3
+ 317 0041 0E       		.uleb128 0xe
+ 318 0042 3A       		.uleb128 0x3a
+ 319 0043 0B       		.uleb128 0xb
+ 320 0044 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 7
+
+
+ 321 0045 0B       		.uleb128 0xb
+ 322 0046 49       		.uleb128 0x49
+ 323 0047 13       		.uleb128 0x13
+ 324 0048 38       		.uleb128 0x38
+ 325 0049 0B       		.uleb128 0xb
+ 326 004a 00       		.byte	0
+ 327 004b 00       		.byte	0
+ 328 004c 07       		.uleb128 0x7
+ 329 004d 01       		.uleb128 0x1
+ 330 004e 01       		.byte	0x1
+ 331 004f 49       		.uleb128 0x49
+ 332 0050 13       		.uleb128 0x13
+ 333 0051 01       		.uleb128 0x1
+ 334 0052 13       		.uleb128 0x13
+ 335 0053 00       		.byte	0
+ 336 0054 00       		.byte	0
+ 337 0055 08       		.uleb128 0x8
+ 338 0056 21       		.uleb128 0x21
+ 339 0057 00       		.byte	0
+ 340 0058 49       		.uleb128 0x49
+ 341 0059 13       		.uleb128 0x13
+ 342 005a 2F       		.uleb128 0x2f
+ 343 005b 0B       		.uleb128 0xb
+ 344 005c 00       		.byte	0
+ 345 005d 00       		.byte	0
+ 346 005e 09       		.uleb128 0x9
+ 347 005f 0F       		.uleb128 0xf
+ 348 0060 00       		.byte	0
+ 349 0061 0B       		.uleb128 0xb
+ 350 0062 0B       		.uleb128 0xb
+ 351 0063 49       		.uleb128 0x49
+ 352 0064 13       		.uleb128 0x13
+ 353 0065 00       		.byte	0
+ 354 0066 00       		.byte	0
+ 355 0067 0A       		.uleb128 0xa
+ 356 0068 16       		.uleb128 0x16
+ 357 0069 00       		.byte	0
+ 358 006a 03       		.uleb128 0x3
+ 359 006b 0E       		.uleb128 0xe
+ 360 006c 3A       		.uleb128 0x3a
+ 361 006d 0B       		.uleb128 0xb
+ 362 006e 3B       		.uleb128 0x3b
+ 363 006f 0B       		.uleb128 0xb
+ 364 0070 49       		.uleb128 0x49
+ 365 0071 13       		.uleb128 0x13
+ 366 0072 00       		.byte	0
+ 367 0073 00       		.byte	0
+ 368 0074 0B       		.uleb128 0xb
+ 369 0075 2E       		.uleb128 0x2e
+ 370 0076 01       		.byte	0x1
+ 371 0077 3F       		.uleb128 0x3f
+ 372 0078 19       		.uleb128 0x19
+ 373 0079 03       		.uleb128 0x3
+ 374 007a 0E       		.uleb128 0xe
+ 375 007b 3A       		.uleb128 0x3a
+ 376 007c 0B       		.uleb128 0xb
+ 377 007d 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 8
+
+
+ 378 007e 0B       		.uleb128 0xb
+ 379 007f 27       		.uleb128 0x27
+ 380 0080 19       		.uleb128 0x19
+ 381 0081 11       		.uleb128 0x11
+ 382 0082 01       		.uleb128 0x1
+ 383 0083 12       		.uleb128 0x12
+ 384 0084 06       		.uleb128 0x6
+ 385 0085 40       		.uleb128 0x40
+ 386 0086 18       		.uleb128 0x18
+ 387 0087 9742     		.uleb128 0x2117
+ 388 0089 19       		.uleb128 0x19
+ 389 008a 01       		.uleb128 0x1
+ 390 008b 13       		.uleb128 0x13
+ 391 008c 00       		.byte	0
+ 392 008d 00       		.byte	0
+ 393 008e 0C       		.uleb128 0xc
+ 394 008f 05       		.uleb128 0x5
+ 395 0090 00       		.byte	0
+ 396 0091 03       		.uleb128 0x3
+ 397 0092 0E       		.uleb128 0xe
+ 398 0093 3A       		.uleb128 0x3a
+ 399 0094 0B       		.uleb128 0xb
+ 400 0095 3B       		.uleb128 0x3b
+ 401 0096 0B       		.uleb128 0xb
+ 402 0097 49       		.uleb128 0x49
+ 403 0098 13       		.uleb128 0x13
+ 404 0099 02       		.uleb128 0x2
+ 405 009a 17       		.uleb128 0x17
+ 406 009b 00       		.byte	0
+ 407 009c 00       		.byte	0
+ 408 009d 0D       		.uleb128 0xd
+ 409 009e 34       		.uleb128 0x34
+ 410 009f 00       		.byte	0
+ 411 00a0 03       		.uleb128 0x3
+ 412 00a1 0E       		.uleb128 0xe
+ 413 00a2 3A       		.uleb128 0x3a
+ 414 00a3 0B       		.uleb128 0xb
+ 415 00a4 3B       		.uleb128 0x3b
+ 416 00a5 0B       		.uleb128 0xb
+ 417 00a6 49       		.uleb128 0x49
+ 418 00a7 13       		.uleb128 0x13
+ 419 00a8 02       		.uleb128 0x2
+ 420 00a9 17       		.uleb128 0x17
+ 421 00aa 00       		.byte	0
+ 422 00ab 00       		.byte	0
+ 423 00ac 0E       		.uleb128 0xe
+ 424 00ad 898201   		.uleb128 0x4109
+ 425 00b0 01       		.byte	0x1
+ 426 00b1 11       		.uleb128 0x11
+ 427 00b2 01       		.uleb128 0x1
+ 428 00b3 31       		.uleb128 0x31
+ 429 00b4 13       		.uleb128 0x13
+ 430 00b5 01       		.uleb128 0x1
+ 431 00b6 13       		.uleb128 0x13
+ 432 00b7 00       		.byte	0
+ 433 00b8 00       		.byte	0
+ 434 00b9 0F       		.uleb128 0xf
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 9
+
+
+ 435 00ba 8A8201   		.uleb128 0x410a
+ 436 00bd 00       		.byte	0
+ 437 00be 02       		.uleb128 0x2
+ 438 00bf 18       		.uleb128 0x18
+ 439 00c0 9142     		.uleb128 0x2111
+ 440 00c2 18       		.uleb128 0x18
+ 441 00c3 00       		.byte	0
+ 442 00c4 00       		.byte	0
+ 443 00c5 10       		.uleb128 0x10
+ 444 00c6 898201   		.uleb128 0x4109
+ 445 00c9 01       		.byte	0x1
+ 446 00ca 11       		.uleb128 0x11
+ 447 00cb 01       		.uleb128 0x1
+ 448 00cc 31       		.uleb128 0x31
+ 449 00cd 13       		.uleb128 0x13
+ 450 00ce 00       		.byte	0
+ 451 00cf 00       		.byte	0
+ 452 00d0 11       		.uleb128 0x11
+ 453 00d1 2E       		.uleb128 0x2e
+ 454 00d2 00       		.byte	0
+ 455 00d3 3F       		.uleb128 0x3f
+ 456 00d4 19       		.uleb128 0x19
+ 457 00d5 3C       		.uleb128 0x3c
+ 458 00d6 19       		.uleb128 0x19
+ 459 00d7 6E       		.uleb128 0x6e
+ 460 00d8 0E       		.uleb128 0xe
+ 461 00d9 03       		.uleb128 0x3
+ 462 00da 0E       		.uleb128 0xe
+ 463 00db 3A       		.uleb128 0x3a
+ 464 00dc 0B       		.uleb128 0xb
+ 465 00dd 3B       		.uleb128 0x3b
+ 466 00de 0B       		.uleb128 0xb
+ 467 00df 00       		.byte	0
+ 468 00e0 00       		.byte	0
+ 469 00e1 00       		.byte	0
+ 470              		.section	.debug_loc,"",%progbits
+ 471              	.Ldebug_loc0:
+ 472              	.LLST0:
+ 473 0000 00000000 		.4byte	.LVL0
+ 474 0004 06000000 		.4byte	.LVL2
+ 475 0008 0100     		.2byte	0x1
+ 476 000a 50       		.byte	0x50
+ 477 000b 06000000 		.4byte	.LVL2
+ 478 000f 20000000 		.4byte	.LFE34
+ 479 0013 0400     		.2byte	0x4
+ 480 0015 F3       		.byte	0xf3
+ 481 0016 01       		.uleb128 0x1
+ 482 0017 50       		.byte	0x50
+ 483 0018 9F       		.byte	0x9f
+ 484 0019 00000000 		.4byte	0
+ 485 001d 00000000 		.4byte	0
+ 486              	.LLST1:
+ 487 0021 02000000 		.4byte	.LVL1
+ 488 0025 06000000 		.4byte	.LVL2
+ 489 0029 0100     		.2byte	0x1
+ 490 002b 50       		.byte	0x50
+ 491 002c 06000000 		.4byte	.LVL2
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 10
+
+
+ 492 0030 20000000 		.4byte	.LFE34
+ 493 0034 0400     		.2byte	0x4
+ 494 0036 F3       		.byte	0xf3
+ 495 0037 01       		.uleb128 0x1
+ 496 0038 50       		.byte	0x50
+ 497 0039 9F       		.byte	0x9f
+ 498 003a 00000000 		.4byte	0
+ 499 003e 00000000 		.4byte	0
+ 500              		.section	.debug_aranges,"",%progbits
+ 501 0000 1C000000 		.4byte	0x1c
+ 502 0004 0200     		.2byte	0x2
+ 503 0006 00000000 		.4byte	.Ldebug_info0
+ 504 000a 04       		.byte	0x4
+ 505 000b 00       		.byte	0
+ 506 000c 0000     		.2byte	0
+ 507 000e 0000     		.2byte	0
+ 508 0010 00000000 		.4byte	.LFB34
+ 509 0014 20000000 		.4byte	.LFE34-.LFB34
+ 510 0018 00000000 		.4byte	0
+ 511 001c 00000000 		.4byte	0
+ 512              		.section	.debug_ranges,"",%progbits
+ 513              	.Ldebug_ranges0:
+ 514 0000 00000000 		.4byte	.LFB34
+ 515 0004 20000000 		.4byte	.LFE34
+ 516 0008 00000000 		.4byte	0
+ 517 000c 00000000 		.4byte	0
+ 518              		.section	.debug_line,"",%progbits
+ 519              	.Ldebug_line0:
+ 520 0000 66000000 		.section	.debug_str,"MS",%progbits,1
+ 520      02004D00 
+ 520      00000201 
+ 520      FB0E0D00 
+ 520      01010101 
+ 521              	.LASF6:
+ 522 0000 6C6F6E67 		.ascii	"long long int\000"
+ 522      206C6F6E 
+ 522      6720696E 
+ 522      7400
+ 523              	.LASF16:
+ 524 000e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 524      43313120 
+ 524      352E342E 
+ 524      31203230 
+ 524      31363036 
+ 525 0041 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 525      20726576 
+ 525      6973696F 
+ 525      6E203233 
+ 525      37373135 
+ 526 0074 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 526      66756E63 
+ 526      74696F6E 
+ 526      2D736563 
+ 526      74696F6E 
+ 527              	.LASF8:
+ 528 009c 756E7369 		.ascii	"unsigned int\000"
+ 528      676E6564 
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 11
+
+
+ 528      20696E74 
+ 528      00
+ 529              	.LASF17:
+ 530 00a9 64697370 		.ascii	"display.c\000"
+ 530      6C61792E 
+ 530      6300
+ 531              	.LASF5:
+ 532 00b3 6C6F6E67 		.ascii	"long unsigned int\000"
+ 532      20756E73 
+ 532      69676E65 
+ 532      6420696E 
+ 532      7400
+ 533              	.LASF7:
+ 534 00c5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 534      206C6F6E 
+ 534      6720756E 
+ 534      7369676E 
+ 534      65642069 
+ 535              	.LASF9:
+ 536 00dc 666C6F61 		.ascii	"float\000"
+ 536      7400
+ 537              	.LASF1:
+ 538 00e2 756E7369 		.ascii	"unsigned char\000"
+ 538      676E6564 
+ 538      20636861 
+ 538      7200
+ 539              	.LASF23:
+ 540 00f0 64697370 		.ascii	"displayDataPtr\000"
+ 540      6C617944 
+ 540      61746150 
+ 540      747200
+ 541              	.LASF11:
+ 542 00ff 63686172 		.ascii	"char\000"
+ 542      00
+ 543              	.LASF21:
+ 544 0104 64697370 		.ascii	"display\000"
+ 544      6C617900 
+ 545              	.LASF22:
+ 546 010c 64617461 		.ascii	"dataPointer\000"
+ 546      506F696E 
+ 546      74657200 
+ 547              	.LASF4:
+ 548 0118 6C6F6E67 		.ascii	"long int\000"
+ 548      20696E74 
+ 548      00
+ 549              	.LASF10:
+ 550 0121 646F7562 		.ascii	"double\000"
+ 550      6C6500
+ 551              	.LASF14:
+ 552 0128 4C43445F 		.ascii	"LCD_Position\000"
+ 552      506F7369 
+ 552      74696F6E 
+ 552      00
+ 553              	.LASF18:
+ 554 0135 433A5C55 		.ascii	"C:\\Users\\Default User.DESKTOP-J8EE37M\\Documents\\"
+ 554      73657273 
+ 554      5C446566 
+ARM GAS  C:\Users\DEFAUL~1.DES\AppData\Local\Temp\cchWPFmu.s 			page 12
+
+
+ 554      61756C74 
+ 554      20557365 
+ 555 0165 50536F43 		.ascii	"PSoC Creator\\HuskyRobotics\\PioneerLSeries\\Pionee"
+ 555      20437265 
+ 555      61746F72 
+ 555      5C487573 
+ 555      6B79526F 
+ 556 0195 724C5365 		.ascii	"rLSeries.cydsn\000"
+ 556      72696573 
+ 556      2E637964 
+ 556      736E00
+ 557              	.LASF3:
+ 558 01a4 73686F72 		.ascii	"short unsigned int\000"
+ 558      7420756E 
+ 558      7369676E 
+ 558      65642069 
+ 558      6E7400
+ 559              	.LASF0:
+ 560 01b7 7369676E 		.ascii	"signed char\000"
+ 560      65642063 
+ 560      68617200 
+ 561              	.LASF19:
+ 562 01c3 706F7452 		.ascii	"potRawPtr\000"
+ 562      61775074 
+ 562      7200
+ 563              	.LASF12:
+ 564 01cd 6C6F6E67 		.ascii	"long double\000"
+ 564      20646F75 
+ 564      626C6500 
+ 565              	.LASF2:
+ 566 01d9 73686F72 		.ascii	"short int\000"
+ 566      7420696E 
+ 566      7400
+ 567              	.LASF13:
+ 568 01e3 73697A65 		.ascii	"sizetype\000"
+ 568      74797065 
+ 568      00
+ 569              	.LASF20:
+ 570 01ec 64697370 		.ascii	"displayData\000"
+ 570      6C617944 
+ 570      61746100 
+ 571              	.LASF15:
+ 572 01f8 4C43445F 		.ascii	"LCD_PrintString\000"
+ 572      5072696E 
+ 572      74537472 
+ 572      696E6700 
+ 573              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+>>>>>>> refs/remotes/origin/master

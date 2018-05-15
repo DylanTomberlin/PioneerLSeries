@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="B1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="A2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="B2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="A1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="QuadDec1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VMux_count" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_reload" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_stop" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_m0s8_tcpwm_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="COUNTER" address="0x402001C8" bitWidth="32" desc="Current counter value" hidden="false" />
+    <register name="CC" address="0x402001CC" bitWidth="32" desc="Compare / capture value" hidden="false" />
+    <register name="CC_BUF" address="0x402001D0" bitWidth="32" desc="Compare / capture buffer value" hidden="false" />
+    <register name="PERIOD" address="0x402001D4" bitWidth="32" desc="Period value" hidden="false" />
+    <register name="PERIOD_BUF" address="0x402001D8" bitWidth="32" desc="Period buffer value" hidden="false" />
+  </block>
+  <block name="QuadDec2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VMux_count" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_reload" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_stop" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_m0s8_tcpwm_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="COUNTER" address="0x40200208" bitWidth="32" desc="Current counter value" hidden="false" />
+    <register name="CC" address="0x4020020C" bitWidth="32" desc="Compare / capture value" hidden="false" />
+    <register name="CC_BUF" address="0x40200210" bitWidth="32" desc="Compare / capture buffer value" hidden="false" />
+    <register name="PERIOD" address="0x40200214" bitWidth="32" desc="Period value" hidden="false" />
+    <register name="PERIOD_BUF" address="0x40200218" bitWidth="32" desc="Period buffer value" hidden="false" />
+  </block>
+  <block name="QuadDec0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VMux_count" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_reload" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_stop" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_m0s8_tcpwm_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="COUNTER" address="0x40200108" bitWidth="32" desc="Current counter value" hidden="false" />
+    <register name="CC" address="0x4020010C" bitWidth="32" desc="Compare / capture value" hidden="false" />
+    <register name="CC_BUF" address="0x40200110" bitWidth="32" desc="Compare / capture buffer value" hidden="false" />
+    <register name="PERIOD" address="0x40200114" bitWidth="32" desc="Period value" hidden="false" />
+    <register name="PERIOD_BUF" address="0x40200118" bitWidth="32" desc="Period buffer value" hidden="false" />
+  </block>
   <block name="DMAC" BASE="0x0" SIZE="0x0" desc="DMAC Registers" visible="true" hidden="false">
     <register name="DMAC_CTL" address="0x40101000" bitWidth="32" desc="DMA controller control register" hidden="false">
       <field name="ENABLED" from="31" to="31" access="RW" resetVal="" desc="Global DMAC enable" hidden="false">
@@ -4307,13 +4353,43 @@
       <field name="CURR_DATA_NR" from="15" to="0" access="RW" resetVal="" desc="Specifies the index of the current data transfer. This value increases from 0 to CONTROL.DATA_NR. HW sets this field: &#xA; - When a descriptor is done (RESPONSE is DONE), the field is set to '0' when PING_CTL.INV_DESCR is '0' and the field is set to PING_CTL.DATA_NR when PING_CTL.INV_DESCR is '1'.                                                                 &#xA; - When a descriptor is not done (RESPONSE is NO_ERROR), the field reflects the progress of a data transfer.                                                                 &#xA; - In case of erroneous behavior (RESPONSE is neither DONE or NO_ERROR), the field is not updated, but keeps its value to ease debugging.                                                                 &#xA; HW only modifies this field for an active descriptor (STATUS.VALID to be '1'). At descriptor initialization, SW should set this field to '0'.                                                                 &#xA; This field allows software to read the progress of the data transfer. Note that SRC.ADDR and DST.ADDR represent base addresses and are not modified during data transfer. However, STATUS.CURR_DATA_NR is modified during data transfer and provides an offset wrt. the base addresses." hidden="false" />
     </register>
   </block>
-  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="cy_lfclk" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="A0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="B0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="QuadClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LimitPin1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Pot0Pin" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="LCD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
-    <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="PWM0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VMux_count" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_reload" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_stop" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_m0s8_tcpwm_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="COUNTER" address="0x40200248" bitWidth="32" desc="Current counter value" hidden="false" />
+    <register name="CC" address="0x4020024C" bitWidth="32" desc="Compare / capture value" hidden="false" />
+    <register name="CC_BUF" address="0x40200250" bitWidth="32" desc="Compare / capture buffer value" hidden="false" />
+    <register name="PERIOD" address="0x40200254" bitWidth="32" desc="Period value" hidden="false" />
+    <register name="PERIOD_BUF" address="0x40200258" bitWidth="32" desc="Period buffer value" hidden="false" />
   </block>
+  <block name="PWM1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VMux_count" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_reload" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_stop" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_m0s8_tcpwm_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="COUNTER" address="0x40200188" bitWidth="32" desc="Current counter value" hidden="false" />
+    <register name="CC" address="0x4020018C" bitWidth="32" desc="Compare / capture value" hidden="false" />
+    <register name="CC_BUF" address="0x40200190" bitWidth="32" desc="Compare / capture buffer value" hidden="false" />
+    <register name="PERIOD" address="0x40200194" bitWidth="32" desc="Period value" hidden="false" />
+    <register name="PERIOD_BUF" address="0x40200198" bitWidth="32" desc="Period buffer value" hidden="false" />
+  </block>
+  <block name="Pot1Pin" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="ADC" BASE="0x0" SIZE="0x0" desc="Sequencing SAR ADC" visible="true" hidden="false">
     <block name="cy_analog_noconnect_30" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_31" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -4702,6 +4778,28 @@
       <field name="WOUND_RESOLUTION" from="1" to="0" access="R" resetVal="" desc="Maximum SAR resolution allowed" hidden="false" />
     </register>
   </block>
-  <block name="Pot1Pin" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LCD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  </block>
   <block name="Pot2Pin" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="isrLim0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LimitPin0" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LimitPin2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="isrLim1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="PWM2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="VMux_count" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_reload" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_stop" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_m0s8_tcpwm_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="COUNTER" address="0x40200148" bitWidth="32" desc="Current counter value" hidden="false" />
+    <register name="CC" address="0x4020014C" bitWidth="32" desc="Compare / capture value" hidden="false" />
+    <register name="CC_BUF" address="0x40200150" bitWidth="32" desc="Compare / capture buffer value" hidden="false" />
+    <register name="PERIOD" address="0x40200154" bitWidth="32" desc="Period value" hidden="false" />
+    <register name="PERIOD_BUF" address="0x40200158" bitWidth="32" desc="Period buffer value" hidden="false" />
+  </block>
+  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="isrLim2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
 </blockRegMap>

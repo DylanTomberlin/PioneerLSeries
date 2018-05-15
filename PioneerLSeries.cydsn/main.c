@@ -11,16 +11,17 @@
 */
 #include "top.h"
 
-
 //local function prototypes
 void initialize(void);
 void initDataStructs(void);
 void initTCBs(void);
 void initMotor(motor *currMotorPtr, int motorID);
+void initEncoders(void);
+void initPWMs(void);
 
 //external function prototypes
-void addTask(tcb *newTask);
-void executeTask(tcb *tcbPtr);
+//void addTask(tcb *newTask);
+//void executeTask(tcb *tcbPtr);
 void readPot(void* currDataPtr);
 void display(void *dataPointer);
 
@@ -41,6 +42,7 @@ displayData myDisplayData;
 tcb potTCB;
 tcb displayTCB;
 
+<<<<<<< HEAD
 char addFlags[NUM_FLAGS];
 char removeFlags[NUM_FLAGS];
 tcb *taskArray[NUM_FLAGS] = {&potTCB, &displayTCB};
@@ -50,6 +52,23 @@ tcb *lastTCBPtr = 0;
 
 
 
+=======
+/*
+CY_ISR(isrLim0)
+{
+    LCD_Position(0,0);
+    LCD_PrintString("Pot interrupt");
+    addTask(&potTCB);
+}
+
+CY_ISR(isrLim1)
+{
+    LCD_Position(0, 0);
+    LCD_PrintString("Display interrupt");
+    addTask(&displayTCB);   
+}
+*/
+>>>>>>> refs/remotes/origin/master
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
@@ -57,13 +76,16 @@ int main(void)
     initialize();
     
     int count = 0; //For testing/ call simulation purposes.
-    
+    addTask(&displayTCB);
     for(;;)
     {
-        if(0 == count % 6)
-            addTask((void*) &potTCB);
-        if(0 == count % 17)
-            addTask((void*) &displayTCB);
+        tcb *myFirstTCBPtr = firstTCBPtr;
+        addTask(&displayTCB);
+        myFirstTCBPtr = firstTCBPtr;
+//        if(0 == count % 6)
+//            addtask((void*) &pottcb);
+//        if(0 == count % 17)
+//            addtask((void*) &displaytcb);
         //readPot(&motor0);
         //CyDelay(500);
         //LCD_Position(1, 0);
@@ -71,8 +93,13 @@ int main(void)
         //readPot(&motor0);
         //LCD_PrintDecUint16(motor0.posRaw);
         //CyDelay(500);
-        if(0 != firstTCBPtr)
-            executeTask(firstTCBPtr);
+        //addTask(&
+        //if(NULL != firstTCBPtr)
+          //  executeTask(firstTCBPtr);
+        //addTask(&displayTCB);    
+        executeTask(firstTCBPtr);
+        myFirstTCBPtr = firstTCBPtr;
+        LCD_PrintString("Hi");
     }
 }
 
@@ -86,6 +113,9 @@ void initialize()
     //LCD_PrintString("Hello World");
     initDataStructs();
     initTCBs();
+    addTask(&potTCB);
+    initEncoders();
+    initPWMs();
 }
 
 void initMotor(motor *currMotorPtr, int motorID)
@@ -105,6 +135,25 @@ void initDataStructs(void)
 
 void initTCBs(void)
 {
+    LCD_PrintString("TCB Init");
     potTCB.currTask = readPot;
-    displayTCB.currTask = &display;
+    potTCB.dataPtr  = &myPotData;
+    displayTCB.currTask = display;
+    displayTCB.dataPtr = &myDisplayData;
+}
+
+// This may start an unnecessary number of decoders if less than 3 are used
+void initEncoders(void)
+{
+    QuadDec0_Start();
+    QuadDec1_Start();
+    QuadDec2_Start();
+}
+
+// This may start the pwm signals at start which may make the motors run at startup, fix
+void initPWMs(void)
+{
+    PWM0_Start();
+    PWM1_Start();
+    PWM2_Start();
 }
