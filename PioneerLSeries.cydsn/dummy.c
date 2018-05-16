@@ -11,7 +11,7 @@ void dummyTask1(void *dataPtr)
    dummyData *myDummyData = (dummyData*) dataPtr;
    myDummyData->number = 1;
    LCD_PrintString(myDummyData->myChar);
-   addFlags[2] = 1;
+   //addFlags[2] = 1;
 }
 
 void dummyTask2(void *dataPtr)
@@ -19,7 +19,7 @@ void dummyTask2(void *dataPtr)
    dummyData *myDummyData = (dummyData*) dataPtr;
    myDummyData->number = 2;
    LCD_PrintString(myDummyData->myChar);
-   addFlags[3] = 1;
+   //addFlags[3] = 1;
 }
 
 void dummyTask3(void *dataPtr)
@@ -27,7 +27,7 @@ void dummyTask3(void *dataPtr)
    dummyData *myDummyData = (dummyData*) dataPtr;
    myDummyData->number = 3;
    LCD_PrintString(myDummyData->myChar);
-   addFlags[4] = 1;
+   //addFlags[4] = 1;
 }
 void debugPrintCount(void)
 {

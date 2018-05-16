@@ -7,19 +7,20 @@ This file contains the data structs for the robotics arm motor board
 */
 #ifndef MY_STRUCTS
 #define MY_STRUCTS
-    
+
+#include <cytypes.h>
 #include "constants.h"
     
 //Potentiometer data struct
 typedef struct
 {
-    int potRaw[NUM_MOTORS];
+    int16 potRaw[NUM_MOTORS];
 } potData;
 
 //LCD Display data for debug purposes
 typedef struct
 {
-    int *potRawPtr[NUM_MOTORS];
+    int16 *potRawPtr[NUM_MOTORS];
 } displayData;
 
 // Encoder data struct
@@ -31,7 +32,7 @@ typedef struct
 // PWM data struct
 typedef struct
 {
-    int pwmData[NUM_MOTORS];
+    int pwmValues[NUM_MOTORS];
 } pwmData;
 
 //Dummy data struct for debugging
@@ -40,6 +41,13 @@ typedef struct
     int number;
     char myChar[2];
 } dummyData;
+
+//data struct for sending postion data over CAN
+typedef struct
+{
+   int16 *pwmValues;//pointer to first element in array of raw pwmData
+    
+} sendCANData;
 
 
 // an enum for whether a motor is a Talon or Cytron
